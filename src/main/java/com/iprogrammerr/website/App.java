@@ -9,16 +9,25 @@ import org.eclipse.jetty.server.handler.ResourceHandler;
 import org.eclipse.jetty.servlet.ServletHandler;
 import org.eclipse.jetty.util.resource.Resource;
 
+import java.io.File;
+
 public class App {
 
     public static void main(String... args) throws Exception {
+        Configuration configuration = Configuration.fromCmd(args);
+
         Server server = new Server();
 
         HandlerCollection handlers = new HandlerCollection();
         server.setHandler(handlers);
 
         ResourceHandler resourceHandler = new ResourceHandler();
-        resourceHandler.setBaseResource(Resource.newClassPathResource("public"));
+        String rootPath = configuration.getResourcesPath();
+        if (rootPath.isEmpty()) {
+            resourceHandler.setBaseResource(Resource.newClassPathResource("public"));
+        } else {
+            resourceHandler.setBaseResource(Resource.newResource(new File(rootPath, "public")));
+        }
         ContextHandler resourceContext = new ContextHandler();
         resourceContext.setContextPath("/resources");
         resourceContext.setHandler(resourceHandler);
@@ -29,7 +38,7 @@ public class App {
         handlers.addHandler(servletHandler);
 
         ServerConnector connector = new ServerConnector(server);
-        connector.setPort(80);
+        connector.setPort(configuration.getPort());
         server.setConnectors(new Connector[]{connector});
 
         server.start();
