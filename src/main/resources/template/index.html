@@ -7,17 +7,37 @@
     <meta charset="UTF-8" />
     <meta name="author" content="Igor Roztropiński" />
     <link rel="stylesheet" type="text/css" href="resources/style.css" />
+    <style>
+        @media screen and (max-width: 1000px) {
+
+            .head {
+                grid-template-columns: 1fr 2fr;
+            }
+        }
+
+        @media screen and (max-width: 600px) {
+
+            .experience,
+            .projects {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+    </style>
 </head>
 
 <body class="gradient">
-    <h1>Igor Roztropiński</h1>
-    <h2>Programmer</h2>
-    <div class="info">
-        <p>Born: 04.04.1994</p>
-        <p>Email: ceigor94@gmail.com</p>
-        <image alt="icon"></image>
-        <p><a href="https://github.com/Iprogrammerr" target="blank">Code</a></p>
-        <p><a href="/about">More</a></p>
+    <div class="head">
+        <div>
+            <h1>Igor Roztropiński</h1>
+            <h2>Programmer</h2>
+            <div>
+                <p><a href="https://github.com/Iprogrammerr" target="blank">Code</a></p>
+                <p><a href="/about">About</a></p>
+            </div>
+        </div>
+        <div>
+            <image src="/resources/iprogrammerr.jpg" class="profile"></image>
+        </div>
     </div>
     <h1>Experience</h1>
     <div class="experience">
@@ -26,7 +46,7 @@
             <h2>Inovatica Sp. z o. o.</h2>
             <h3>Java developer</h3>
             <p>Using jvm to solving various problems. Ranging from writing mobile,
-                 desktop and restful apps to coming up with algorithms for autonomous forklift</p>
+                desktop and restful apps to coming up with algorithms for autonomous forklift</p>
         </div>
     </div>
     <h1>Projects</h1>
@@ -37,9 +57,9 @@
     </div>
     <h1>Skills</h1>
     <div>
-        <p>Java</p>
-        <p>Kotlin</p>
-        <p>JavaScript</p>
+        <h2>Languages</h2>
+        <h2>Platforms</h2>
+        <h2>Other</h2>
     </div>
 </body>
 

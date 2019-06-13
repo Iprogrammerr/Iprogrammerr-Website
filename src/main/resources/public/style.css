@@ -27,11 +27,23 @@ h1 {
     font-size: var(--font-large);
 }
 
+.head {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 2fr 1fr;
+}
+
+.profile {
+    float: right;
+    width: 70%;
+    height: 100%;
+}
+
 .info {
     width: 100%;
     display: grid;
     grid-template-columns: 1fr 1fr 2fr;
-    text-align: left;
+    text-align: center;
     align-items: center;
 }
 
