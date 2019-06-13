@@ -5,6 +5,10 @@
 
 :root {
     --font: "Comic Sans MS", cursive, sans-serif;
+    --padding-medium: 16px;
+    --font-large: 2em;
+    --background-start: white;
+    --background-end: #e3e5ea;
 }
 
 html, body {
@@ -12,4 +16,42 @@ html, body {
     height: 100%;
     margin: 0;
     overflow: auto;
+}
+
+body.gradient {
+    padding: var(--padding-medium);
+    background-image: linear-gradient(to right, var(--background-start), var(--background-end));
+}
+
+h1 {
+    font-size: var(--font-large);
+}
+
+.info {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr 2fr;
+    text-align: left;
+    align-items: center;
+}
+
+.experience {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 2fr 1fr;
+    text-align: left;
+    align-items: center;
+    cursor: pointer;
+}
+
+.experience:hover {
+    opacity: 0.8;
+}
+
+.projects {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    text-align: left;
+    align-items: center;
 }
