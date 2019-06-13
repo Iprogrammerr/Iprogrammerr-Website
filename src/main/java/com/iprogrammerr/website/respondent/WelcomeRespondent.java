@@ -1,14 +1,21 @@
 package com.iprogrammerr.website.respondent;
 
-import com.iprogrammerr.website.Respondent;
+import com.iprogrammerr.website.HtmlRespondent;
+import com.iprogrammerr.website.view.HtmlViewsTemplates;
 
 import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
 
-public class WelcomeRespondent implements Respondent {
+public class WelcomeRespondent implements HtmlRespondent {
+
+    private static final String TEMPLATE = "index";
+    private final HtmlViewsTemplates templates;
+
+    public WelcomeRespondent(HtmlViewsTemplates templates) {
+        this.templates = templates;
+    }
 
     @Override
-    public void respond(HttpServletRequest req, HttpServletResponse res) {
-
+    public String response(HttpServletRequest request) {
+        return templates.rendered(TEMPLATE);
     }
 }
