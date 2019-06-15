@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html>
-<title>Project</title>
+<title th:text="${project.name}"></title>
 
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -9,6 +9,21 @@
 </head>
 
 <body class="gradient">
-    <div>Project</div>
+    <h1 th:utext="${project.name}" class="fade-in"></h1>
+    <div class="fade-in-first-delay">
+        <h2 class="fade-in-first-delay">Goal</h2>
+        <p th:text="${project.goal}" class="indented"></p>
+    </div>
+    <div class="fade-in-second-delay">
+        <h2>Description</h2>
+        <p th:text="${project.description}" class="indented fade-in-first-delay"></p>
+    </div>
+    <div class="fade-in-third-delay">
+        <h2>Links</h2>
+        <ul id="links" th:each="l : ${project.links}">
+            <li><a th:href="${l}" th:text="${l}" target="blank"></a></li>
+        </ul>
+    </div>
 </body>
+
 </html>

@@ -2,7 +2,7 @@
   {
     "name": "Daily Wisdom",
     "goal": "Mobile application for devices with Android that allows reading quotes from the greatest minds in history. CMS for adding and modyfing data consumed by mobile application. RESTful service that serves as a source of data for both of the above mentioned.",
-    "descriptionName": "daily-wisdom.txt",
+    "description": "daily-wisdom.txt",
     "state": "completed",
     "links": ["http://iprogrammerr.com/daily-wisdom/", "http://www.iprogrammerr.com:8080/daily-wisdom/swagger-ui.html#/"]
   }

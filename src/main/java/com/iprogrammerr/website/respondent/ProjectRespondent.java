@@ -6,6 +6,8 @@ import com.iprogrammerr.website.model.UrlParameter;
 import com.iprogrammerr.website.view.HtmlViewsTemplates;
 
 import javax.servlet.http.HttpServletRequest;
+import java.util.HashMap;
+import java.util.Map;
 
 public class ProjectRespondent implements HtmlRespondent {
 
@@ -23,10 +25,11 @@ public class ProjectRespondent implements HtmlRespondent {
         return PROJECT;
     }
 
-    //TODO render project
     @Override
     public String response(HttpServletRequest request) {
         int id = new UrlParameter(request.getRequestURI()).intValue(-1);
-        return templates.rendered(PROJECT);
+        Map<String, Object> params = new HashMap<>();
+        params.put(PROJECT, projects.project(id));
+        return templates.rendered(PROJECT, params);
     }
 }
