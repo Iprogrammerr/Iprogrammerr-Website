@@ -1,7 +1,7 @@
 package com.iprogrammerr.website;
 
+import com.iprogrammerr.website.model.Projects;
 import com.iprogrammerr.website.respondent.WelcomeRespondent;
-import com.iprogrammerr.website.view.HtmlViews;
 import com.iprogrammerr.website.view.HtmlViewsTemplates;
 import org.eclipse.jetty.server.Connector;
 import org.eclipse.jetty.server.Server;
@@ -41,8 +41,10 @@ public class App {
         }
         engine.setTemplateResolver(resolver);
         HtmlViewsTemplates templates = new HtmlViewsTemplates(engine);
+        Projects projects = new Projects();
+        projects.load();
 
-        WelcomeRespondent welcomeRespondent = new WelcomeRespondent(templates);
+        WelcomeRespondent welcomeRespondent = new WelcomeRespondent(templates, projects);
 
         DispatcherServlet dispatcherServlet = new DispatcherServlet(welcomeRespondent);
 
