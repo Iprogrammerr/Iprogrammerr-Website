@@ -11,7 +11,7 @@
     --links-color:#7faaef;
     --accent: #0badf1;
     --background-start: white;
-    --background-end: #e3e5ea;
+    --background-end:#e8eaed;
 }
 
 html, body {
@@ -21,9 +21,14 @@ html, body {
     overflow: auto;
 }
 
-body.gradient {
+body.gradient{
     padding: var(--padding-medium);
     background-image: linear-gradient(to right, var(--background-start), var(--background-end));
+}
+
+@keyframes fadeIn {
+    from {opacity: 0;}
+    to {opacity: 1;}
 }
 
 h1 {
@@ -38,6 +43,15 @@ h2 {
     width: 100%;
     display: grid;
     grid-template-columns: 1fr 2fr 1fr;
+}
+
+.fade-in, .fade-in-delay {
+    opacity: 0;
+    animation: fadeIn 2s ease 0s 1 forwards;
+}
+
+.fade-in-delay {
+    animation-delay: 0.5s;
 }
 
 .profile {
