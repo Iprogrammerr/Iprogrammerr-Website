@@ -11,7 +11,7 @@ import java.util.Map;
 
 public class WelcomeRespondent implements HtmlRespondent {
 
-    private static final String TEMPLATE = "index";
+    private static final String WELCOME = "index";
     private static final String EXPERIENCES_TEMPLATE = "experiences";
     private static final String PROJECTS_TEMPLATE = "projects";
     private final HtmlViewsTemplates templates;
@@ -29,6 +29,11 @@ public class WelcomeRespondent implements HtmlRespondent {
         Map<String, Object> params = new HashMap<>();
         params.put(EXPERIENCES_TEMPLATE, experiences.all());
         params.put(PROJECTS_TEMPLATE, projects.all());
-        return templates.rendered(TEMPLATE, params);
+        return templates.rendered(WELCOME, params);
+    }
+
+    @Override
+    public String path() {
+        return WELCOME;
     }
 }

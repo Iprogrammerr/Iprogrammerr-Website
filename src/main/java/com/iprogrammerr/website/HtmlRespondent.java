@@ -1,8 +1,10 @@
 package com.iprogrammerr.website;
 
 import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
 
 public interface HtmlRespondent {
+
+    String path();
+
     String response(HttpServletRequest request);
 }

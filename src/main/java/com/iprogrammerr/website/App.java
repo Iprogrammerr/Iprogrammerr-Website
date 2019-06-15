@@ -2,6 +2,10 @@ package com.iprogrammerr.website;
 
 import com.iprogrammerr.website.model.Experiences;
 import com.iprogrammerr.website.model.Projects;
+import com.iprogrammerr.website.respondent.AboutRespondent;
+import com.iprogrammerr.website.respondent.ExperienceRespondent;
+import com.iprogrammerr.website.respondent.ProjectRespondent;
+import com.iprogrammerr.website.respondent.SkillsRespondent;
 import com.iprogrammerr.website.respondent.WelcomeRespondent;
 import com.iprogrammerr.website.view.HtmlViewsTemplates;
 import org.eclipse.jetty.server.Connector;
@@ -39,8 +43,13 @@ public class App {
         Projects projects = new Projects(databasePath + File.separator + "projects.json", descriptionsPath);
 
         WelcomeRespondent welcomeRespondent = new WelcomeRespondent(templates, experiences, projects);
+        AboutRespondent aboutRespondent = new AboutRespondent(templates);
+        ExperienceRespondent experienceRespondent = new ExperienceRespondent(templates, experiences);
+        ProjectRespondent projectRespondent = new ProjectRespondent(templates, projects);
+        SkillsRespondent skillsRespondent = new SkillsRespondent(templates);
 
-        DispatcherServlet dispatcherServlet = new DispatcherServlet(welcomeRespondent);
+        DispatcherServlet dispatcherServlet = new DispatcherServlet(welcomeRespondent, aboutRespondent,
+            experienceRespondent, projectRespondent, skillsRespondent);
 
         server(configuration, dispatcherServlet).start();
     }
