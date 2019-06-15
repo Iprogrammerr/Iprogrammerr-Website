@@ -1,6 +1,10 @@
 [
   {
-
-
+    "startDate": "2017.09",
+    "endDate": "",
+    "place": "Inovatica Sp. z o. o.",
+    "function": "Java developer",
+    "shortDescription": "Using jvm to solve various problems. Ranging from writing mobile, desktop and RESTful apps to coming up with algorithms for autonomous forklift",
+    "description": "inovatica.txt"
   }
 ]

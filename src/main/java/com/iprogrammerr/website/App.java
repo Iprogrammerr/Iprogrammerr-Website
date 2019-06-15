@@ -34,11 +34,11 @@ public class App {
 
         String databasePath = resources.getPath() + File.separator + "database";
         String descriptionsPath = databasePath + File.separator + "description";
-        Projects projects = new Projects(databasePath + File.separator + "projects.json", descriptionsPath);
         Experiences experiences = new Experiences(databasePath + File.separator + "experiences.json",
             descriptionsPath);
+        Projects projects = new Projects(databasePath + File.separator + "projects.json", descriptionsPath);
 
-        WelcomeRespondent welcomeRespondent = new WelcomeRespondent(templates, projects);
+        WelcomeRespondent welcomeRespondent = new WelcomeRespondent(templates, experiences, projects);
 
         DispatcherServlet dispatcherServlet = new DispatcherServlet(welcomeRespondent);
 

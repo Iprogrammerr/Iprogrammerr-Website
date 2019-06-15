@@ -1,5 +1,6 @@
 const HIDDEN_CLASS = "hidden";
 const VISIBLE_CLASS = "visible";
+const ID_ATTRIBUTE = "data-id";
 
 const skills = document.getElementsByClassName("skills")[0];
 const tags = skills.querySelectorAll("h2");
@@ -22,6 +23,11 @@ function toggleVisibility(element) {
 const experience = document.getElementsByClassName("experience")[0].children;
 
 for (let i = 0; i < experience.length; i+=2) {
-    experience[i].onclick = () => location.href = "experience";
-    experience[i + 1].onclick = () => location.href = "experience";
+    let url = experienceUrl(experience[i].getAttribute(ID_ATTRIBUTE));
+    experience[i].onclick = () => location.href = url;
+    experience[i + 1].onclick = () => location.href = url;
+}
+
+function experienceUrl(id) {
+    return `experience/${id}`;
 }

@@ -40,13 +40,12 @@
         </div>
     </div>
     <h1>Experience</h1>
-    <div class="experience">
-        <p>2017.09 -</p>
+    <div class="experience" th:each="e : ${experiences}">
+        <p th:utext="|${e.startDate} - ${e.endDate}|" th:data-id="${e.id}"></p>
         <div>
-            <h2>Inovatica Sp. z o. o.</h2>
-            <h3>Java developer</h3>
-            <p>Using jvm to solving various problems. Ranging from writing mobile,
-                desktop and restful apps to coming up with algorithms for autonomous forklift.</p>
+            <h2 th:text="${e.place}"></h2>
+            <h3 th:text="${e.function}"></h3>
+            <p th:text="${e.shortDescription}"></p>
         </div>
     </div>
     <h1>Projects</h1>
