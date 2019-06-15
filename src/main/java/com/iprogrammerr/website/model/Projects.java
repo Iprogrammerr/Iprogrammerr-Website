@@ -3,7 +3,6 @@ package com.iprogrammerr.website.model;
 import org.json.JSONArray;
 import org.json.JSONObject;
 
-import java.io.File;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
@@ -18,16 +17,11 @@ public class Projects {
     private static final String LINKS = "links";
     private static final String STATE = "state";
     private final Path projectsPath;
-    private final Path descriptionsPath;
+    private final String descriptionsPath;
 
-    public Projects(Path projectsPath, Path descriptionsPath) {
-        this.projectsPath = projectsPath;
+    public Projects(String projectsPath, String descriptionsPath) {
+        this.projectsPath = Paths.get(projectsPath);
         this.descriptionsPath = descriptionsPath;
-    }
-
-    public Projects() {
-        this(new File(Project.class.getResource("/database/projects.json").getPath()).toPath(),
-            new File(Project.class.getResource("/database/description").getPath()).toPath());
     }
 
     private JSONArray allJson() throws Exception {
@@ -69,8 +63,7 @@ public class Projects {
     private ProjectDetails fromJson(JSONObject json) throws Exception {
         String name = json.getString(NAME);
         String goal = json.getString(GOAL);
-        String description = new String(Files.readAllBytes(Paths.get(descriptionsPath.toString(),
-            json.getString(DESCRIPTION))));
+        String description = new String(Files.readAllBytes(Paths.get(descriptionsPath, json.getString(DESCRIPTION))));
         List<String> links = new ArrayList<>();
         JSONArray linksArray = json.getJSONArray(LINKS);
         for (int i = 0; i < linksArray.length(); i++) {

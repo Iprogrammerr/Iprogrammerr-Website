@@ -1,5 +1,6 @@
 package com.iprogrammerr.website;
 
+import com.iprogrammerr.website.model.Experiences;
 import com.iprogrammerr.website.model.Projects;
 import com.iprogrammerr.website.respondent.WelcomeRespondent;
 import com.iprogrammerr.website.view.HtmlViewsTemplates;
@@ -13,8 +14,6 @@ import org.eclipse.jetty.servlet.ServletHandler;
 import org.eclipse.jetty.servlet.ServletHolder;
 import org.eclipse.jetty.util.resource.Resource;
 import org.thymeleaf.TemplateEngine;
-import org.thymeleaf.templateresolver.AbstractConfigurableTemplateResolver;
-import org.thymeleaf.templateresolver.ClassLoaderTemplateResolver;
 import org.thymeleaf.templateresolver.FileTemplateResolver;
 
 import java.io.File;
@@ -24,24 +23,20 @@ public class App {
     public static void main(String... args) throws Exception {
         Configuration configuration = Configuration.fromCmd(args);
 
-        String rootPath = configuration.getResourcesPath();
-        File root = new File(rootPath.isEmpty() ? App.class.getResource("/").getPath() : rootPath);
-
+        File resources = new File(configuration.getResourcesPath());
 
         TemplateEngine engine = new TemplateEngine();
-        AbstractConfigurableTemplateResolver resolver;
-        if (rootPath.isEmpty()) {
-            resolver = new ClassLoaderTemplateResolver();
-            resolver.setCacheable(true);
-            resolver.setPrefix("template" + File.separator);
-        } else {
-            resolver = new FileTemplateResolver();
-            resolver.setCacheable(false);
-            resolver.setPrefix(new File(root, "template").getPath() + File.separator);
-        }
+        FileTemplateResolver resolver = new FileTemplateResolver();
+        resolver.setPrefix(new File(resources, "template").getPath() + File.separator);
+        resolver.setCacheable(false);
         engine.setTemplateResolver(resolver);
         HtmlViewsTemplates templates = new HtmlViewsTemplates(engine);
-        Projects projects = new Projects();
+
+        String databasePath = resources.getPath() + File.separator + "database";
+        String descriptionsPath = databasePath + File.separator + "description";
+        Projects projects = new Projects(databasePath + File.separator + "projects.json", descriptionsPath);
+        Experiences experiences = new Experiences(databasePath + File.separator + "experiences.json",
+            descriptionsPath);
 
         WelcomeRespondent welcomeRespondent = new WelcomeRespondent(templates, projects);
 

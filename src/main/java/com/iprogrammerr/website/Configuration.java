@@ -2,12 +2,12 @@ package com.iprogrammerr.website;
 
 import java.io.FileInputStream;
 import java.io.InputStream;
-import java.net.URL;
 import java.util.Properties;
 
 public class Configuration {
 
     private static final String PORT = "port";
+    private static final String RESOURCES_PATH = "resourcesPath";
     private final Properties source;
 
     public Configuration(Properties source) {
@@ -35,12 +35,9 @@ public class Configuration {
     }
 
     public String getResourcesPath() {
-        String path;
-        URL root = Configuration.class.getResource(".");
-        if (root == null) {
-            path = "";
-        } else {
-            String classPath = root.getPath();
+        String path = source.getProperty(RESOURCES_PATH, "");
+        if (path.isEmpty()) {
+            String classPath = Configuration.class.getResource(".").getPath();
             path = classPath.substring(0, classPath.indexOf("target")) + "src/main/resources";
         }
         return path;
