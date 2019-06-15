@@ -42,7 +42,6 @@ public class App {
         engine.setTemplateResolver(resolver);
         HtmlViewsTemplates templates = new HtmlViewsTemplates(engine);
         Projects projects = new Projects();
-        projects.load();
 
         WelcomeRespondent welcomeRespondent = new WelcomeRespondent(templates, projects);
 
