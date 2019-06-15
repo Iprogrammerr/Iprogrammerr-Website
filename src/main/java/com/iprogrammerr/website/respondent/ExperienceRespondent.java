@@ -2,6 +2,7 @@ package com.iprogrammerr.website.respondent;
 
 import com.iprogrammerr.website.HtmlRespondent;
 import com.iprogrammerr.website.model.Experiences;
+import com.iprogrammerr.website.model.UrlParameter;
 import com.iprogrammerr.website.view.HtmlViewsTemplates;
 
 import javax.servlet.http.HttpServletRequest;
@@ -20,6 +21,7 @@ public class ExperienceRespondent implements HtmlRespondent {
     //TODO render experience
     @Override
     public String response(HttpServletRequest request) {
+        int id = new UrlParameter(request.getRequestURI()).intValue(-1);
         return templates.rendered(EXPERIENCE);
     }
 
