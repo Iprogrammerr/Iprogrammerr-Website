@@ -55,10 +55,23 @@ public class Skills {
             Skill skill = fromJson(json);
             String description = new String(Files.readAllBytes(Paths.get(descriptionsPath,
                 json.getString(DESCRIPTION))));
-            return new SkillDetails(skill, description);
+            return new SkillDetails(skill.category, skill.items, description);
         } catch (Exception e) {
             throw new RuntimeException(e);
         }
     }
 
+    public int firstId() {
+        return 1;
+    }
+
+    public int lastId() {
+        int last;
+        try {
+            last = allJson().length();
+        } catch (Exception e) {
+            last = 0;
+        }
+        return last;
+    }
 }

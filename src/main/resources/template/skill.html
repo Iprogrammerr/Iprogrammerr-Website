@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<title>Skills</title>
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" category="text/css" href="/resources/style.css" />
+    <style>
+        @media screen and (max-width: 800px) {
+            .skill {
+                grid-template-columns: 1fr 4fr 1fr;
+            }
+        }
+    </style>
+</head>
+
+<body class="gradient">
+    <div class="skill">
+        <div th:if="${hasPrevious}" id="previous" class="arrow fade-in-second-delay">&#10094</div>
+        <div th:unless="${hasPrevious}"></div>
+        <div class="content fade-in">
+            <h1 th:text="${skill.category}"></h1>
+            <ul>
+                <li th:each="i : ${skill.items}">
+                    <span th:text="${i}"></span>
+                </li>
+            </ul>
+            <p class="indented fade-in-first-delay" th:text="${skill.description}">
+            </p>
+        </div>
+        <div th:if="${hasNext}" id="next" class="arrow fade-in-second-delay">&#10095</div>
+        <div th:unless="${hasNext}"></div>
+    </div>
+</body>
+<script src="/resources/skill.js"></script>
+
+</html>
