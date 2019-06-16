@@ -90,14 +90,6 @@ h2 {
     cursor: pointer;
 }
 
-.about {
-    width: 100%;
-    display: grid;
-    grid-template-columns: 3fr 1fr;
-    text-align: left;
-    align-items: center;
-}
-
 .experience:hover, .skills > h2:hover {
     cursor: pointer;
     color: var(--accent-dark);
@@ -136,4 +128,14 @@ a:hover {
 
 p.indented {
     text-indent: var(--padding-indention);
+}
+
+.formatted {
+    width: 70%;
+}
+
+@media screen and (max-width: 600px) {
+    .formatted {
+        width: 90%;
+    }
 }

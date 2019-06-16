@@ -10,19 +10,21 @@
 
 <body class="gradient">
     <h1 th:utext="${project.name}" class="fade-in"></h1>
-    <div class="fade-in-first-delay">
-        <h2 class="fade-in-first-delay">Goal</h2>
-        <p th:text="${project.goal}" class="indented"></p>
-    </div>
-    <div class="fade-in-second-delay">
-        <h2>Description</h2>
-        <p th:text="${project.description}" class="indented fade-in-first-delay"></p>
-    </div>
-    <div class="fade-in-third-delay">
-        <h2>Links</h2>
-        <ul id="links" th:each="l : ${project.links}">
-            <li><a th:href="${l}" th:text="${l}" target="blank"></a></li>
-        </ul>
+    <div class="formatted">
+        <div class="fade-in-first-delay">
+            <h2 class="fade-in-first-delay">Goal</h2>
+            <p th:text="${project.goal}" class="indented"></p>
+        </div>
+        <div class="fade-in-second-delay">
+            <h2>Description</h2>
+            <p th:text="${project.description}" class="indented fade-in-first-delay"></p>
+        </div>
+        <div class="fade-in-third-delay">
+            <h2>Links</h2>
+            <ul id="links" th:each="l : ${project.links}">
+                <li><a th:href="${l}" th:text="${l}" target="blank"></a></li>
+            </ul>
+        </div>
     </div>
 </body>
 
