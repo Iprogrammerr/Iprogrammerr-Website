@@ -9,19 +9,15 @@
 </head>
 
 <body class="gradient">
-    <h1>Experience</h1>
-    <h2>Java Developer</h2>
-    <h2>2019.09 - Today</h2>
+    <h1 th:text="${experience.place}"></h1>
+    <h2 th:text="${experience.function}"></h2>
+    <h2 th:utext="|${experience.startDate} - ${experience.endDate}|"></h2>
     <h2>Tech Stack</h2>
-    <ul>
-        <li>Java</li>
-        <li>JavaScript</li>
-        <li>Java</li>
-        <li>JavaScript</li>
-        <li>Ros</li>
+    <ul th:each="t : ${experience.techStack}">
+        <li th:text="${t}"></li>
     </ul>
     <h2>Details</h2>
-    <p>dada</p>
+    <p class="indented" th:text="${experience.description}"></p>
 </body>
 
 </html>

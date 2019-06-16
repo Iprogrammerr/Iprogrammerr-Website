@@ -6,6 +6,8 @@ import com.iprogrammerr.website.model.UrlParameter;
 import com.iprogrammerr.website.view.Views;
 
 import javax.servlet.http.HttpServletRequest;
+import java.util.HashMap;
+import java.util.Map;
 
 public class ExperienceRespondent implements HtmlRespondent {
 
@@ -18,11 +20,12 @@ public class ExperienceRespondent implements HtmlRespondent {
         this.experiences = experiences;
     }
 
-    //TODO render experience
     @Override
     public String response(HttpServletRequest request) {
         int id = new UrlParameter(request.getRequestURI()).intValue(-1);
-        return views.view(EXPERIENCE);
+        Map<String, Object> params = new HashMap<>();
+        params.put(EXPERIENCE, experiences.experience(id));
+        return views.rendered(EXPERIENCE, params);
     }
 
     @Override
