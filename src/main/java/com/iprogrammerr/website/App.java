@@ -7,7 +7,8 @@ import com.iprogrammerr.website.respondent.ExperienceRespondent;
 import com.iprogrammerr.website.respondent.ProjectRespondent;
 import com.iprogrammerr.website.respondent.SkillsRespondent;
 import com.iprogrammerr.website.respondent.WelcomeRespondent;
-import com.iprogrammerr.website.view.HtmlViewsTemplates;
+import com.iprogrammerr.website.view.HtmlViews;
+import com.iprogrammerr.website.view.Views;
 import org.eclipse.jetty.server.Connector;
 import org.eclipse.jetty.server.Server;
 import org.eclipse.jetty.server.ServerConnector;
@@ -29,12 +30,13 @@ public class App {
 
         File resources = new File(configuration.getResourcesPath());
 
+        File templates = new File(resources, "template");
         TemplateEngine engine = new TemplateEngine();
         FileTemplateResolver resolver = new FileTemplateResolver();
-        resolver.setPrefix(new File(resources, "template").getPath() + File.separator);
+        resolver.setPrefix(templates.getPath() + File.separator);
         resolver.setCacheable(false);
         engine.setTemplateResolver(resolver);
-        HtmlViewsTemplates templates = new HtmlViewsTemplates(engine);
+        Views views = new HtmlViews(templates, engine);
 
         String databasePath = resources.getPath() + File.separator + "database";
         String descriptionsPath = databasePath + File.separator + "description";
@@ -42,11 +44,11 @@ public class App {
             descriptionsPath);
         Projects projects = new Projects(databasePath + File.separator + "projects.json", descriptionsPath);
 
-        WelcomeRespondent welcomeRespondent = new WelcomeRespondent(templates, experiences, projects);
-        AboutRespondent aboutRespondent = new AboutRespondent(templates);
-        ExperienceRespondent experienceRespondent = new ExperienceRespondent(templates, experiences);
-        ProjectRespondent projectRespondent = new ProjectRespondent(templates, projects);
-        SkillsRespondent skillsRespondent = new SkillsRespondent(templates);
+        WelcomeRespondent welcomeRespondent = new WelcomeRespondent(views, experiences, projects);
+        AboutRespondent aboutRespondent = new AboutRespondent(views);
+        ExperienceRespondent experienceRespondent = new ExperienceRespondent(views, experiences);
+        ProjectRespondent projectRespondent = new ProjectRespondent(views, projects);
+        SkillsRespondent skillsRespondent = new SkillsRespondent(views);
 
         DispatcherServlet dispatcherServlet = new DispatcherServlet(welcomeRespondent, aboutRespondent,
             experienceRespondent, projectRespondent, skillsRespondent);

@@ -3,7 +3,7 @@ package com.iprogrammerr.website.respondent;
 import com.iprogrammerr.website.HtmlRespondent;
 import com.iprogrammerr.website.model.Experiences;
 import com.iprogrammerr.website.model.Projects;
-import com.iprogrammerr.website.view.HtmlViewsTemplates;
+import com.iprogrammerr.website.view.Views;
 
 import javax.servlet.http.HttpServletRequest;
 import java.util.HashMap;
@@ -14,12 +14,12 @@ public class WelcomeRespondent implements HtmlRespondent {
     private static final String WELCOME = "index";
     private static final String EXPERIENCES_TEMPLATE = "experiences";
     private static final String PROJECTS_TEMPLATE = "projects";
-    private final HtmlViewsTemplates templates;
+    private final Views views;
     private final Experiences experiences;
     private final Projects projects;
 
-    public WelcomeRespondent(HtmlViewsTemplates templates, Experiences experiences, Projects projects) {
-        this.templates = templates;
+    public WelcomeRespondent(Views views, Experiences experiences, Projects projects) {
+        this.views = views;
         this.experiences = experiences;
         this.projects = projects;
     }
@@ -29,7 +29,7 @@ public class WelcomeRespondent implements HtmlRespondent {
         Map<String, Object> params = new HashMap<>();
         params.put(EXPERIENCES_TEMPLATE, experiences.all());
         params.put(PROJECTS_TEMPLATE, projects.all());
-        return templates.rendered(WELCOME, params);
+        return views.rendered(WELCOME, params);
     }
 
     @Override

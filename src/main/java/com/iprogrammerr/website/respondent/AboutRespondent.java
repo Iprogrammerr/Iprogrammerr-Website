@@ -1,7 +1,7 @@
 package com.iprogrammerr.website.respondent;
 
 import com.iprogrammerr.website.HtmlRespondent;
-import com.iprogrammerr.website.view.HtmlViewsTemplates;
+import com.iprogrammerr.website.view.Views;
 
 import javax.servlet.http.HttpServletRequest;
 
@@ -9,15 +9,15 @@ public class AboutRespondent implements HtmlRespondent {
 
     private static final String ABOUT = "about";
 
-    private final HtmlViewsTemplates templates;
+    private final Views views;
 
-    public AboutRespondent(HtmlViewsTemplates templates) {
-        this.templates = templates;
+    public AboutRespondent(Views views) {
+        this.views = views;
     }
 
     @Override
     public String response(HttpServletRequest request) {
-        return templates.rendered(ABOUT);
+        return views.view(ABOUT);
     }
 
     @Override

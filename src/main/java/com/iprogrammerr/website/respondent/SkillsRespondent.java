@@ -1,17 +1,17 @@
 package com.iprogrammerr.website.respondent;
 
 import com.iprogrammerr.website.HtmlRespondent;
-import com.iprogrammerr.website.view.HtmlViewsTemplates;
+import com.iprogrammerr.website.view.Views;
 
 import javax.servlet.http.HttpServletRequest;
 
 public class SkillsRespondent implements HtmlRespondent {
 
     private static final String SKILLS = "skills";
-    private final HtmlViewsTemplates templates;
+    private final Views views;
 
-    public SkillsRespondent(HtmlViewsTemplates templates) {
-        this.templates = templates;
+    public SkillsRespondent(Views views) {
+        this.views = views;
     }
 
     @Override
@@ -22,6 +22,6 @@ public class SkillsRespondent implements HtmlRespondent {
     //TODO render path
     @Override
     public String response(HttpServletRequest request) {
-        return templates.rendered(SKILLS);
+        return views.view(SKILLS);
     }
 }

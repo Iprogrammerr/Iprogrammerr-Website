@@ -3,18 +3,18 @@ package com.iprogrammerr.website.respondent;
 import com.iprogrammerr.website.HtmlRespondent;
 import com.iprogrammerr.website.model.Experiences;
 import com.iprogrammerr.website.model.UrlParameter;
-import com.iprogrammerr.website.view.HtmlViewsTemplates;
+import com.iprogrammerr.website.view.Views;
 
 import javax.servlet.http.HttpServletRequest;
 
 public class ExperienceRespondent implements HtmlRespondent {
 
     private static final String EXPERIENCE = "experience";
-    private final HtmlViewsTemplates templates;
+    private final Views views;
     private final Experiences experiences;
 
-    public ExperienceRespondent(HtmlViewsTemplates templates, Experiences experiences) {
-        this.templates = templates;
+    public ExperienceRespondent(Views views, Experiences experiences) {
+        this.views = views;
         this.experiences = experiences;
     }
 
@@ -22,7 +22,7 @@ public class ExperienceRespondent implements HtmlRespondent {
     @Override
     public String response(HttpServletRequest request) {
         int id = new UrlParameter(request.getRequestURI()).intValue(-1);
-        return templates.rendered(EXPERIENCE);
+        return views.view(EXPERIENCE);
     }
 
     @Override
