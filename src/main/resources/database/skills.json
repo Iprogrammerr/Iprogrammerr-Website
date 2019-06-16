@@ -1,0 +1,41 @@
+[
+  {
+    "category": "Languages",
+    "items": [
+      "Java",
+      "JavaScript",
+      "Kotlin",
+      "C/C++",
+      "Assembly"
+    ],
+    "description": "languages.txt"
+  },
+  {
+    "category": "Environments",
+    "items": [
+      "Android",
+      "Web",
+      "Desktop"
+    ],
+    "description": "environments.txt"
+  },
+  {
+    "category": "Technologies",
+    "items": [
+      "SQL",
+      "Git",
+      "Maven",
+      "Gradle"
+    ],
+    "description": "technologies.txt"
+  },
+  {
+    "category": "Other",
+    "items": [
+      "HTTP",
+      "REST",
+      "Dedication to learning"
+    ],
+    "description": "other.txt"
+  }
+]

@@ -2,6 +2,7 @@ package com.iprogrammerr.website;
 
 import com.iprogrammerr.website.model.Experiences;
 import com.iprogrammerr.website.model.Projects;
+import com.iprogrammerr.website.model.Skills;
 import com.iprogrammerr.website.respondent.AboutRespondent;
 import com.iprogrammerr.website.respondent.ExperienceRespondent;
 import com.iprogrammerr.website.respondent.ProjectRespondent;
@@ -43,8 +44,9 @@ public class App {
         Experiences experiences = new Experiences(databasePath + File.separator + "experiences.json",
             descriptionsPath);
         Projects projects = new Projects(databasePath + File.separator + "projects.json", descriptionsPath);
+        Skills skills = new Skills(databasePath + File.separator + "skills.json", descriptionsPath);
 
-        WelcomeRespondent welcomeRespondent = new WelcomeRespondent(views, experiences, projects);
+        WelcomeRespondent welcomeRespondent = new WelcomeRespondent(views, experiences, projects, skills);
         AboutRespondent aboutRespondent = new AboutRespondent(views);
         ExperienceRespondent experienceRespondent = new ExperienceRespondent(views, experiences);
         ProjectRespondent projectRespondent = new ProjectRespondent(views, projects);

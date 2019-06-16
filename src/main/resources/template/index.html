@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta charset="UTF-8" />
     <meta name="author" content="Igor Roztropiński" />
-    <link rel="stylesheet" type="text/css" href="/resources/style.css" />
+    <link rel="stylesheet" category="text/css" href="/resources/style.css" />
     <style>
         @media screen and (max-width: 1000px) {
 
@@ -54,35 +54,17 @@
     </div>
     <h1>Skills</h1>
     <div class="skills">
-        <h2>Languages</h2>
-        <ul class="hidden">
-            <li>Java</li>
-            <li>Kotlin</li>
-            <li>C/C++</li>
-            <li>JavaScript</li>
-            <li>Assembly</li>
-        </ul>
-        <h2>Environments</h2>
-        <ul class="hidden">
-            <li>Android</li>
-            <li>Web</li>
-            <li>Desktop</li>
-        </ul>
-        <h2>Technologies</h2>
-        <ul class="hidden">
-            <li>SQL</li>
-            <li>Git</li>
-            <li>Maven</li>
-            <li>Gradle</li>
-        </ul>
-        <h2>Other</h2>
-        <ul class="hidden">
-            <li>HTTP</li>
-            <li>REST</li>
-            <li>Dedication to learning</li>
-        </ul>
+        <th:block th:each="s : ${skills}">
+            <h2 th:text="${s.category}"></h2>
+            <ul class="hidden">
+                <li th:each="i : ${s.items}">
+                    <span th:text="${i}"></span>
+                </li>
+            </ul>
+        </th:block>
         <h2>More</h2>
     </div>
 </body>
 <script src="/resources/index.js"></script>
+
 </html>

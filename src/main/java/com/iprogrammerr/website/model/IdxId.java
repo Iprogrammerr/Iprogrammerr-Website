@@ -12,6 +12,10 @@ public class IdxId {
         return new IdxId(validated(id, min, max, defaultValue) - 1);
     }
 
+    public static IdxId fromId(int id, int max) {
+        return fromId(id, 1, max, 1);
+    }
+
     private static int validated(int val, int min, int max, int defaultValue) {
         if (val < min || val > max) {
             return defaultValue;

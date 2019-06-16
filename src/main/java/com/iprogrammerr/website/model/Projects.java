@@ -28,19 +28,18 @@ public class Projects {
         return new JSONArray(new String(Files.readAllBytes(projectsPath)));
     }
 
-
     public List<Project> all() {
-        List<Project> projects = new ArrayList<>();
         try {
+            List<Project> projects = new ArrayList<>();
             JSONArray all = allJson();
             for (int i = 0; i < all.length(); i++) {
                 int id = IdxId.fromIdx(i).id();
                 projects.add(new Project(id, all.getJSONObject(i).getString(NAME)));
             }
+            return projects;
         } catch (Exception e) {
             throw new RuntimeException(e);
         }
-        return projects;
     }
 
     public ProjectDetails project(int id) {
