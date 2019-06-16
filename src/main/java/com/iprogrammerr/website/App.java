@@ -67,11 +67,7 @@ public class App {
 
         ResourceHandler resourceHandler = new ResourceHandler();
         String rootPath = configuration.getResourcesPath();
-        if (rootPath.isEmpty()) {
-            resourceHandler.setBaseResource(Resource.newClassPathResource("public"));
-        } else {
-            resourceHandler.setBaseResource(Resource.newResource(new File(rootPath, "public")));
-        }
+        resourceHandler.setBaseResource(Resource.newResource(new File(rootPath, "public")));
         resourceHandler.setCacheControl("max-age=0");
         ContextHandler resourceContext = new ContextHandler();
         resourceContext.setContextPath("/resources");
