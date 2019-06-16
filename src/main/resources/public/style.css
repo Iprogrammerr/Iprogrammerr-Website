@@ -4,9 +4,14 @@
 }
 
 :root {
+    --primary-dark: #5f6c87;
+    --primary: #aabadd;
+    --font-dark: black;
+    --font-light: white;
     --font: "Comic Sans MS", cursive, sans-serif;
     --padding-medium: 16px;
     --padding-indention: 30px;
+    --padding-little: 4px;
     --font-large: 2em;
     --font-medium: 1.5em;
     --links-color:#7faaef;
@@ -128,6 +133,7 @@ a:hover {
 
 p.indented {
     text-indent: var(--padding-indention);
+    margin: var(--padding-medium);
 }
 
 .formatted {
@@ -138,4 +144,25 @@ p.indented {
     .formatted {
         width: 90%;
     }
+}
+
+.skill {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 2fr 1fr;
+    text-align: center;
+    align-items: center;
+}
+
+ .skill .content {
+    text-align: start;
+}
+
+.skill .arrow {
+    font-size: var(--font-large);
+    cursor: pointer;
+}
+
+.skill .arrow:hover {
+    color: var(--accent);
 }
