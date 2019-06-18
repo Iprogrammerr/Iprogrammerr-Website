@@ -41,8 +41,7 @@ public class App {
 
         String databasePath = resources.getPath() + File.separator + "database";
         String descriptionsPath = databasePath + File.separator + "description";
-        Experiences experiences = new Experiences(databasePath + File.separator + "experiences.json",
-            descriptionsPath);
+        Experiences experiences = new Experiences(databasePath + File.separator + "experiences.json");
         Projects projects = new Projects(databasePath + File.separator + "projects.json", descriptionsPath);
         Skills skills = new Skills(databasePath + File.separator + "skills.json", descriptionsPath);
 

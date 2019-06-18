@@ -14,7 +14,24 @@
       "ROS",
       "Hazelcast"
     ],
-    "shortDescription": "Using jvm to solve various problems. Ranging from writing mobile, desktop and RESTful apps to coming up with algorithms for autonomous forklift",
-    "description": "inovatica.txt"
+    "description": "Using jvm to solve various problems. Ranging from writing mobile, desktop and RESTful apps to coming up with algorithms for autonomous forklift.",
+    "software": [
+      {
+        "type": "Mobile",
+        "description": "Writing native mobile apps using Java and Kotlin. All of them were communicating with RESTful API. Often there was integration with Google or Facebook services."
+      },
+      {
+        "type": "Backend",
+        "description": "One project was a typical RESTful app written in Java, using SpringBoot and Hibernate. Second was a maintenance of a journey planning service making heavy use of GTFS."
+      },
+      {
+        "type": "Desktop",
+        "description": "Simple internal apps using Swing and JavaFX."
+      },
+      {
+        "type": "Algorithms",
+        "description": "Participating in autonomous forklift project I have opportunity to work on very interesting problems. One of them was safety system, that allows forklift to slow down and then stop, if detected obstacle get closer."
+      }
+    ]
   }
 ]

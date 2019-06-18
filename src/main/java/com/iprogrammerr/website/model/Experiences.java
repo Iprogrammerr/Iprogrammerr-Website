@@ -16,14 +16,13 @@ public class Experiences {
     private static final String PLACE = "place";
     private static final String FUNCTION = "function";
     private static final String TECH_STACK = "techStack";
-    private static final String SHORT_DESCRIPTION = "shortDescription";
     private static final String DESCRIPTION = "description";
+    private static final String SOFTWARE = "software";
+    private static final String TYPE = "type";
     private final Path experiencesPath;
-    private final String descriptionsPath;
 
-    public Experiences(String experiencesPath, String descriptionsPath) {
+    public Experiences(String experiencesPath) {
         this.experiencesPath = Paths.get(experiencesPath);
-        this.descriptionsPath = descriptionsPath;
     }
 
     public List<Experience> all() {
@@ -46,7 +45,7 @@ public class Experiences {
 
     private Experience fromJson(int id, JSONObject json) {
         return new Experience(id, json.getString(START_DATE), json.getString(END_DATE), json.getString(PLACE),
-            json.getString(FUNCTION), json.getString(SHORT_DESCRIPTION));
+            json.getString(FUNCTION), json.getString(DESCRIPTION));
     }
 
     public ExperienceDetails experience(int id) {
@@ -59,14 +58,22 @@ public class Experiences {
         }
     }
 
-    private ExperienceDetails fromJson(JSONObject json) throws Exception {
+    private ExperienceDetails fromJson(JSONObject json) {
         JSONArray technologies = json.getJSONArray(TECH_STACK);
         List<String> technologyStack = new ArrayList<>(technologies.length());
         for (int i = 0; i < technologies.length(); i++) {
             technologyStack.add(technologies.getString(i));
         }
-        String description = new String(Files.readAllBytes(Paths.get(descriptionsPath, json.getString(DESCRIPTION))));
         return new ExperienceDetails(json.getString(START_DATE), json.getString(END_DATE), json.getString(PLACE),
-            json.getString(FUNCTION), technologyStack, description);
+            json.getString(FUNCTION), technologyStack, fromJson(json.getJSONArray(SOFTWARE)));
+    }
+
+    private List<Software> fromJson(JSONArray json) {
+        List<Software> software = new ArrayList<>();
+        for (int i = 0; i < json.length(); i++) {
+            JSONObject j = json.getJSONObject(i);
+            software.add(new Software(j.getString(TYPE), j.getString(DESCRIPTION)));
+        }
+        return software;
     }
 }

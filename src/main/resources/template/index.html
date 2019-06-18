@@ -41,7 +41,7 @@
     </div>
     <h1>Experience</h1>
     <div class="experience" th:each="e : ${experiences}">
-        <p th:utext="|${e.startDate} - ${e.endDate}|" th:data-id="${e.id}"></p>
+        <h3 th:utext="|${e.startDate} - ${e.endDate}|" th:data-id="${e.id}"></h3>
         <div>
             <h2 th:text="${e.place}"></h2>
             <h3 th:text="${e.function}"></h3>

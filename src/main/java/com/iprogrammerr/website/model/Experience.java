@@ -7,15 +7,15 @@ public class Experience {
     public final String endDate;
     public final String place;
     public final String function;
-    public final String shortDescription;
+    public final String description;
 
     public Experience(long id, String startDate, String endDate, String place, String function,
-        String shortDescription) {
+        String description) {
         this.id = id;
         this.startDate = startDate;
         this.endDate = endDate;
         this.place = place;
         this.function = function;
-        this.shortDescription = shortDescription;
+        this.description = description;
     }
 }
