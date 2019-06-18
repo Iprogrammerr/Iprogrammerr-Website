@@ -98,11 +98,11 @@ h3 {
 }
 
 .fade-in-first-delay {
-    animation-delay: 1s;
+    animation-delay: 0.5s;
 }
 
 .fade-in-second-delay {
-    animation-delay: 2s;
+    animation-delay: 1.5s;
 }
 
 .fade-in-third-delay {
@@ -110,7 +110,7 @@ h3 {
 }
 
 .fade-in-forth-delay {
-    animation-delay: 4s;
+    animation-delay: 4.5s;
 }
 
 .profile {
@@ -152,7 +152,7 @@ h3 {
 .projects {
     width: 100%;
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
     text-align: left;
     align-items: center;
     grid-row-gap: var(--padding-medium);
@@ -213,4 +213,8 @@ p.indented {
 
 .skill .arrow:hover {
     color: var(--accent);
+}
+
+#links{
+    color: var(--links-color);
 }

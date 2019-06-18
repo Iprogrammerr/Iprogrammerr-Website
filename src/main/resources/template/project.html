@@ -13,12 +13,12 @@
     <h1 th:utext="${project.name}" class="fade-in"></h1>
     <div class="formatted">
         <div class="fade-in-first-delay">
-            <h2 class="fade-in-first-delay">Goal</h2>
+            <h2>Goal</h2>
             <p th:text="${project.goal}" class="indented"></p>
         </div>
         <div class="fade-in-second-delay">
             <h2>Description</h2>
-            <p th:text="${project.description}" class="indented fade-in-first-delay"></p>
+            <p th:utext="${project.description}" class="indented"></p>
         </div>
         <div class="fade-in-third-delay">
             <h2>Links</h2>

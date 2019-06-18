@@ -15,13 +15,10 @@ public class Projects {
     private static final String GOAL = "goal";
     private static final String DESCRIPTION = "description";
     private static final String LINKS = "links";
-    private static final String STATE = "state";
     private final Path projectsPath;
-    private final String descriptionsPath;
 
-    public Projects(String projectsPath, String descriptionsPath) {
+    public Projects(String projectsPath) {
         this.projectsPath = Paths.get(projectsPath);
-        this.descriptionsPath = descriptionsPath;
     }
 
     private JSONArray allJson() throws Exception {
@@ -52,16 +49,14 @@ public class Projects {
         }
     }
 
-    private ProjectDetails fromJson(JSONObject json) throws Exception {
+    private ProjectDetails fromJson(JSONObject json) {
         String name = json.getString(NAME);
         String goal = json.getString(GOAL);
-        String description = new String(Files.readAllBytes(Paths.get(descriptionsPath, json.getString(DESCRIPTION))));
         List<String> links = new ArrayList<>();
         JSONArray linksArray = json.getJSONArray(LINKS);
         for (int i = 0; i < linksArray.length(); i++) {
             links.add(linksArray.getString(i));
         }
-        ProjectDetails.State state = ProjectDetails.State.valueOf(json.getString(STATE).toUpperCase());
-        return new ProjectDetails(name, goal, description, links, state);
+        return new ProjectDetails(name, goal, json.getString(DESCRIPTION), links);
     }
 }
