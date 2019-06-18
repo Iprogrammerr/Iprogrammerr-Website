@@ -15,11 +15,9 @@ public class Skills {
     private static final String ITEMS = "items";
     private static final String DESCRIPTION = "description";
     private final Path skillsPath;
-    private final String descriptionsPath;
 
-    public Skills(String skillsPath, String descriptionsPath) {
+    public Skills(String skillsPath) {
         this.skillsPath = Paths.get(skillsPath);
-        this.descriptionsPath = descriptionsPath;
     }
 
     private JSONArray allJson() throws Exception {
@@ -53,9 +51,7 @@ public class Skills {
             JSONArray all = allJson();
             JSONObject json = all.getJSONObject(IdxId.fromId(id, all.length()).idx());
             Skill skill = fromJson(json);
-            String description = new String(Files.readAllBytes(Paths.get(descriptionsPath,
-                json.getString(DESCRIPTION))));
-            return new SkillDetails(skill.category, skill.items, description);
+            return new SkillDetails(skill.category, skill.items, json.getString(DESCRIPTION));
         } catch (Exception e) {
             throw new RuntimeException(e);
         }
