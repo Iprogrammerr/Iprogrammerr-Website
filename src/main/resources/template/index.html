@@ -36,7 +36,7 @@
             </div>
         </div>
         <div>
-            <image src="/resources/iprogrammerr.jpg" class="profile fade-in-first-delay"></image>
+            <image src="/resources/profile.jpg" class="profile fade-in-first-delay"></image>
         </div>
     </div>
     <h1>Experience</h1>
@@ -48,7 +48,7 @@
             <p th:text="${e.shortDescription}"></p>
         </div>
     </div>
-    <h1>Projects</h1>
+    <h1 id="projects">Projects</h1>
     <div class="projects" th:each="p : ${projects}">
         <a th:href="'project/' + ${p.id}" th:text="${p.name}"></a>
     </div>
