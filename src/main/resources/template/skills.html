@@ -8,8 +8,8 @@
     <link rel="stylesheet" category="text/css" href="/resources/style.css" />
     <style>
         @media screen and (max-width: 800px) {
-            .skill {
-                grid-template-columns: 10% 80% 10%;
+            .skills-details > * {
+                width: 80%;
             }
         }
     </style>
@@ -17,19 +17,15 @@
 
 <body class="gradient">
     <div class="background"></div>
-    <div class="skill">
-        <div th:if="${hasPrevious}" id="previous" class="arrow fade-in-second-delay">&#10094</div>
-        <div th:unless="${hasPrevious}"></div>
-        <div class="content fade-in">
-            <h1 th:text="${skills.category}"></h1>
-            <div th:each="s : ${skills.skills}">
-                <h2 th:utext="${s.name}" class="fade-in-first-delay"></h2>
-                <p class="indented fade-in-second-delay" th:utext="${s.description}">
-                </p>
-            </div>
+    <div th:if="${hasPrevious}" id="previous" class="arrow-left fade-in-second-delay">&#10094</div>
+    <div th:if="${hasNext}" id="next" class="arrow-right fade-in-second-delay">&#10095</div>
+    <div class="skills-details">
+        <h1 th:text="${skills.category}" class="fade-in"></h1>
+        <div th:each="s : ${skills.skills}">
+            <h2 th:utext="${s.name}" class="fade-in"></h2>
+            <p class="indented fade-in-first-delay" th:utext="${s.description}">
+            </p>
         </div>
-        <div th:if="${hasNext}" id="next" class="arrow fade-in-second-delay">&#10095</div>
-        <div th:unless="${hasNext}"></div>
     </div>
 </body>
 <script src="/resources/skills.js"></script>

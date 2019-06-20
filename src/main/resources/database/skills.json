@@ -4,23 +4,23 @@
     "skills": [
       {
         "name": "Java",
-        "description": "I will call myself primary Java developer. I have the most experience there and use language on a daily basis. But I also knew JavaScript fairly well and have developed nice looking applications without using any framework. Kotlin is similar to Java and I have written two Android apps using it. In C/C++ I have started programming, but have not done anything complex in it, but if there would be a need I could very quick refresh my skills. Recently, I have also played with Assembly to have a better grasp of what is going on on the lowest level."
+        "description": "This is the language in which I have the most experience. Most projects in which I participated or created by me, use it. I consider myself advanced Java programmer, as I have used to created almost anything including mobile, web, desktop and cli applications."
       },
       {
         "name": "JavaScript",
-        "description": "I will call myself primary Java developer. I have the most experience there and use language on a daily basis. But I also knew JavaScript fairly well and have developed nice looking applications without using any framework. Kotlin is similar to Java and I have written two Android apps using it. In C/C++ I have started programming, but have not done anything complex in it, but if there would be a need I could very quick refresh my skills. Recently, I have also played with Assembly to have a better grasp of what is going on on the lowest level."
+        "description": "I consider myself intermediate JS developer. I use it exclusively for front-end web development. My minimalistic approach, which is to avoid frameworks in favor of libraries, helped me to get deeper understanding of the language."
       },
       {
         "name": "Kotlin",
-        "description": "I will call myself primary Java developer. I have the most experience there and use language on a daily basis. But I also knew JavaScript fairly well and have developed nice looking applications without using any framework. Kotlin is similar to Java and I have written two Android apps using it. In C/C++ I have started programming, but have not done anything complex in it, but if there would be a need I could very quick refresh my skills. Recently, I have also played with Assembly to have a better grasp of what is going on on the lowest level."
+        "description": "I have written two Android apps in these language. As it has a lot in common with Java, it was very easy to pick up. I enjoy this language a lot and will definitely use it in the future."
       },
       {
         "name": "C/C++",
-        "description": "I will call myself primary Java developer. I have the most experience there and use language on a daily basis. But I also knew JavaScript fairly well and have developed nice looking applications without using any framework. Kotlin is similar to Java and I have written two Android apps using it. In C/C++ I have started programming, but have not done anything complex in it, but if there would be a need I could very quick refresh my skills. Recently, I have also played with Assembly to have a better grasp of what is going on on the lowest level."
+        "description": "This is the language in which I have started programming. I have never create any complex program in it, but if there will be a need I could very quick refresh my skills. I will also be happy to do so."
       },
       {
         "name": "Assembly",
-        "description": "I will call myself primary Java developer. I have the most experience there and use language on a daily basis. But I also knew JavaScript fairly well and have developed nice looking applications without using any framework. Kotlin is similar to Java and I have written two Android apps using it. In C/C++ I have started programming, but have not done anything complex in it, but if there would be a need I could very quick refresh my skills. Recently, I have also played with Assembly to have a better grasp of what is going on on the lowest level."
+        "description": "I have also played with Assembly to have a better grasp of what is going on on the lowest level. I think that every programmer should at least write some toy programs in it, to have comprehensive view of how things work and how high many details high-level languages are hiding from us."
       }
     ]
   },
@@ -29,19 +29,19 @@
     "skills": [
       {
         "name": "Android",
-        "description": "I will call myself primary Java developer. I have the most experience there and use language on a daily basis. But I also knew JavaScript fairly well and have developed nice looking applications without using any framework. Kotlin is similar to Java and I have written two Android apps using it. In C/C++ I have started programming, but have not done anything complex in it, but if there would be a need I could very quick refresh my skills. Recently, I have also played with Assembly to have a better grasp of what is going on on the lowest level."
+        "description": "I written quite a few native Android apps. Most of them used RESTful API as a data source. In two cases, I have used SQLite and synchronize data with backend periodically. Often there was a need to integrate with Google or Facebook services."
       },
       {
         "name": "Web",
-        "description": "I will call myself primary Java developer. I have the most experience there and use language on a daily basis. But I also knew JavaScript fairly well and have developed nice looking applications without using any framework. Kotlin is similar to Java and I have written two Android apps using it. In C/C++ I have started programming, but have not done anything complex in it, but if there would be a need I could very quick refresh my skills. Recently, I have also played with Assembly to have a better grasp of what is going on on the lowest level."
+        "description": "I created and participated in development of a few RESTful backends and websites. I am familiar with both REST API concepts and HTML, CSS, JavaScript."
       },
       {
         "name": "Desktop",
-        "description": "I will call myself primary Java developer. I have the most experience there and use language on a daily basis. But I also knew JavaScript fairly well and have developed nice looking applications without using any framework. Kotlin is similar to Java and I have written two Android apps using it. In C/C++ I have started programming, but have not done anything complex in it, but if there would be a need I could very quick refresh my skills. Recently, I have also played with Assembly to have a better grasp of what is going on on the lowest level."
+        "description": "Creating apps using Swing and JavaFX. One of them has to work on a small, resistive screen, which requires very customized approach."
       },
       {
         "name": "Command Line",
-        "description": "I will call myself primary Java developer. I have the most experience there and use language on a daily basis. But I also knew JavaScript fairly well and have developed nice looking applications without using any framework. Kotlin is similar to Java and I have written two Android apps using it. In C/C++ I have started programming, but have not done anything complex in it, but if there would be a need I could very quick refresh my skills. Recently, I have also played with Assembly to have a better grasp of what is going on on the lowest level."
+        "description": "I have created many programs and algorithms that can be interact with only through cli. This includes utility programs like file transformers, parsers, mappers. Participating in autonomous forklift project I developed a few algorithms exchanging data over TCP/IP using <a href=\"https://hazelcast.com/\" target=\"_blank\">Hazelcast</a>."
       }
     ]
   },
@@ -50,19 +50,19 @@
     "skills": [
       {
         "name": "SQL",
-        "description": "I am familiar with SQL as most applications, in which I needed to store persistent data are using it. I used MySQL on server-side and SQLite on Android. When it comes to version control system, choice is rather obvious now. I have used Git extensively both at my work and personal projects. If we talk about build systems I prefer and have the most experience using Maven. I use it by default. Gradle have to be used, if you want to create Android apps. Having done that, I am also familiar with this system."
+        "description": "Most applications, in which I needed to store persistent data are using it. I used MySQL on server-side and SQLite on Android."
       },
       {
         "name": "Git",
-        "description": "I am familiar with SQL as most applications, in which I needed to store persistent data are using it. I used MySQL on server-side and SQLite on Android. When it comes to version control system, choice is rather obvious now. I have used Git extensively both at my work and personal projects. If we talk about build systems I prefer and have the most experience using Maven. I use it by default. Gradle have to be used, if you want to create Android apps. Having done that, I am also familiar with this system."
+        "description": "When it comes to version control system, choice is rather obvious now. I have used Git extensively both at my work and personal projects."
       },
       {
         "name": "Maven",
-        "description": "I am familiar with SQL as most applications, in which I needed to store persistent data are using it. I used MySQL on server-side and SQLite on Android. When it comes to version control system, choice is rather obvious now. I have used Git extensively both at my work and personal projects. If we talk about build systems I prefer and have the most experience using Maven. I use it by default. Gradle have to be used, if you want to create Android apps. Having done that, I am also familiar with this system."
+        "description": "If we talk about build systems I prefer and have the most experience with Maven. I use it by default in every jvm project."
       },
       {
         "name": "Gradle",
-        "description": "I am familiar with SQL as most applications, in which I needed to store persistent data are using it. I used MySQL on server-side and SQLite on Android. When it comes to version control system, choice is rather obvious now. I have used Git extensively both at my work and personal projects. If we talk about build systems I prefer and have the most experience using Maven. I use it by default. Gradle have to be used, if you want to create Android apps. Having done that, I am also familiar with this system."
+        "description": "It has to be used, if you want to create Android apps. Having done that, I am also familiar with this system."
       }
     ]
   },
@@ -71,23 +71,23 @@
     "skills": [
       {
         "name": "HTTP",
-        "description": "I have created simple <a href=\"https://github.com/Iprogrammerr/Bright-Server\" target=\"_blank\">http server</a>"
+        "description": "Creating simple <a href=\"https://github.com/Iprogrammerr/Bright-Server\" target=\"_blank\">server</a> and using it from both client and server side made me well versed with this protocol."
       },
       {
         "name": "REST",
-        "description": "I have created simple <a href=\"https://github.com/Iprogrammerr/Bright-Server\" target=\"_blank\">http server</a>"
+        "description": "Participating in creating services that uses its principles and being client of them."
       },
       {
         "name": "Design Patterns",
-        "description": "I have created simple <a href=\"https://github.com/Iprogrammerr/Bright-Server\" target=\"_blank\">http server</a>"
+        "description": "I think that there is great value in knowing them. Even tough they often don't have to and need to be used as described, knowledge of them helps to understand many frameworks, libraries and help to solve recurring problems."
       },
       {
         "name": "Algorithms and Data Structures",
-        "description": "I have created simple <a href=\"https://github.com/Iprogrammerr/Bright-Server\" target=\"_blank\">http server</a>"
+        "description": "Every programmer should know basic <a href=\"https://github.com/Iprogrammerr/Algorithms-Data-Structures\" target=\"_blank\">algorithms and data structures</a>. Although we often use, and should, ready-made solutions, we ought to know and understand logic behind them."
       },
       {
         "name": "Dedication to learning",
-        "description": "I have created simple <a href=\"https://github.com/Iprogrammerr/Bright-Server\" target=\"_blank\">http server</a>"
+        "description": "Programming is one of my biggest passions. I always learn something new and strive for more."
       }
     ]
   }

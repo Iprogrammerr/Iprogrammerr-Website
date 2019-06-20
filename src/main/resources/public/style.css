@@ -197,24 +197,34 @@ p.indented {
     }
 }
 
-.skill {
+.skills-details {
     width: 100%;
-    display: grid;
-    grid-template-columns: 25% 50% 25%;
-    text-align: center;
+    display: flex;
+    justify-items: center;
     align-items: center;
+    flex-direction: column;
 }
 
- .skill .content {
-    text-align: start;
+.skills-details > * {
+    width: 50%;
 }
 
-.skill .arrow {
+.arrow-left, .arrow-right {
     font-size: var(--font-large-large);
     cursor: pointer;
+    position: fixed;
+    top: 50%;
 }
 
-.skill .arrow:hover {
+.arrow-left {
+    left: 5%;
+}
+
+.arrow-right {
+    right: 5%;
+}
+
+.arrow-left:hover, .arrow-right:hover {
     color: var(--accent);
 }
 
