@@ -8,8 +8,8 @@
     <meta name="author" content="Igor Roztropiński" />
     <link rel="stylesheet" category="text/css" href="/resources/style.css" />
     <style>
+    
         @media screen and (max-width: 1000px) {
-
             .head {
                 grid-template-columns: 1fr 2fr;
             }
@@ -17,7 +17,18 @@
 
         @media screen and (max-width: 700px) {
 
-            .experience,
+            .head {
+                display: block;
+            }
+
+            .profile {
+                float: none;
+            }
+
+            .experience {
+                display: block;
+            }
+
             .projects {
                 grid-template-columns: 1fr 1fr;
             }
@@ -35,17 +46,18 @@
                 <p><a href="/about">About</a></p>
             </div>
         </div>
-        <div>
-            <image src="/resources/profile.jpg" class="profile fade-in-first-delay"></image>
+            <div>
+                <image src="/resources/profile.jpg" class="profile fade-in-first-delay"></image>
+            </div>
         </div>
     </div>
     <h1>Experience</h1>
     <div class="experience" th:each="e : ${experiences}">
-        <h3 th:utext="|${e.startDate} - ${e.endDate}|" th:data-id="${e.id}"></h3>
+        <h2 th:utext="|${e.startDate} - ${e.endDate}|" th:data-id="${e.id}"></h2>
         <div>
             <h2 th:text="${e.place}"></h2>
             <h3 th:text="${e.function}"></h3>
-            <p th:text="${e.description}"></p>
+            <p th:text="${e.description}" class="formatted"></p>
         </div>
     </div>
     <h1 id="projects">Projects</h1>

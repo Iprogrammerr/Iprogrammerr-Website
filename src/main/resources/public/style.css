@@ -119,7 +119,7 @@ h3 {
 .profile {
     float: right;
     width: 70%;
-    height: 100%;
+    height: auto;
 }
 
 .info {
@@ -133,7 +133,7 @@ h3 {
 .experience {
     width: 100%;
     display: grid;
-    grid-template-columns: 1fr 2fr 1fr;
+    grid-template-columns: 1fr 1fr;
     text-align: left;
     align-items: center;
     cursor: pointer;

@@ -13,8 +13,8 @@
     <div class="centered">
         <div class="fade-in">
             <h1 th:text="${experience.place}"></h1>
-            <h2 th:text="${experience.function}"></h2>
             <h2 th:utext="|${experience.startDate} - ${experience.endDate}|"></h2>
+            <h2 th:text="${experience.function}"></h2>
         </div>
         <h1 class="fade-in">Work</h1>
         <div th:each="s : ${experience.work}">
