@@ -6,35 +6,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta charset="UTF-8" />
     <link rel="stylesheet" category="text/css" href="/resources/style.css" />
-    <style>
-        @media screen and (max-width: 700px) {
-
-            .software {
-                grid-template-columns: 1fr;
-                width: 90%;
-            }
-        }
-    </style>
 </head>
 
 <body class="gradient">
-    <div class="background-top"></div>
-    <div class="fade-in">
-        <h1 th:text="${experience.place}"></h1>
-        <h2 th:text="${experience.function}"></h2>
-        <h2 th:utext="|${experience.startDate} - ${experience.endDate}|"></h2>
-    </div>
-    <div class="fade-in-first-delay">
-        <h2>Tech Stack</h2>
-        <ul th:each="t : ${experience.techStack}">
-            <li th:text="${t}"></li>
-        </ul>
-    </div>
-    <div class="fade-in-second-delay">
-        <h2>Software</h2>
-        <div class="software" th:each="s : ${experience.software}">
-            <h3 th:text="${s.type}"></h3>
-            <p th:text="${s.description}"></p>
+    <div class="background"></div>
+    <div class="centered">
+        <div class="fade-in">
+            <h1 th:text="${experience.place}"></h1>
+            <h2 th:text="${experience.function}"></h2>
+            <h2 th:utext="|${experience.startDate} - ${experience.endDate}|"></h2>
+        </div>
+        <h1 class="fade-in">Work</h1>
+        <div th:each="s : ${experience.work}">
+            <h2 th:text="${s.type}" class="fade-in-first-delay"></h2>
+            <p th:text="${s.description}" class="indented fade-in-second-delay"></p>
         </div>
     </div>
 </body>

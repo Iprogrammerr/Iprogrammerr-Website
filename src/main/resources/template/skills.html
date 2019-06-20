@@ -6,20 +6,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta charset="UTF-8" />
     <link rel="stylesheet" category="text/css" href="/resources/style.css" />
-    <style>
-        @media screen and (max-width: 800px) {
-            .skills-details > * {
-                width: 80%;
-            }
-        }
-    </style>
 </head>
 
 <body class="gradient">
     <div class="background"></div>
     <div th:if="${hasPrevious}" id="previous" class="arrow-left fade-in-second-delay">&#10094</div>
     <div th:if="${hasNext}" id="next" class="arrow-right fade-in-second-delay">&#10095</div>
-    <div class="skills-details">
+    <div class="centered">
         <h1 th:text="${skills.category}" class="fade-in"></h1>
         <div th:each="s : ${skills.skills}">
             <h2 th:utext="${s.name}" class="fade-in"></h2>

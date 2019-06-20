@@ -4,21 +4,11 @@
     "endDate": "",
     "place": "Inovatica",
     "function": "Java developer",
-    "techStack": [
-      "Java",
-      "Kotlin",
-      "Android",
-      "Spring",
-      "Spring Boot",
-      "Hibernate",
-      "ROS",
-      "Hazelcast"
-    ],
     "description": "Using jvm to solve various problems. Ranging from writing mobile, desktop and RESTful apps to coming up with algorithms for autonomous forklift.",
-    "software": [
+    "work": [
       {
         "type": "Mobile",
-        "description": "Writing native mobile apps using Java and Kotlin. All of them were communicating with RESTful API. Often there was integration with Google or Facebook services."
+        "description": "Writing native mobile apps using Java and Koltin. All of them were communicating with RESTful API. Often there was integration with Google or Facebook services. They were also making extensive use of hardware capabilities including GPS, camera and step counter."
       },
       {
         "type": "Backend",

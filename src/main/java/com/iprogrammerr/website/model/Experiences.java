@@ -15,9 +15,8 @@ public class Experiences {
     private static final String END_DATE = "endDate";
     private static final String PLACE = "place";
     private static final String FUNCTION = "function";
-    private static final String TECH_STACK = "techStack";
     private static final String DESCRIPTION = "description";
-    private static final String SOFTWARE = "software";
+    private static final String WORK = "work";
     private static final String TYPE = "type";
     private final Path experiencesPath;
 
@@ -59,13 +58,8 @@ public class Experiences {
     }
 
     private ExperienceDetails fromJson(JSONObject json) {
-        JSONArray technologies = json.getJSONArray(TECH_STACK);
-        List<String> technologyStack = new ArrayList<>(technologies.length());
-        for (int i = 0; i < technologies.length(); i++) {
-            technologyStack.add(technologies.getString(i));
-        }
         return new ExperienceDetails(json.getString(START_DATE), json.getString(END_DATE), json.getString(PLACE),
-            json.getString(FUNCTION), technologyStack, fromJson(json.getJSONArray(SOFTWARE)));
+            json.getString(FUNCTION), fromJson(json.getJSONArray(WORK)));
     }
 
     private List<Software> fromJson(JSONArray json) {

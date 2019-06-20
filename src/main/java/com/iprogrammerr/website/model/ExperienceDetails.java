@@ -8,16 +8,13 @@ public class ExperienceDetails {
     public final String endDate;
     public final String place;
     public final String function;
-    public final List<String> techStack;
-    public final List<Software> software;
+    public final List<Software> work;
 
-    public ExperienceDetails(String startDate, String endDate, String place, String function,
-        List<String> techStack, List<Software> software) {
+    public ExperienceDetails(String startDate, String endDate, String place, String function, List<Software> work) {
         this.startDate = startDate;
         this.endDate = endDate;
         this.place = place;
         this.function = function;
-        this.techStack = techStack;
-        this.software = software;
+        this.work = work;
     }
 }

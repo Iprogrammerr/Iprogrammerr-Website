@@ -22,7 +22,7 @@
         </div>
         <div class="fade-in-third-delay">
             <h2>Links</h2>
-            <ul id="links" th:each="l : ${project.links}">
+            <ul class="links" th:each="l : ${project.links}">
                 <li><a th:href="${l}" th:text="${l}" target="blank"></a></li>
             </ul>
         </div>
