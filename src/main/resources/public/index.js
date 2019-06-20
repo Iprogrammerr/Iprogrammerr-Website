@@ -11,7 +11,7 @@ for (let i = 0; i < tags.length - 1; i++) {
     tags[i].onclick = () => toggleVisibility(lists[i]);
 }
 
-tags[tags.length - 1].onclick = () => saveScrollAndExecute(() => location.href = "skill");
+tags[tags.length - 1].onclick = () => saveScrollAndExecute(() => location.href = "skills");
 
 const experience = document.getElementsByClassName("experience")[0].children;
 

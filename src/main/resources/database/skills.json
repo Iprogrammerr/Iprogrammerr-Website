@@ -1,41 +1,94 @@
 [
   {
     "category": "Languages",
-    "items": [
-      "Java",
-      "JavaScript",
-      "Kotlin",
-      "C/C++",
-      "Assembly"
-    ],
-    "description": "Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source. Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of \"de Finibus Bonorum et Malorum\" (The Extremes of Good and Evil) by Cicero, written in 45 BC. This book is a treatise on the theory of ethics, very popular during the Renaissance. The first line of Lorem Ipsum, Lorem ipsum dolor sit amet.., comes from a line in section 1.10.32"
+    "skills": [
+      {
+        "name": "Java",
+        "description": "I will call myself primary Java developer. I have the most experience there and use language on a daily basis. But I also knew JavaScript fairly well and have developed nice looking applications without using any framework. Kotlin is similar to Java and I have written two Android apps using it. In C/C++ I have started programming, but have not done anything complex in it, but if there would be a need I could very quick refresh my skills. Recently, I have also played with Assembly to have a better grasp of what is going on on the lowest level."
+      },
+      {
+        "name": "JavaScript",
+        "description": "I will call myself primary Java developer. I have the most experience there and use language on a daily basis. But I also knew JavaScript fairly well and have developed nice looking applications without using any framework. Kotlin is similar to Java and I have written two Android apps using it. In C/C++ I have started programming, but have not done anything complex in it, but if there would be a need I could very quick refresh my skills. Recently, I have also played with Assembly to have a better grasp of what is going on on the lowest level."
+      },
+      {
+        "name": "Kotlin",
+        "description": "I will call myself primary Java developer. I have the most experience there and use language on a daily basis. But I also knew JavaScript fairly well and have developed nice looking applications without using any framework. Kotlin is similar to Java and I have written two Android apps using it. In C/C++ I have started programming, but have not done anything complex in it, but if there would be a need I could very quick refresh my skills. Recently, I have also played with Assembly to have a better grasp of what is going on on the lowest level."
+      },
+      {
+        "name": "C/C++",
+        "description": "I will call myself primary Java developer. I have the most experience there and use language on a daily basis. But I also knew JavaScript fairly well and have developed nice looking applications without using any framework. Kotlin is similar to Java and I have written two Android apps using it. In C/C++ I have started programming, but have not done anything complex in it, but if there would be a need I could very quick refresh my skills. Recently, I have also played with Assembly to have a better grasp of what is going on on the lowest level."
+      },
+      {
+        "name": "Assembly",
+        "description": "I will call myself primary Java developer. I have the most experience there and use language on a daily basis. But I also knew JavaScript fairly well and have developed nice looking applications without using any framework. Kotlin is similar to Java and I have written two Android apps using it. In C/C++ I have started programming, but have not done anything complex in it, but if there would be a need I could very quick refresh my skills. Recently, I have also played with Assembly to have a better grasp of what is going on on the lowest level."
+      }
+    ]
   },
   {
     "category": "Environments",
-    "items": [
-      "Android",
-      "Web",
-      "Desktop"
-    ],
-    "description": "Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source. Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of \"de Finibus Bonorum et Malorum\" (The Extremes of Good and Evil) by Cicero, written in 45 BC. This book is a treatise on the theory of ethics, very popular during the Renaissance. The first line of Lorem Ipsum, \"Lorem ipsum dolor sit amet..\", comes from a line in section 1.10.32"
+    "skills": [
+      {
+        "name": "Android",
+        "description": "I will call myself primary Java developer. I have the most experience there and use language on a daily basis. But I also knew JavaScript fairly well and have developed nice looking applications without using any framework. Kotlin is similar to Java and I have written two Android apps using it. In C/C++ I have started programming, but have not done anything complex in it, but if there would be a need I could very quick refresh my skills. Recently, I have also played with Assembly to have a better grasp of what is going on on the lowest level."
+      },
+      {
+        "name": "Web",
+        "description": "I will call myself primary Java developer. I have the most experience there and use language on a daily basis. But I also knew JavaScript fairly well and have developed nice looking applications without using any framework. Kotlin is similar to Java and I have written two Android apps using it. In C/C++ I have started programming, but have not done anything complex in it, but if there would be a need I could very quick refresh my skills. Recently, I have also played with Assembly to have a better grasp of what is going on on the lowest level."
+      },
+      {
+        "name": "Desktop",
+        "description": "I will call myself primary Java developer. I have the most experience there and use language on a daily basis. But I also knew JavaScript fairly well and have developed nice looking applications without using any framework. Kotlin is similar to Java and I have written two Android apps using it. In C/C++ I have started programming, but have not done anything complex in it, but if there would be a need I could very quick refresh my skills. Recently, I have also played with Assembly to have a better grasp of what is going on on the lowest level."
+      },
+      {
+        "name": "Command Line",
+        "description": "I will call myself primary Java developer. I have the most experience there and use language on a daily basis. But I also knew JavaScript fairly well and have developed nice looking applications without using any framework. Kotlin is similar to Java and I have written two Android apps using it. In C/C++ I have started programming, but have not done anything complex in it, but if there would be a need I could very quick refresh my skills. Recently, I have also played with Assembly to have a better grasp of what is going on on the lowest level."
+      }
+    ]
   },
   {
     "category": "Technologies",
-    "items": [
-      "SQL",
-      "Git",
-      "Maven",
-      "Gradle"
-    ],
-    "description": "Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source. Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of \"de Finibus Bonorum et Malorum\" (The Extremes of Good and Evil) by Cicero, written in 45 BC. This book is a treatise on the theory of ethics, very popular during the Renaissance. The first line of Lorem Ipsum, \"Lorem ipsum dolor sit amet..\", comes from a line in section 1.10.32"
+    "skills": [
+      {
+        "name": "SQL",
+        "description": "I am familiar with SQL as most applications, in which I needed to store persistent data are using it. I used MySQL on server-side and SQLite on Android. When it comes to version control system, choice is rather obvious now. I have used Git extensively both at my work and personal projects. If we talk about build systems I prefer and have the most experience using Maven. I use it by default. Gradle have to be used, if you want to create Android apps. Having done that, I am also familiar with this system."
+      },
+      {
+        "name": "Git",
+        "description": "I am familiar with SQL as most applications, in which I needed to store persistent data are using it. I used MySQL on server-side and SQLite on Android. When it comes to version control system, choice is rather obvious now. I have used Git extensively both at my work and personal projects. If we talk about build systems I prefer and have the most experience using Maven. I use it by default. Gradle have to be used, if you want to create Android apps. Having done that, I am also familiar with this system."
+      },
+      {
+        "name": "Maven",
+        "description": "I am familiar with SQL as most applications, in which I needed to store persistent data are using it. I used MySQL on server-side and SQLite on Android. When it comes to version control system, choice is rather obvious now. I have used Git extensively both at my work and personal projects. If we talk about build systems I prefer and have the most experience using Maven. I use it by default. Gradle have to be used, if you want to create Android apps. Having done that, I am also familiar with this system."
+      },
+      {
+        "name": "Gradle",
+        "description": "I am familiar with SQL as most applications, in which I needed to store persistent data are using it. I used MySQL on server-side and SQLite on Android. When it comes to version control system, choice is rather obvious now. I have used Git extensively both at my work and personal projects. If we talk about build systems I prefer and have the most experience using Maven. I use it by default. Gradle have to be used, if you want to create Android apps. Having done that, I am also familiar with this system."
+      }
+    ]
   },
   {
     "category": "Other",
-    "items": [
-      "HTTP",
-      "REST",
-      "Dedication to learning"
-    ],
-    "description": "Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source. Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of \"de Finibus Bonorum et Malorum\" (The Extremes of Good and Evil) by Cicero, written in 45 BC. This book is a treatise on the theory of ethics, very popular during the Renaissance. The first line of Lorem Ipsum, \"Lorem ipsum dolor sit amet..\", comes from a line in section 1.10.32"
+    "skills": [
+      {
+        "name": "HTTP",
+        "description": "I have created simple <a href=\"https://github.com/Iprogrammerr/Bright-Server\" target=\"_blank\">http server</a>"
+      },
+      {
+        "name": "REST",
+        "description": "I have created simple <a href=\"https://github.com/Iprogrammerr/Bright-Server\" target=\"_blank\">http server</a>"
+      },
+      {
+        "name": "Design Patterns",
+        "description": "I have created simple <a href=\"https://github.com/Iprogrammerr/Bright-Server\" target=\"_blank\">http server</a>"
+      },
+      {
+        "name": "Algorithms and Data Structures",
+        "description": "I have created simple <a href=\"https://github.com/Iprogrammerr/Bright-Server\" target=\"_blank\">http server</a>"
+      },
+      {
+        "name": "Dedication to learning",
+        "description": "I have created simple <a href=\"https://github.com/Iprogrammerr/Bright-Server\" target=\"_blank\">http server</a>"
+      }
+    ]
   }
 ]

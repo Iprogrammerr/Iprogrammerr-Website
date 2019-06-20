@@ -59,7 +59,7 @@
         <th:block th:each="s : ${skills}">
             <h2 th:text="${s.category}"></h2>
             <ul class="hidden">
-                <li th:each="i : ${s.items}">
+                <li th:each="i : ${s.skills}">
                     <span th:text="${i}"></span>
                 </li>
             </ul>

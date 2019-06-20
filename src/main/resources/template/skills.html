@@ -9,7 +9,7 @@
     <style>
         @media screen and (max-width: 800px) {
             .skill {
-                grid-template-columns: 1fr 4fr 1fr;
+                grid-template-columns: 10% 80% 10%;
             }
         }
     </style>
@@ -21,19 +21,17 @@
         <div th:if="${hasPrevious}" id="previous" class="arrow fade-in-second-delay">&#10094</div>
         <div th:unless="${hasPrevious}"></div>
         <div class="content fade-in">
-            <h1 th:text="${skill.category}"></h1>
-            <ul>
-                <li th:each="i : ${skill.items}">
-                    <span th:text="${i}"></span>
-                </li>
-            </ul>
-            <p class="indented fade-in-first-delay" th:text="${skill.description}">
-            </p>
+            <h1 th:text="${skills.category}"></h1>
+            <div th:each="s : ${skills.skills}">
+                <h2 th:utext="${s.name}" class="fade-in-first-delay"></h2>
+                <p class="indented fade-in-second-delay" th:utext="${s.description}">
+                </p>
+            </div>
         </div>
         <div th:if="${hasNext}" id="next" class="arrow fade-in-second-delay">&#10095</div>
         <div th:unless="${hasNext}"></div>
     </div>
 </body>
-<script src="/resources/skill.js"></script>
+<script src="/resources/skills.js"></script>
 
 </html>

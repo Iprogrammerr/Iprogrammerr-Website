@@ -12,7 +12,8 @@ import java.util.List;
 public class Skills {
 
     private static final String CATEGORY = "category";
-    private static final String ITEMS = "items";
+    private static final String NAME = "name";
+    private static final String SKILLS = "skills";
     private static final String DESCRIPTION = "description";
     private final Path skillsPath;
 
@@ -24,9 +25,9 @@ public class Skills {
         return new JSONArray(new String(Files.readAllBytes(skillsPath)));
     }
 
-    public List<Skill> all() {
+    public List<CategorySkills> all() {
         try {
-            List<Skill> skills = new ArrayList<>();
+            List<CategorySkills> skills = new ArrayList<>();
             JSONArray all = allJson();
             for (int i = 0; i < all.length(); i++) {
                 skills.add(fromJson(all.getJSONObject(i)));
@@ -37,21 +38,26 @@ public class Skills {
         }
     }
 
-    private Skill fromJson(JSONObject json) {
-        JSONArray elements = json.getJSONArray(ITEMS);
+    private CategorySkills fromJson(JSONObject json) {
+        JSONArray elements = json.getJSONArray(SKILLS);
         List<String> items = new ArrayList<>(elements.length());
         for (int i = 0; i < elements.length(); i++) {
-            items.add(elements.getString(i));
+            items.add(elements.getJSONObject(i).getString(NAME));
         }
-        return new Skill(json.getString(CATEGORY), items);
+        return new CategorySkills(json.getString(CATEGORY), items);
     }
 
-    public SkillDetails skill(int id) {
+    public CategorySkillsDetails categorySkills(int id) {
         try {
             JSONArray all = allJson();
             JSONObject json = all.getJSONObject(IdxId.fromId(id, all.length()).idx());
-            Skill skill = fromJson(json);
-            return new SkillDetails(skill.category, skill.items, json.getString(DESCRIPTION));
+            JSONArray skillsJson = json.getJSONArray(SKILLS);
+            List<Skill> skills = new ArrayList<>(skillsJson.length());
+            for (int i = 0; i < skillsJson.length(); i++) {
+                JSONObject j = skillsJson.getJSONObject(i);
+                skills.add(new Skill(j.getString(NAME), j.getString(DESCRIPTION)));
+            }
+            return new CategorySkillsDetails(json.getString(CATEGORY), skills);
         } catch (Exception e) {
             throw new RuntimeException(e);
         }

@@ -6,7 +6,7 @@ import com.iprogrammerr.website.model.Skills;
 import com.iprogrammerr.website.respondent.AboutRespondent;
 import com.iprogrammerr.website.respondent.ExperienceRespondent;
 import com.iprogrammerr.website.respondent.ProjectRespondent;
-import com.iprogrammerr.website.respondent.SkillRespondent;
+import com.iprogrammerr.website.respondent.SkillsRespondent;
 import com.iprogrammerr.website.respondent.WelcomeRespondent;
 import com.iprogrammerr.website.view.HtmlViews;
 import com.iprogrammerr.website.view.Views;
@@ -48,10 +48,10 @@ public class App {
         AboutRespondent aboutRespondent = new AboutRespondent(views);
         ExperienceRespondent experienceRespondent = new ExperienceRespondent(views, experiences);
         ProjectRespondent projectRespondent = new ProjectRespondent(views, projects);
-        SkillRespondent skillRespondent = new SkillRespondent(views, skills);
+        SkillsRespondent skillsRespondent = new SkillsRespondent(views, skills);
 
         DispatcherServlet dispatcherServlet = new DispatcherServlet(welcomeRespondent, aboutRespondent,
-            experienceRespondent, projectRespondent, skillRespondent);
+            experienceRespondent, projectRespondent, skillsRespondent);
 
         server(configuration, dispatcherServlet).start();
     }

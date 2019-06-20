@@ -43,7 +43,7 @@ body.gradient{
     top: 0;
     right: 0;
     background-image: url("background.png");
-    background-size: auto 80%;
+    background-size:  auto 80%;
     background-repeat: no-repeat;
     background-position: center;
     z-index: -1;
@@ -58,9 +58,12 @@ body.gradient{
     background-position: top right;
 }
 
-@media screen and (max-height: 500px) {
+@media screen and (max-width: 600px) {
     .background, .background-top {
-        background-size: auto 95%;
+        top: 0;
+        right: 0;
+        background-size: auto 70%;
+        background-position: center;
     }
 }
 
@@ -197,7 +200,7 @@ p.indented {
 .skill {
     width: 100%;
     display: grid;
-    grid-template-columns: 1fr 2fr 1fr;
+    grid-template-columns: 25% 50% 25%;
     text-align: center;
     align-items: center;
 }

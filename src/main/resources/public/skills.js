@@ -9,12 +9,12 @@ const previous = document.getElementById("previous");
 const next = document.getElementById("next");
 
 if (previous != null) {
-    previous.onclick = () => window.location.replace(skillUrl(id - 1));
+    previous.onclick = () => window.location.replace(skillsUrl(id - 1));
 }
 if (next != null) {
-    next.onclick = () => window.location.replace(skillUrl(id + 1));
+    next.onclick = () => window.location.replace(skillsUrl(id + 1));
 }
 
-function skillUrl(id) {
-    return `/skill/${id}`;
+function skillsUrl(id) {
+    return `/skills/${id}`;
 };
