@@ -136,11 +136,15 @@ h3 {
     grid-template-columns: 1fr 1fr;
     text-align: left;
     align-items: center;
-    cursor: pointer;
 }
 
-.hover:hover, .no-hover:active {
+.hover:hover {
     cursor: pointer;
+    color: var(--accent);
+}
+
+.no-hover:active {
+    cursor: default;
     color: var(--accent);
 }
 
@@ -165,8 +169,12 @@ a {
     color: var(--links-color);   
 }
 
-a:hover {
+a:hover, a.no-hover:active {
     color: var(--accent);
+}
+
+a.no-hover {
+    cursor: none;
 }
 
 a.no-hover:hover {
@@ -203,7 +211,6 @@ p.indented {
 }
 
 .arrow-left, .arrow-right {
-    cursor: pointer;
     width: 10%;
     height: 100%;
     display: flex;

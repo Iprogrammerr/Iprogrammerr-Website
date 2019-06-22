@@ -12,7 +12,7 @@ if (previous != null) {
     previous.onclick = () => window.location.replace(skillsUrl(id - 1));
 }
 if (next != null) {
-    next.onclick = () => window.location.replace(skillsUrl(id + 1));
+   next.onclick = () => window.location.replace(skillsUrl(id + 1));
 }
 
 function skillsUrl(id) {
