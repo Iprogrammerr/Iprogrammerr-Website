@@ -105,15 +105,15 @@ h3 {
 }
 
 .fade-in-second-delay {
-    animation-delay: 1.5s;
+    animation-delay: 1s;
 }
 
 .fade-in-third-delay {
-    animation-delay: 3s;
+    animation-delay: 1.5s;
 }
 
 .fade-in-forth-delay {
-    animation-delay: 4.5s;
+    animation-delay: 2s;
 }
 
 .profile {
