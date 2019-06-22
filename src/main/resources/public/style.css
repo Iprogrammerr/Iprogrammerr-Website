@@ -203,18 +203,26 @@ p.indented {
 }
 
 .arrow-left, .arrow-right {
-    font-size: var(--font-large-large);
     cursor: pointer;
+    width: 10%;
+    height: 100%;
+    display: flex;
     position: fixed;
-    top: 50%;
+    top: 0;
+    justify-content: center;
+    align-items: center;
+}
+
+.arrow-left > *, .arrow-right > * {
+    font-size: var(--font-large-large);
 }
 
 .arrow-left {
-    left: 5%;
+    left: 0;
 }
 
 .arrow-right {
-    right: 5%;
+    right: 0;
 }
 
 .links {
@@ -228,7 +236,7 @@ p.indented {
 }
 
 @media screen and (max-width: 800px) {
-    .centered>* {
+    .centered > * {
         width: 80%;
     }
 }

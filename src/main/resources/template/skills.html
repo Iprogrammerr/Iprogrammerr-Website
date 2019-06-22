@@ -10,8 +10,12 @@
 
 <body class="gradient">
     <div class="background"></div>
-    <div th:if="${hasPrevious}" id="previous" class="arrow-left fade-in-second-delay">&#10094</div>
-    <div th:if="${hasNext}" id="next" class="arrow-right fade-in-second-delay">&#10095</div>
+    <div th:if="${hasPrevious}" id="previous" class="arrow-left fade-in-second-delay hover">
+        <div>&#10094</div>
+    </div>
+    <div th:if="${hasNext}" id="next" class="arrow-right fade-in-second-delay hover">
+            <div>&#10095</div>
+        </div>
     <div class="centered">
         <h1 th:text="${skills.category}" class="fade-in"></h1>
         <div th:each="s : ${skills.skills}">
@@ -23,4 +27,5 @@
 </body>
 <script src="/resources/skills.js"></script>
 <script src="/resources/app.js"></script>
+
 </html>
