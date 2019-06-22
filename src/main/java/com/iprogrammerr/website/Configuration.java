@@ -1,7 +1,15 @@
 package com.iprogrammerr.website;
 
+import com.iprogrammerr.website.model.Mapping;
+import org.json.JSONArray;
+
+import java.io.File;
 import java.io.FileInputStream;
 import java.io.InputStream;
+import java.nio.file.Files;
+import java.nio.file.Paths;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Properties;
 
 public class Configuration {
@@ -34,12 +42,23 @@ public class Configuration {
         return Integer.parseInt(source.getProperty(PORT));
     }
 
-    public String getResourcesPath() {
+    public File getResources() {
         String path = source.getProperty(RESOURCES_PATH, "");
         if (path.isEmpty()) {
             String classPath = Configuration.class.getResource(".").getPath();
             path = classPath.substring(0, classPath.indexOf("target")) + "src/main/resources";
         }
-        return path;
+        return new File(path);
+    }
+
+    public List<Mapping> getMappings() throws Exception {
+        String json = new String(Files.readAllBytes(Paths.get(getResources().getPath() +
+            File.separator + "mappings.json")));
+        JSONArray all = new JSONArray(json);
+        List<Mapping> resources = new ArrayList<>(all.length());
+        for (int i = 0; i < all.length(); i++) {
+            resources.add(Mapping.fromJson(all.getJSONObject(i)));
+        }
+        return resources;
     }
 }

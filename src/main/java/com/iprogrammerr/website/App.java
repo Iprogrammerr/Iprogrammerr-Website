@@ -1,6 +1,7 @@
 package com.iprogrammerr.website;
 
 import com.iprogrammerr.website.model.Experiences;
+import com.iprogrammerr.website.model.Mapping;
 import com.iprogrammerr.website.model.Projects;
 import com.iprogrammerr.website.model.Skills;
 import com.iprogrammerr.website.respondent.AboutRespondent;
@@ -11,6 +12,7 @@ import com.iprogrammerr.website.respondent.WelcomeRespondent;
 import com.iprogrammerr.website.view.HtmlViews;
 import com.iprogrammerr.website.view.Views;
 import org.eclipse.jetty.server.Connector;
+import org.eclipse.jetty.server.Handler;
 import org.eclipse.jetty.server.Server;
 import org.eclipse.jetty.server.ServerConnector;
 import org.eclipse.jetty.server.handler.ContextHandler;
@@ -26,10 +28,12 @@ import java.io.File;
 
 public class App {
 
+    private static final String RESOURCES_CACHE_CONTROL = "max-age=0";
+
     public static void main(String... args) throws Exception {
         Configuration configuration = Configuration.fromCmd(args);
 
-        File resources = new File(configuration.getResourcesPath());
+        File resources = configuration.getResources();
 
         File templates = new File(resources, "template");
         TemplateEngine engine = new TemplateEngine();
@@ -57,20 +61,17 @@ public class App {
     }
 
 
-    private static Server server(Configuration configuration, DispatcherServlet dispatcher) {
+    private static Server server(Configuration configuration, DispatcherServlet dispatcher) throws Exception {
         Server server = new Server();
 
         HandlerCollection handlers = new HandlerCollection();
         server.setHandler(handlers);
 
-        ResourceHandler resourceHandler = new ResourceHandler();
-        String rootPath = configuration.getResourcesPath();
-        resourceHandler.setBaseResource(Resource.newResource(new File(rootPath, "public")));
-        resourceHandler.setCacheControl("max-age=0");
-        ContextHandler resourceContext = new ContextHandler();
-        resourceContext.setContextPath("/resources");
-        resourceContext.setHandler(resourceHandler);
-        handlers.addHandler(resourceContext);
+        handlers.addHandler(resourceHandler("resources", new File(configuration.getResources(), "public")));
+
+        for (Mapping r : configuration.getMappings()) {
+            handlers.addHandler(resourceHandler(r.context, new File(r.path), r.welcomeFile));
+        }
 
         ServletHandler servletHandler = new ServletHandler();
         servletHandler.addServletWithMapping(new ServletHolder(dispatcher), "/");
@@ -81,5 +82,22 @@ public class App {
         server.setConnectors(new Connector[]{connector});
 
         return server;
+    }
+
+    private static Handler resourceHandler(String context, File resource, String welcomeFile) {
+        ResourceHandler handler = new ResourceHandler();
+        handler.setBaseResource(Resource.newResource(resource));
+        handler.setCacheControl(RESOURCES_CACHE_CONTROL);
+        if (!welcomeFile.isEmpty()) {
+            handler.setWelcomeFiles(new String[]{welcomeFile});
+        }
+        ContextHandler contextHandler = new ContextHandler();
+        contextHandler.setContextPath("/" + context);
+        contextHandler.setHandler(handler);
+        return contextHandler;
+    }
+
+    private static Handler resourceHandler(String context, File resource) {
+        return resourceHandler(context, resource, "");
     }
 }
