@@ -8,7 +8,10 @@ const tags = skills.querySelectorAll("h2");
 const lists = skills.querySelectorAll("ul");
 
 for (let i = 0; i < tags.length - 1; i++) {
-    tags[i].onclick = () => toggleVisibility(lists[i]);
+    tags[i].onclick = () => {
+        tags[i].blur();
+        toggleVisibility(lists[i]);
+    };
 }
 
 tags[tags.length - 1].onclick = () => saveScrollAndExecute(() => location.href = "skills");

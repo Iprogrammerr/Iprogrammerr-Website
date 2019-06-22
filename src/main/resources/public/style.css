@@ -139,7 +139,7 @@ h3 {
     cursor: pointer;
 }
 
-.experience:hover, .skills > h2:hover {
+.hover:hover, .no-hover:active {
     cursor: pointer;
     color: var(--accent);
 }
@@ -169,17 +169,16 @@ a:hover {
     color: var(--accent);
 }
 
+a.no-hover:hover {
+    color: var(--links-color);
+}
+
 .hidden {
     display: none;
 }
 
 .visible {
     display: block;
-}
-
-.skills > h2:hover {
-    cursor: pointer;
-    color: var(--accent);
 }
 
 p.indented {
@@ -218,11 +217,7 @@ p.indented {
     right: 5%;
 }
 
-.arrow-left:hover, .arrow-right:hover {
-    color: var(--accent);
-}
-
-.links{
+.links {
     color: var(--links-color);
 }
 

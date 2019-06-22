@@ -8,7 +8,6 @@
     <meta name="author" content="Igor Roztropiński" />
     <link rel="stylesheet" category="text/css" href="/resources/style.css" />
     <style>
-    
         @media screen and (max-width: 1000px) {
             .head {
                 grid-template-columns: 1fr 2fr;
@@ -46,13 +45,13 @@
                 <p><a href="/about">About</a></p>
             </div>
         </div>
-            <div>
-                <image src="/resources/profile.jpg" class="profile fade-in-first-delay"></image>
-            </div>
+        <div>
+            <image src="/resources/profile.jpg" class="profile fade-in-first-delay"></image>
         </div>
     </div>
+    </div>
     <h1>Experience</h1>
-    <div class="experience" th:each="e : ${experiences}">
+    <div class="experience hover" th:each="e : ${experiences}">
         <h2 th:utext="|${e.startDate} - ${e.endDate}|" th:data-id="${e.id}"></h2>
         <div>
             <h2 th:text="${e.place}"></h2>
@@ -69,16 +68,17 @@
     <h1>Skills</h1>
     <div class="skills">
         <th:block th:each="s : ${skills}">
-            <h2 th:text="${s.category}"></h2>
+            <h2 th:text="${s.category}" class="hover"></h2>
             <ul class="hidden">
                 <li th:each="i : ${s.skills}">
                     <span th:text="${i}"></span>
                 </li>
             </ul>
         </th:block>
-        <h2>More</h2>
+        <h2 class="hover">More</h2>
     </div>
 </body>
 <script src="/resources/index.js"></script>
+<script src="/resources/app.js"></script>
 
 </html>
