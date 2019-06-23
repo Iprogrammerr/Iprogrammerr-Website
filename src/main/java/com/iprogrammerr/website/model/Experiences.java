@@ -20,8 +20,12 @@ public class Experiences {
     private static final String TYPE = "type";
     private final Path experiencesPath;
 
+    public Experiences(Path experiencesPath) {
+        this.experiencesPath = experiencesPath;
+    }
+
     public Experiences(String experiencesPath) {
-        this.experiencesPath = Paths.get(experiencesPath);
+        this(Paths.get(experiencesPath));
     }
 
     public List<Experience> all() {
@@ -50,7 +54,7 @@ public class Experiences {
     public ExperienceDetails experience(int id) {
         try {
             JSONArray experiences = allJson();
-            int idx = IdxId.fromId(id, 1, experiences.length(), 1).idx();
+            int idx = IdxId.fromId(id, experiences.length()).idx();
             return fromJson(experiences.getJSONObject(idx));
         } catch (Exception e) {
             throw new RuntimeException(e);

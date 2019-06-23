@@ -1,7 +1,6 @@
 package com.iprogrammerr.website.respondent;
 
 import com.iprogrammerr.website.HtmlRespondent;
-import com.iprogrammerr.website.model.CategorySkillsDetails;
 import com.iprogrammerr.website.model.Skills;
 import com.iprogrammerr.website.model.UrlParameter;
 import com.iprogrammerr.website.view.Views;
@@ -30,12 +29,11 @@ public class SkillsRespondent implements HtmlRespondent {
 
     @Override
     public String response(HttpServletRequest request) {
-        int id = new UrlParameter(request.getRequestURI()).intValue(-1);
-        CategorySkillsDetails skill = skills.categorySkills(id);
+        int id = new UrlParameter(request.getRequestURI()).intValue();
         Map<String, Object> params = new HashMap<>();
         params.put(HAS_PREVIOUS, id > skills.firstId());
         params.put(HAS_NEXT, id < skills.lastId());
-        params.put(SKILLS, skill);
+        params.put(SKILLS, skills.categorySkills(id));
         return views.rendered(SKILLS, params);
     }
 }

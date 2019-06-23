@@ -19,6 +19,10 @@ public class UrlParameter {
         return value;
     }
 
+    public int intValue() {
+        return intValue(-1);
+    }
+
     private String[] parts() {
         return url.split("/");
     }

@@ -27,7 +27,7 @@ public class ProjectRespondent implements HtmlRespondent {
 
     @Override
     public String response(HttpServletRequest request) {
-        int id = new UrlParameter(request.getRequestURI()).intValue(-1);
+        int id = new UrlParameter(request.getRequestURI()).intValue();
         Map<String, Object> params = new HashMap<>();
         params.put(PROJECT, projects.project(id));
         return views.rendered(PROJECT, params);

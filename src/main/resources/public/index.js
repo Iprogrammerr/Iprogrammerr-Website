@@ -8,20 +8,14 @@ const tags = skills.querySelectorAll("h2");
 const lists = skills.querySelectorAll("ul");
 
 for (let i = 0; i < tags.length - 1; i++) {
-    tags[i].onclick = () => {
-        tags[i].blur();
-        toggleVisibility(lists[i]);
-    };
+    tags[i].onclick = () => toggleVisibility(lists[i]);
 }
 
 tags[tags.length - 1].onclick = () => saveScrollAndExecute(() => location.href = "skills");
 
-const experience = document.getElementsByClassName("experience")[0].children;
-
-for (let i = 0; i < experience.length; i += 2) {
-    let url = experienceUrl(experience[i].getAttribute(ID_ATTRIBUTE));
-    experience[i].onclick = () => saveScrollAndExecute(() => location.href = url);
-    experience[i + 1].onclick = () => saveScrollAndExecute(() => location.href = url);
+for (let e of document.getElementsByClassName("experience")) {
+    let url = experienceUrl(e.getAttribute(ID_ATTRIBUTE));
+    e.onclick = () => saveScrollAndExecute(() => location.href = url);
 }
 
 const links = document.querySelectorAll("a");

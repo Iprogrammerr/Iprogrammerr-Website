@@ -17,8 +17,12 @@ public class Skills {
     private static final String DESCRIPTION = "description";
     private final Path skillsPath;
 
+    public Skills(Path skillsPath) {
+        this.skillsPath = skillsPath;
+    }
+
     public Skills(String skillsPath) {
-        this.skillsPath = Paths.get(skillsPath);
+        this(Paths.get(skillsPath));
     }
 
     private JSONArray allJson() throws Exception {

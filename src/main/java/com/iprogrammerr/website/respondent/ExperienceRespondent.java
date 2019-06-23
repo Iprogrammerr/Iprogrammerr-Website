@@ -22,7 +22,7 @@ public class ExperienceRespondent implements HtmlRespondent {
 
     @Override
     public String response(HttpServletRequest request) {
-        int id = new UrlParameter(request.getRequestURI()).intValue(-1);
+        int id = new UrlParameter(request.getRequestURI()).intValue();
         Map<String, Object> params = new HashMap<>();
         params.put(EXPERIENCE, experiences.experience(id));
         return views.rendered(EXPERIENCE, params);

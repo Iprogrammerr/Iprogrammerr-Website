@@ -44,7 +44,7 @@ public class DispatcherServlet extends HttpServlet {
         } else {
             response = "";
             for (HtmlRespondent r : respondents) {
-                String rPath = "/" + r.path();
+                String rPath = SEPARATOR + r.path();
                 if (url.startsWith(rPath)) {
                     response = r.response(req);
                     break;

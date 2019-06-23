@@ -17,8 +17,12 @@ public class Projects {
     private static final String LINKS = "links";
     private final Path projectsPath;
 
+    public Projects(Path projectsPath) {
+        this.projectsPath = projectsPath;
+    }
+
     public Projects(String projectsPath) {
-        this.projectsPath = Paths.get(projectsPath);
+        this(Paths.get(projectsPath));
     }
 
     private JSONArray allJson() throws Exception {
@@ -42,7 +46,7 @@ public class Projects {
     public ProjectDetails project(int id) {
         try {
             JSONArray projects = allJson();
-            int idx = IdxId.fromId(id, 1, projects.length(), 1).idx();
+            int idx = IdxId.fromId(id, projects.length()).idx();
             return fromJson(projects.getJSONObject(idx));
         } catch (Exception e) {
             throw new RuntimeException(e);
