@@ -4,8 +4,6 @@
 }
 
 :root {
-    --primary-dark: #5f6c87;
-    --primary: #aabadd;
     --font-dark: black;
     --font-light: white;
     --font: "Comic Sans MS", cursive, sans-serif;
@@ -135,7 +133,15 @@ h3 {
     display: grid;
     grid-template-columns: 1fr 1fr;
     text-align: left;
+    position: relative;
     align-items: center;
+}
+
+.more {
+    position: absolute;
+    top: 0;
+    right: 0;
+    font-size: var(--font-large);
 }
 
 .hover:hover {
