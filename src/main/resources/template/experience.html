@@ -19,7 +19,7 @@
         <h1 class="fade-in">Work</h1>
         <div th:each="s : ${experience.work}">
             <h2 th:text="${s.type}" class="fade-in-first-delay"></h2>
-            <p th:text="${s.description}" class="indented fade-in-second-delay"></p>
+            <p th:utext="${s.description}" class="indented fade-in-second-delay"></p>
         </div>
     </div>
 </body>

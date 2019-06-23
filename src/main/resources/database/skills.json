@@ -4,23 +4,23 @@
     "skills": [
       {
         "name": "Java",
-        "description": "This is the language in which I have the most experience. Most projects in which I participated or created by me, use it. I consider myself advanced Java programmer, as I have used to created almost anything including mobile, web, desktop and cli applications."
+        "description": "This is my primary and favorite langauge. Most projects in which I participated or created are written in it. I consider myself advanced Java programmer, as I have used it to created almost anything including mobile, web, desktop and cli applications."
       },
       {
         "name": "JavaScript",
-        "description": "I consider myself intermediate JS developer. I use it exclusively for front-end web development. My minimalistic approach, which is to avoid frameworks in favor of libraries, helped me to get deeper understanding of the language."
+        "description": "I consider myself intermediate JS developer. I use it exclusively for frontend web development. My minimalist approach, which is to avoid frameworks in favor of small libraries, is constantly helping me to get deeper understanding of the language."
       },
       {
         "name": "Kotlin",
-        "description": "I have written two Android apps in these language. As it has a lot in common with Java, it was very easy to pick up. I enjoy this language a lot and will definitely use it in the future."
+        "description": "I have written two Android apps in this language. As it has a lot in common with Java, it was very easy to pick up. I enjoyed it a lot, will definitely use it in the future and have hope to see it as Java successor."
       },
       {
         "name": "C/C++",
-        "description": "This is the language in which I have started programming. I have never create any complex program in it, but if there will be a need I could very quick refresh my skills. I will also be happy to do so."
+        "description": "This is the language in which I learned programming. I have never create anything of substantial complexity in it, but if there will be a need I could quickly refresh and expand my skills. I will also be happy to do so."
       },
       {
         "name": "Assembly",
-        "description": "I have also played with Assembly to have a better grasp of what is going on on the lowest level. I think that every programmer should at least write some toy programs in it, to have comprehensive view of how things work and how high many details high-level languages are hiding from us."
+        "description": "I have also played with Assembly to have a better grasp of what is going on on the lowest level. It's my strong conviction that every programmer should at least write some toy programs in it. Knowledge of it gives comprehensive view of how words of high-level languages are translated to machine instructions and how many important details they hide from us. The most importantly, it destroys <a href=\"https://blog.cleancoder.com/uncle-bob/2015/08/06/LetTheMagicDie.html\" target=\"_blank\">the magic</a> and gives confidence of understanding."
       }
     ]
   },
@@ -29,19 +29,19 @@
     "skills": [
       {
         "name": "Android",
-        "description": "I written quite a few native Android apps. Most of them used RESTful API as a data source. In two cases, I have used SQLite and synchronize data with backend periodically. Often there was a need to integrate with Google or Facebook services."
+        "description": "I wrote quite a few native Android apps. Most of them used RESTful API as a data source. In two cases, SQLite database and periodical synchronization of data with backend was used. More than once there was a need to integrate with Google or Facebook services and to use hardware features."
       },
       {
         "name": "Web",
-        "description": "I created and participated in development of a few RESTful backends and websites. I am familiar with both REST API concepts and HTML, CSS, JavaScript."
+        "description": "I created and participated in development of a few RESTful backends and websites. I am familiar with REST API concepts, http protocol, HTML, CSS and JavaScript."
       },
       {
         "name": "Desktop",
-        "description": "Creating apps using Swing and JavaFX. One of them has to work on a small, resistive screen, which requires very customized approach."
+        "description": "Creating apps using Swing and JavaFX. One of them had to work on a small, resistive touchscreen, which requires very customized approach."
       },
       {
         "name": "Command Line",
-        "description": "I have created many programs and algorithms that can be interact with only through cli. This includes utility programs like file transformers, parsers, mappers. Participating in autonomous forklift project I developed a few algorithms exchanging data over TCP/IP using <a href=\"https://hazelcast.com/\" target=\"_blank\">Hazelcast</a>."
+        "description": "I authored many programs and algorithms that can be interacted with only through cli. This include utility programs like file transformers, parsers and mappers. Participating in autonomous forklift project I developed a few algorithms exchanging data over TCP/IP using <a href=\"https://hazelcast.com/\" target=\"_blank\">Hazelcast</a>."
       }
     ]
   },
@@ -50,19 +50,19 @@
     "skills": [
       {
         "name": "SQL",
-        "description": "Most applications, in which I needed to store persistent data are using it. I used MySQL on server-side and SQLite on Android."
+        "description": "Most applications, in which I needed to store data in a persistent manner take advantage of relational database. Mostly, I used MySQL on a server-side and SQLite on Android."
       },
       {
         "name": "Git",
-        "description": "When it comes to version control system, choice is rather obvious now. I have used Git extensively both at my work and personal projects."
+        "description": "When it comes to version control system, choice is rather obvious now. I have used Git extensively both at my work and in personal projects."
       },
       {
         "name": "Maven",
-        "description": "If we talk about build systems I prefer and have the most experience with Maven. I use it by default in every jvm project."
+        "description": "If we talk about build systems I prefer and have the most experience using Maven. I use it by default in every jvm project. My libraries can be found in <a href=\"https://search.maven.org/search?q=iprogrammerr\" target=\"_blank\">The Central Maven Repository</a>."
       },
       {
         "name": "Gradle",
-        "description": "It has to be used, if you want to create Android apps. Having done that, I am also familiar with this system."
+        "description": "It has to be used, when creating Android apps. Having done that, I know the basics of this system."
       }
     ]
   },
@@ -71,19 +71,19 @@
     "skills": [
       {
         "name": "HTTP",
-        "description": "Creating simple <a href=\"https://github.com/Iprogrammerr/Bright-Server\" target=\"_blank\">server</a> and using it from both client and server side made me well versed with this protocol."
+        "description": "Creating simple <a href=\"https://github.com/Iprogrammerr/Bright-Server\" target=\"_blank\">server</a> and using it from both <a href=\"https://github.com/Iprogrammerr/Gentle-Request\" target=\"_blank\">client</a> and server side made me well versed with this protocol."
       },
       {
         "name": "REST",
-        "description": "Participating in creating services that uses its principles and being client of them."
+        "description": "Participating in creating projects that take advantage of its principles and using them from client side."
       },
       {
         "name": "Design Patterns",
-        "description": "I think that there is great value in knowing them. Even tough they often don't have to and need to be used as described, knowledge of them helps to understand many frameworks, libraries and help to solve recurring problems."
+        "description": "I think that there is great value in knowing them, because in software engineering we often solve similar problems. Even tough they often don't have to be used exactly as described, knowledge of them helps to understand many frameworks, libraries and recognize category of problems being solved, which makes them a lot easier to solve."
       },
       {
         "name": "Algorithms and Data Structures",
-        "description": "Every programmer should know basic <a href=\"https://github.com/Iprogrammerr/Algorithms-Data-Structures\" target=\"_blank\">algorithms and data structures</a>. Although we often use, and should, ready-made solutions, we ought to know and understand logic behind them."
+        "description": "Every programmer should know basic <a href=\"https://github.com/Iprogrammerr/Algorithms-Data-Structures\" target=\"_blank\">algorithms and data structures</a>. Although we often use, and should be doing so, ready-made solutions, we ought to know and understand logic behind them."
       },
       {
         "name": "Dedication to learning",

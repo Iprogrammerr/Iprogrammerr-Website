@@ -7,20 +7,21 @@
     "description": "Using jvm to solve various problems. Ranging from writing mobile, desktop and RESTful apps to coming up with algorithms for autonomous forklift.",
     "work": [
       {
+
         "type": "Mobile",
-        "description": "Writing native mobile apps using Java and Koltin. All of them were communicating with RESTful API. Often there was integration with Google or Facebook services. They were also making extensive use of hardware capabilities including GPS, camera and step counter."
+        "description": "Writing native mobile apps using Java and Kotlin. All of them were communicating with RESTful API. Often integration with Google or Facebook services was needed. They were also making extensive use of hardware features including GPS, camera and step counter."
       },
       {
         "type": "Backend",
-        "description": "One project was a typical RESTful app written in Java, using SpringBoot and Hibernate. Second was a maintenance of a journey planning service making heavy use of GTFS."
+        "description": "One project was a typical RESTful app written in Java, using Spring Boot and Hibernate. I was also responsible for maintenance of a journey planning service, which makes heavy use of <a href=\"https://en.wikipedia.org/wiki/General_Transit_Feed_Specification\" target=\"_blank\">GTFS</a>."
       },
       {
         "type": "Desktop",
-        "description": "Simple internal apps using Swing and JavaFX."
+        "description": "Creating internal apps using Swing and JavaFX."
       },
       {
         "type": "Algorithms",
-        "description": "Participating in autonomous forklift project I have opportunity to work on very interesting problems. One of them was safety system, that allows forklift to slow down and then stop, if detected obstacle get closer."
+        "description": "Participating in autonomous forklift project I have opportunity to work on very interesting problems. One of them was a safety system, that allows forklift to firstly slow down and then stop, if detected obstacle is too close."
       }
     ]
   }
