@@ -14,8 +14,8 @@
         <div id="previous" class="hover">&#10094</div>
     </div>
     <div th:if="${hasNext}" class="arrow-right fade-in-second-delay">
-            <div id="next" class="hover">&#10095</div>
-        </div>
+        <div id="next" class="hover">&#10095</div>
+    </div>
     <div class="centered">
         <h1 th:text="${skills.category}" class="fade-in"></h1>
         <div th:each="s : ${skills.skills}">
@@ -25,7 +25,7 @@
         </div>
     </div>
 </body>
-<script src="/resources/skills.js"></script>
+<script src="/resources/skills.js" type="module"></script>
 <script src="/resources/app.js"></script>
 
 </html>

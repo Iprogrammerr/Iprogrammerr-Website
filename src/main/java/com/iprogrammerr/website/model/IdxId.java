@@ -2,6 +2,7 @@ package com.iprogrammerr.website.model;
 
 public class IdxId {
 
+    public static final int FIRST_ID = 1;
     private final int idx;
 
     private IdxId(int idx) {
@@ -13,7 +14,7 @@ public class IdxId {
     }
 
     public static IdxId fromId(int id, int max) {
-        return fromId(id, 1, max, 1);
+        return fromId(id, FIRST_ID, max, FIRST_ID);
     }
 
     private static int validated(int val, int min, int max, int defaultValue) {

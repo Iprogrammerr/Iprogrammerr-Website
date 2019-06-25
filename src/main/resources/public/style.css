@@ -168,7 +168,7 @@ h3 {
     grid-template-columns: 1fr 1fr 1fr 1fr;
     text-align: left;
     align-items: center;
-    grid-row-gap: var(--padding-medium);
+    grid-gap: var(--padding-medium);
 }
 
 a {

@@ -15,6 +15,7 @@ public class Projects {
     private static final String GOAL = "goal";
     private static final String DESCRIPTION = "description";
     private static final String LINKS = "links";
+    private static final String URL = "url";
     private final Path projectsPath;
 
     public Projects(Path projectsPath) {
@@ -56,11 +57,26 @@ public class Projects {
     private ProjectDetails fromJson(JSONObject json) {
         String name = json.getString(NAME);
         String goal = json.getString(GOAL);
-        List<String> links = new ArrayList<>();
-        JSONArray linksArray = json.getJSONArray(LINKS);
-        for (int i = 0; i < linksArray.length(); i++) {
-            links.add(linksArray.getString(i));
+        List<Link> links = new ArrayList<>();
+        JSONArray linksJson = json.getJSONArray(LINKS);
+        for (int i = 0; i < linksJson.length(); i++) {
+            JSONObject lj = linksJson.getJSONObject(i);
+            links.add(new Link(lj.getString(URL), lj.getString(NAME)));
         }
         return new ProjectDetails(name, goal, json.getString(DESCRIPTION), links);
+    }
+
+    public int firstId() {
+        return IdxId.FIRST_ID;
+    }
+
+    public int lastId() {
+        int last;
+        try {
+            last = allJson().length();
+        } catch (Exception e) {
+            last = 0;
+        }
+        return last;
     }
 }

@@ -68,7 +68,7 @@ public class Skills {
     }
 
     public int firstId() {
-        return 1;
+        return IdxId.FIRST_ID;
     }
 
     public int lastId() {
