@@ -1,11 +1,12 @@
-package com.iprogrammerr.website.model;
+package com.iprogrammerr.website.model.project;
 
+import com.iprogrammerr.website.model.IdxId;
+import com.iprogrammerr.website.model.JsonArrayCache;
+import com.iprogrammerr.website.model.Link;
 import org.json.JSONArray;
 import org.json.JSONObject;
 
-import java.nio.file.Files;
-import java.nio.file.Path;
-import java.nio.file.Paths;
+import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -16,24 +17,16 @@ public class Projects {
     private static final String DESCRIPTION = "description";
     private static final String LINKS = "links";
     private static final String URL = "url";
-    private final Path projectsPath;
+    private final JsonArrayCache cache;
 
-    public Projects(Path projectsPath) {
-        this.projectsPath = projectsPath;
-    }
-
-    public Projects(String projectsPath) {
-        this(Paths.get(projectsPath));
-    }
-
-    private JSONArray allJson() throws Exception {
-        return new JSONArray(new String(Files.readAllBytes(projectsPath)));
+    public Projects(File projectsFile) {
+        cache = new JsonArrayCache(projectsFile);
     }
 
     public List<Project> all() {
         try {
             List<Project> projects = new ArrayList<>();
-            JSONArray all = allJson();
+            JSONArray all = cache.content();
             for (int i = 0; i < all.length(); i++) {
                 int id = IdxId.fromIdx(i).id();
                 projects.add(new Project(id, all.getJSONObject(i).getString(NAME)));
@@ -46,7 +39,7 @@ public class Projects {
 
     public ProjectDetails project(int id) {
         try {
-            JSONArray projects = allJson();
+            JSONArray projects = cache.content();
             int idx = IdxId.fromId(id, projects.length()).idx();
             return fromJson(projects.getJSONObject(idx));
         } catch (Exception e) {
@@ -73,7 +66,7 @@ public class Projects {
     public int lastId() {
         int last;
         try {
-            last = allJson().length();
+            last = cache.content().length();
         } catch (Exception e) {
             last = 0;
         }

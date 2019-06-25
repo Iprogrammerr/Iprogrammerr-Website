@@ -1,11 +1,12 @@
-package com.iprogrammerr.website.model;
+package com.iprogrammerr.website.model.experience;
 
+import com.iprogrammerr.website.model.IdxId;
+import com.iprogrammerr.website.model.JsonArrayCache;
+import com.iprogrammerr.website.model.Software;
 import org.json.JSONArray;
 import org.json.JSONObject;
 
-import java.nio.file.Files;
-import java.nio.file.Path;
-import java.nio.file.Paths;
+import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -18,19 +19,16 @@ public class Experiences {
     private static final String DESCRIPTION = "description";
     private static final String WORK = "work";
     private static final String TYPE = "type";
-    private final Path experiencesPath;
+    private final JsonArrayCache cache;
 
-    public Experiences(Path experiencesPath) {
-        this.experiencesPath = experiencesPath;
+    public Experiences(File experiencesFile) {
+        cache = new JsonArrayCache(experiencesFile);
     }
 
-    public Experiences(String experiencesPath) {
-        this(Paths.get(experiencesPath));
-    }
 
     public List<Experience> all() {
         try {
-            JSONArray allExperiences = allJson();
+            JSONArray allExperiences = cache.content();
             List<Experience> experiences = new ArrayList<>(allExperiences.length());
             for (int i = 0; i < allExperiences.length(); i++) {
                 int id = IdxId.fromIdx(i).id();
@@ -42,10 +40,6 @@ public class Experiences {
         }
     }
 
-    private JSONArray allJson() throws Exception {
-        return new JSONArray(new String(Files.readAllBytes(experiencesPath)));
-    }
-
     private Experience fromJson(int id, JSONObject json) {
         return new Experience(id, json.getString(START_DATE), json.getString(END_DATE), json.getString(PLACE),
             json.getString(FUNCTION), json.getString(DESCRIPTION));
@@ -53,7 +47,7 @@ public class Experiences {
 
     public ExperienceDetails experience(int id) {
         try {
-            JSONArray experiences = allJson();
+            JSONArray experiences = cache.content();
             int idx = IdxId.fromId(id, experiences.length()).idx();
             return fromJson(experiences.getJSONObject(idx));
         } catch (Exception e) {

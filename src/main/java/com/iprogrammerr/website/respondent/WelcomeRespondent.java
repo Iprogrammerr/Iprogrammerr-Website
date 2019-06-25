@@ -1,9 +1,9 @@
 package com.iprogrammerr.website.respondent;
 
 import com.iprogrammerr.website.HtmlRespondent;
-import com.iprogrammerr.website.model.Experiences;
-import com.iprogrammerr.website.model.Projects;
-import com.iprogrammerr.website.model.Skills;
+import com.iprogrammerr.website.model.experience.Experiences;
+import com.iprogrammerr.website.model.project.Projects;
+import com.iprogrammerr.website.model.skill.Skills;
 import com.iprogrammerr.website.view.Views;
 
 import javax.servlet.http.HttpServletRequest;

@@ -1,4 +1,6 @@
-package com.iprogrammerr.website.model;
+package com.iprogrammerr.website.model.experience;
+
+import com.iprogrammerr.website.model.Software;
 
 import java.util.List;
 

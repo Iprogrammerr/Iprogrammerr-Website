@@ -1,11 +1,11 @@
-package com.iprogrammerr.website.model;
+package com.iprogrammerr.website.model.skill;
 
+import com.iprogrammerr.website.model.IdxId;
+import com.iprogrammerr.website.model.JsonArrayCache;
 import org.json.JSONArray;
 import org.json.JSONObject;
 
-import java.nio.file.Files;
-import java.nio.file.Path;
-import java.nio.file.Paths;
+import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -15,24 +15,16 @@ public class Skills {
     private static final String NAME = "name";
     private static final String SKILLS = "skills";
     private static final String DESCRIPTION = "description";
-    private final Path skillsPath;
+    private final JsonArrayCache cache;
 
-    public Skills(Path skillsPath) {
-        this.skillsPath = skillsPath;
-    }
-
-    public Skills(String skillsPath) {
-        this(Paths.get(skillsPath));
-    }
-
-    private JSONArray allJson() throws Exception {
-        return new JSONArray(new String(Files.readAllBytes(skillsPath)));
+    public Skills(File skillsFile) {
+        cache = new JsonArrayCache(skillsFile);
     }
 
     public List<CategorySkills> all() {
         try {
             List<CategorySkills> skills = new ArrayList<>();
-            JSONArray all = allJson();
+            JSONArray all = cache.content();
             for (int i = 0; i < all.length(); i++) {
                 skills.add(fromJson(all.getJSONObject(i)));
             }
@@ -53,7 +45,7 @@ public class Skills {
 
     public CategorySkillsDetails categorySkills(int id) {
         try {
-            JSONArray all = allJson();
+            JSONArray all = cache.content();
             JSONObject json = all.getJSONObject(IdxId.fromId(id, all.length()).idx());
             JSONArray skillsJson = json.getJSONArray(SKILLS);
             List<Skill> skills = new ArrayList<>(skillsJson.length());
@@ -74,7 +66,7 @@ public class Skills {
     public int lastId() {
         int last;
         try {
-            last = allJson().length();
+            last = cache.content().length();
         } catch (Exception e) {
             last = 0;
         }

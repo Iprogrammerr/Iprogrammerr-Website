@@ -1,4 +1,6 @@
-package com.iprogrammerr.website.model;
+package com.iprogrammerr.website.model.project;
+
+import com.iprogrammerr.website.model.Link;
 
 import java.util.List;
 

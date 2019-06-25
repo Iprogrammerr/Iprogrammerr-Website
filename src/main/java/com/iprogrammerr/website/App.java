@@ -1,9 +1,9 @@
 package com.iprogrammerr.website;
 
-import com.iprogrammerr.website.model.Experiences;
 import com.iprogrammerr.website.model.Mapping;
-import com.iprogrammerr.website.model.Projects;
-import com.iprogrammerr.website.model.Skills;
+import com.iprogrammerr.website.model.experience.Experiences;
+import com.iprogrammerr.website.model.project.Projects;
+import com.iprogrammerr.website.model.skill.Skills;
 import com.iprogrammerr.website.respondent.AboutRespondent;
 import com.iprogrammerr.website.respondent.ExperienceRespondent;
 import com.iprogrammerr.website.respondent.ProjectRespondent;
@@ -44,9 +44,9 @@ public class App {
         Views views = new HtmlViews(templates, engine);
 
         String databasePath = resources.getPath() + File.separator + "database";
-        Experiences experiences = new Experiences(databasePath + File.separator + "experiences.json");
-        Projects projects = new Projects(databasePath + File.separator + "projects.json");
-        Skills skills = new Skills(databasePath + File.separator + "skills.json");
+        Experiences experiences = new Experiences(new File(databasePath + File.separator + "experiences.json"));
+        Projects projects = new Projects(new File(databasePath + File.separator + "projects.json"));
+        Skills skills = new Skills(new File(databasePath + File.separator + "skills.json"));
 
         WelcomeRespondent welcomeRespondent = new WelcomeRespondent(views, experiences, projects, skills);
         AboutRespondent aboutRespondent = new AboutRespondent(views);

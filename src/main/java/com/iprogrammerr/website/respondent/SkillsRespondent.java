@@ -1,7 +1,7 @@
 package com.iprogrammerr.website.respondent;
 
 import com.iprogrammerr.website.HtmlRespondent;
-import com.iprogrammerr.website.model.Skills;
+import com.iprogrammerr.website.model.skill.Skills;
 import com.iprogrammerr.website.model.UrlParameter;
 import com.iprogrammerr.website.view.Views;
 
