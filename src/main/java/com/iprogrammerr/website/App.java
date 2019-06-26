@@ -25,10 +25,12 @@ import org.thymeleaf.TemplateEngine;
 import org.thymeleaf.templateresolver.FileTemplateResolver;
 
 import java.io.File;
+import java.util.concurrent.TimeUnit;
 
 public class App {
 
-    private static final String RESOURCES_CACHE_CONTROL = "max-age=0";
+    private static final String RESOURCES_NO_CACHE = "max-age=0";
+    private static final String RESOURCES_CACHE = "max-age=" + TimeUnit.HOURS.toSeconds(1);
 
     public static void main(String... args) throws Exception {
         Configuration configuration = Configuration.fromCmd(args);
@@ -67,10 +69,12 @@ public class App {
         HandlerCollection handlers = new HandlerCollection();
         server.setHandler(handlers);
 
-        handlers.addHandler(resourceHandler("resources", new File(configuration.getResources(), "public")));
+        handlers.addHandler(resourceHandler("resources", new File(configuration.getResources(), "public"),
+            configuration.shouldCacheStaticResources()));
 
         for (Mapping r : configuration.getMappings()) {
-            handlers.addHandler(resourceHandler(r.context, new File(r.path), r.welcomeFile));
+            handlers.addHandler(resourceHandler(r.context, new File(r.path), r.welcomeFile,
+                configuration.shouldCacheStaticResources()));
         }
 
         ServletHandler servletHandler = new ServletHandler();
@@ -84,10 +88,14 @@ public class App {
         return server;
     }
 
-    private static Handler resourceHandler(String context, File resource, String welcomeFile) {
+    private static Handler resourceHandler(String context, File resource, String welcomeFile, boolean cache) {
         ResourceHandler handler = new ResourceHandler();
         handler.setBaseResource(Resource.newResource(resource));
-        handler.setCacheControl(RESOURCES_CACHE_CONTROL);
+        if (cache) {
+            handler.setCacheControl(RESOURCES_CACHE);
+        } else {
+            handler.setCacheControl(RESOURCES_NO_CACHE);
+        }
         if (!welcomeFile.isEmpty()) {
             handler.setWelcomeFiles(new String[]{welcomeFile});
         }
@@ -97,7 +105,7 @@ public class App {
         return contextHandler;
     }
 
-    private static Handler resourceHandler(String context, File resource) {
-        return resourceHandler(context, resource, "");
+    private static Handler resourceHandler(String context, File resource, boolean cache) {
+        return resourceHandler(context, resource, "", cache);
     }
 }

@@ -16,6 +16,7 @@ public class Configuration {
 
     private static final String PORT = "port";
     private static final String RESOURCES_PATH = "resourcesPath";
+    private static final String CACHE_STATIC_RESOURCES = "cacheStaticResources";
     private final Properties source;
 
     public Configuration(Properties source) {
@@ -49,6 +50,10 @@ public class Configuration {
             path = classPath.substring(0, classPath.indexOf("target")) + "src/main/resources";
         }
         return new File(path);
+    }
+
+    public boolean shouldCacheStaticResources() {
+        return Boolean.parseBoolean(source.getProperty(CACHE_STATIC_RESOURCES));
     }
 
     public List<Mapping> getMappings() throws Exception {
