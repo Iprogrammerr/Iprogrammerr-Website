@@ -23,19 +23,21 @@ public class Configuration {
         this.source = source;
     }
 
-    public static Configuration fromCmd(String... args) {
-        String path;
-        if (args.length == 0) {
-            path = Configuration.class.getResource("/application.properties").getPath();
+    public static Configuration fromCmd(String... args) throws Exception {
+        InputStream is;
+        if (args.length > 0) {
+            is = new FileInputStream(args[0]);
         } else {
-            path = args[0];
+            is = Configuration.class.getResourceAsStream("/application.properties");
         }
-        try (InputStream is = new FileInputStream(path)) {
+        try {
             Properties properties = new Properties();
             properties.load(is);
             return new Configuration(properties);
         } catch (Exception e) {
             throw new RuntimeException(e);
+        } finally {
+            is.close();
         }
     }
 

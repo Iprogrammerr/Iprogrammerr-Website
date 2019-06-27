@@ -23,16 +23,16 @@ public class DispatcherServlet extends HttpServlet {
         this.respondents = respondents;
     }
 
-    //TODO exception page
     @Override
     protected void service(HttpServletRequest req, HttpServletResponse resp) throws IOException {
         String url = req.getRequestURI();
         String response = response(url, req);
-        resp.setContentType(HTML_CONTENT_TYPE);
         if (!response.isEmpty()) {
+            resp.setContentType(HTML_CONTENT_TYPE);
             resp.getWriter().write(response);
-        } else if (url.startsWith(ICON_REQUEST)) {
-            resp.setHeader(LOCATION_HEADER, ICON_REDIRECT);
+        } else {
+            String redirect = url.startsWith(ICON_REQUEST) ? ICON_REDIRECT : SEPARATOR;
+            resp.setHeader(LOCATION_HEADER, redirect);
             resp.setStatus(HttpURLConnection.HTTP_SEE_OTHER);
         }
     }
