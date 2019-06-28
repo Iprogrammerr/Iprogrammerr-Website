@@ -31,7 +31,7 @@ body.gradient{
     background-image: linear-gradient(to right, var(--background-start), var(--background-end));
 }
 
-.background, .background-top {
+.background, .background-top, .background-bottom {
     width: 100vw;
     height: 100vh;
     top: 0;
@@ -50,6 +50,12 @@ body.gradient{
     top: -4vh;
     right: -4vw;
     background-position: top right;
+}
+
+.background-bottom {
+    top: 4vh;
+    right: -4vw;
+    background-position: bottom right;
 }
 
 h1 {
@@ -222,13 +228,13 @@ p.indented {
         background-size: auto 110%;
     }
 
-    .background-top {
+    .background-top, .background-bottom {
         background-size: auto 90%;
     }
 }
 
 @media screen and (max-width: 600px) {
-    .background-top {
+    .background-top, .background-bottom {
         top: 0;
         right: 0;
         background-position: center;
