@@ -4,9 +4,22 @@ const IMAGE_SMALL = "small";
 const IMAGE_MEDIUM = "medium";
 const IMAGE_LARGE = "large";
 
+const GALLERY = "gallery";
+const GALLERY_THREE = "gallery-three";
+const GALLERY_TWO = "gallery-two";
+const GALLERY_ONE = "gallery-one";
+
 new IdNavigation("project").setup();
 
-let images = document.getElementsByClassName("gallery")[0].children;
+let gallery = document.getElementById(GALLERY);
+let images = gallery.children;
+if (images.length < 2) {
+    gallery.classList.replace(GALLERY, GALLERY_ONE);
+} else if (images.length < 3) {
+    gallery.classList.replace(GALLERY, GALLERY_TWO);
+} else if (images.length < 4) {
+    gallery.classList.replace(GALLERY, GALLERY_THREE);
+}
 let active = null;
 for (let i of images) {
     i.onclick = (e) => {

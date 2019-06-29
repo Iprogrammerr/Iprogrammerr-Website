@@ -26,7 +26,7 @@
             <h2>Description</h2>
             <p th:utext="${project.description}" class="indented"></p>
         </div>
-        <div class="gallery fade-in-second-delay">
+        <div id="gallery" class="gallery fade-in-second-delay">
             <th:block th:each="i : ${project.images}">
                 <div class="medium" th:style="'background-image: url(' + '&quot' + ${i} + '&quot' + ')'">
                 </div>
