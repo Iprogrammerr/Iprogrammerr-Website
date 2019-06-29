@@ -1,6 +1,7 @@
 * {
     box-sizing: border-box;
     font-family: var(--font);
+    color: white;
 }
 
 :root {
@@ -10,10 +11,12 @@
     --font-large: 2em;
     --font-medium: 1.5em;
     --font-medium-small : 1.25em;
-    --links-color:#7faaef;
-    --accent: #0badf1;
-    --background-start: white;
-    --background-end:#cdd2d8;
+    --links-color:#91b1e6;
+    --accent: #73d5ff;
+    --font-gray: #ced5e0;
+    --background-start: #242424;
+    --background-mid: #525254;
+    --background-end: #878791;
     --gallery-small-width-two: 10vw;
     --gallery-small-height-two: 13vw;
     --gallery-medium-width-two: 35vw;
@@ -52,7 +55,7 @@ html {
 
 body.gradient{
     padding: var(--padding-medium);
-    background-image: linear-gradient(to right, var(--background-start), var(--background-end));
+    background-image: linear-gradient(to right, var(--background-start), var(--background-mid), var(--background-end));
 }
 
 .background, .background-top, .background-bottom {
@@ -80,6 +83,10 @@ body.gradient{
     top: 4vh;
     right: -4vw;
     background-position: bottom right;
+}
+
+h1, h2, h3 {
+    color: var(--font-gray);
 }
 
 h1 {
@@ -143,7 +150,7 @@ h3 {
     font-size: var(--font-large);
 }
 
-.hover:hover {
+.hover:hover, .hover > h1:hover {
     cursor: pointer;
     color: var(--accent);
 }
@@ -266,8 +273,9 @@ a.no-hover:hover {
     display: block;
 }
 
-p.indented {
+.indented {
     text-indent: var(--padding-medium);
+    color: white;
 }
 
 .formatted {
@@ -295,6 +303,7 @@ p.indented {
     top: 0;
     justify-content: center;
     align-items: center;
+    color: white;
 }
 
 .arrow-left > *, .arrow-right > * {
@@ -309,11 +318,9 @@ p.indented {
     right: 0;
 }
 
-.links {
+.links , .links > *{
     color: var(--links-color);
 }
-
-
 
 @media screen and (max-width: 1000px) {
     .centered > * {

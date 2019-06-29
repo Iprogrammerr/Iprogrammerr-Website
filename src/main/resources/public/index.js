@@ -15,7 +15,7 @@ tags[tags.length - 1].onclick = () => saveScrollAndExecute(() => location.href =
 
 for (let e of document.getElementsByClassName("experience")) {
     let url = experienceUrl(e.getAttribute(ID_ATTRIBUTE));
-    e.onclick = () => saveScrollAndExecute(() => location.href = url);
+    e.getElementsByClassName("more")[0].onclick = () => saveScrollAndExecute(() => location.href = url);
 }
 
 const links = document.querySelectorAll("a");

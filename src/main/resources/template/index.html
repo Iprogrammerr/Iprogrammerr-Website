@@ -52,14 +52,14 @@
     </div>
     </div>
     <h1>Experience</h1>
-    <div class="experience hover" th:each="e : ${experiences}" th:data-id="${e.id}">
+    <div class="experience" th:each="e : ${experiences}" th:data-id="${e.id}">
         <h2 th:utext="|${e.startDate} - ${e.endDate}|"></h2>
         <div>
             <h2 th:text="${e.place}"></h2>
             <h3 th:text="${e.function}"></h3>
             <p th:text="${e.description}" class="indented formatted"></p>
         </div>
-        <div class="more">..?</div>
+        <div class="more hover">..?</div>
     </div>
     <h1 id="projects">Projects</h1>
     <div class="projects">

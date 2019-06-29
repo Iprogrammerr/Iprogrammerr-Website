@@ -4,7 +4,7 @@
     "goal": "Easy to use mobile application for controlling food intake.",
     "description": "This was my first application written in Kotlin. It's entirely self-contained and is shipped with SQLite database containing most frequently eaten food products. It allows adding new ones, seting daily goals for food intake and keeping track of its history. All of which make it easy to control dieting habits.",
     "images": [
-      "https://lh3.googleusercontent.com/0ueRf2J5sjnH3YfvOrzxftPNUPLgShUOVRaSRbCz08G4HGrXKx_bswbmUSLoyHXIig=w1600-h757-rw",
+      "/resources/profile.jpg",
       "/resources/profile.jpg"
     ],
     "links": [
