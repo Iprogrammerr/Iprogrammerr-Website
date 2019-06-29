@@ -13,7 +13,7 @@
     --font-medium-small : 1.25em;
     --links-color:#91b1e6;
     --accent: #73d5ff;
-    --font-gray: #ced5e0;
+    --font-gray: #c5cedb;
     --background-start: #242424;
     --background-mid: #525254;
     --background-end: #878791;
@@ -129,6 +129,10 @@ h3 {
 }
 
 .profile {
+    opacity: 0.8;
+}
+
+.profile > img {
     float: right;
     width: 70%;
     height: auto;
@@ -275,7 +279,6 @@ a.no-hover:hover {
 
 .indented {
     text-indent: var(--padding-medium);
-    color: white;
 }
 
 .formatted {
@@ -303,7 +306,6 @@ a.no-hover:hover {
     top: 0;
     justify-content: center;
     align-items: center;
-    color: white;
 }
 
 .arrow-left > *, .arrow-right > * {
@@ -400,5 +402,5 @@ a.no-hover:hover {
 
 @keyframes fadeInFaded {
     from {opacity: 0;}
-    to {opacity: 0.1;}
+    to {opacity: 0.3;}
 }
