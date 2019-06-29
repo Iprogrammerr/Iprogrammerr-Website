@@ -81,7 +81,7 @@
   {
     "name": "Algorithms",
     "goal": "Java application for testing various kinds of algorithms.",
-    "description": "As I am interested in algorithms and we know that doing is the best way of learning this idea have emerged. <a href=\"/projects/7\"><del>It will always be in work in progress state, because everytime I will learn a new algorithm it will be added here</del></a>. For now it only has backend and can be easily use through Swagger, so frontend is not really needed but creating it is definitely worth considering.",
+    "description": "As I am interested in algorithms and we know that doing is the best way of learning this idea have emerged. <del><a href=\"/projects/7\">It will always be in work in progress state, because everytime I will learn a new algorithm it will be added here</a></del>. For now it only has backend and can be easily use through Swagger, so frontend is not really needed but creating it is definitely worth considering.",
     "images": [],
     "links": [
       {
