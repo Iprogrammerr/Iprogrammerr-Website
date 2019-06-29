@@ -1,5 +1,6 @@
 package com.iprogrammerr.website;
 
+import com.iprogrammerr.website.respondent.ErrorRespondent;
 import com.iprogrammerr.website.respondent.WelcomeRespondent;
 
 import javax.servlet.http.HttpServlet;
@@ -16,10 +17,13 @@ public class DispatcherServlet extends HttpServlet {
     private static final String ICON_REQUEST = "/favicon";
     private static final String ICON_REDIRECT = "/resources" + ICON_REQUEST + ".ico";
     private final WelcomeRespondent welcomeRespondent;
+    private final ErrorRespondent errorRespondent;
     private final HtmlRespondent[] respondents;
 
-    public DispatcherServlet(WelcomeRespondent welcomeRespondent, HtmlRespondent... respondents) {
+    public DispatcherServlet(WelcomeRespondent welcomeRespondent, ErrorRespondent errorRespondent,
+        HtmlRespondent... respondents) {
         this.welcomeRespondent = welcomeRespondent;
+        this.errorRespondent = errorRespondent;
         this.respondents = respondents;
     }
 
@@ -35,21 +39,26 @@ public class DispatcherServlet extends HttpServlet {
             resp.setHeader(LOCATION_HEADER, redirect);
             resp.setStatus(HttpURLConnection.HTTP_SEE_OTHER);
         }
+
     }
 
     private String response(String url, HttpServletRequest req) {
         String response;
-        if (url.equals(SEPARATOR) || url.startsWith("/index.html")) {
-            response = welcomeRespondent.response(req);
-        } else {
-            response = "";
-            for (HtmlRespondent r : respondents) {
-                String rPath = SEPARATOR + r.path();
-                if (url.startsWith(rPath)) {
-                    response = r.response(req);
-                    break;
+        try {
+            if (url.equals(SEPARATOR)) {
+                response = welcomeRespondent.response(req);
+            } else {
+                response = "";
+                for (HtmlRespondent r : respondents) {
+                    String rPath = SEPARATOR + r.path();
+                    if (url.startsWith(rPath)) {
+                        response = r.response(req);
+                        break;
+                    }
                 }
             }
+        } catch (Exception e) {
+            response = errorRespondent.response();
         }
         return response;
     }

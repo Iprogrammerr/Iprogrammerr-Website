@@ -5,6 +5,7 @@ import com.iprogrammerr.website.model.experience.Experiences;
 import com.iprogrammerr.website.model.project.Projects;
 import com.iprogrammerr.website.model.skill.Skills;
 import com.iprogrammerr.website.respondent.AboutRespondent;
+import com.iprogrammerr.website.respondent.ErrorRespondent;
 import com.iprogrammerr.website.respondent.ExperienceRespondent;
 import com.iprogrammerr.website.respondent.ProjectRespondent;
 import com.iprogrammerr.website.respondent.SkillsRespondent;
@@ -51,12 +52,13 @@ public class App {
         Skills skills = new Skills(new File(databasePath + File.separator + "skills.json"));
 
         WelcomeRespondent welcomeRespondent = new WelcomeRespondent(views, experiences, projects, skills);
+        ErrorRespondent errorRespondent = new ErrorRespondent(views);
         AboutRespondent aboutRespondent = new AboutRespondent(views);
         ExperienceRespondent experienceRespondent = new ExperienceRespondent(views, experiences);
         ProjectRespondent projectRespondent = new ProjectRespondent(views, projects);
         SkillsRespondent skillsRespondent = new SkillsRespondent(views, skills);
 
-        DispatcherServlet dispatcherServlet = new DispatcherServlet(welcomeRespondent, aboutRespondent,
+        DispatcherServlet dispatcherServlet = new DispatcherServlet(welcomeRespondent, errorRespondent, aboutRespondent,
             experienceRespondent, projectRespondent, skillsRespondent);
 
         server(configuration, dispatcherServlet).start();
