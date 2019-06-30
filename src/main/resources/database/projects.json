@@ -3,10 +3,7 @@
     "name": "Food Controller",
     "goal": "Easy to use mobile application for controlling food intake.",
     "description": "This was my first application written in Kotlin. It's entirely self-contained and is shipped with SQLite database containing most frequently eaten food products. It allows adding new ones, seting daily goals for food intake and keeping track of its history. All of which make it easy to control dieting habits.",
-    "images": [
-      "/resources/profile.jpg",
-      "/resources/profile.jpg"
-    ],
+    "images": [],
     "links": [
       {
         "url": "https://github.com/Iprogrammerr/Food-Controller",
@@ -58,7 +55,14 @@
     "name": "Daily Wisdom",
     "goal": "Mobile application for devices with Android that allows reading quotes from the greatest minds in history. CMS for adding and modyfing data consumed by mobile application. RESTful backend that serves as a source of data for both of them.",
     "description": "RESTful service is written in Java, using Spring Boot nad Hibernate. CMS was created in pure JavaScript. It was my first JS application, so I figured out that writing everything from scratch is a great idea to learn it. It has very simple UI and doesn't handle well different screen resolutions. Modyfing content that mobile app consumes is its only purpose. This app is the most important component of the project and at the same time the only one that matters to the end user. It's a native Android application written in Java. Its primary objective is to allow reading quotes in the most comfortable and encouraging way possible. Data come from the backend, is fetched at the moment of installation and saved locally to a SQLite database. From that time it's synchronized on a weekly basis. Thanks to that approach internet connection isn't needed most of the time.",
-    "images": [],
+    "images": [
+      "/resources/projects/cms1.jpg",
+      "/resources/projects/cms2.jpg",
+      "/resources/projects/cms3.jpg",
+      "/resources/projects/mobile1.jpg",
+      "/resources/projects/mobile2.jpg",
+      "/resources/projects/mobile3.jpg"
+    ],
     "links": [
       {
         "url": "http://iprogrammerr.com/daily-wisdom/",
@@ -82,7 +86,10 @@
     "name": "Algorithms",
     "goal": "Java application for testing various kinds of algorithms.",
     "description": "As I am interested in algorithms and we know that doing is the best way of learning this idea have emerged. <del><a href=\"/projects/7\">It will always be in work in progress state, because everytime I will learn a new algorithm it will be added here</a></del>. For now it only has backend and can be easily use through Swagger, so frontend is not really needed but creating it is definitely worth considering.",
-    "images": [],
+    "images": [
+      "/resources/projects/algorithms1.jpg",
+      "/resources/projects/algorithms2.jpg"
+    ],
     "links": [
       {
         "url": "http://iprogrammerr.com:8090/algorithms/swagger-ui.html#/",

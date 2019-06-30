@@ -10,6 +10,16 @@
 
 <body class="gradient">
     <div class="background"></div>
+    <div id="focused" class="focused-image-hidden">
+        <div class="arrow-left">
+            <div id="previousImage" class="hover">&#10094</div>
+        </div>
+        <div class="arrow-right">
+            <div id="nextImage" class="hover">&#10095</div>
+        </div>
+        <img src="/resources/projects/algorithms2.jpg"><img>
+        <div class="focused-image-background"></div>
+    </div>
     <div th:if="${hasPrevious}" class="arrow-left fade-in-second-delay">
         <div id="previous" class="hover">&#10094</div>
     </div>
@@ -28,7 +38,7 @@
         </div>
         <div id="gallery" class="gallery fade-in-second-delay">
             <th:block th:each="i : ${project.images}">
-                <div class="medium" th:style="'background-image: url(' + '&quot' + ${i} + '&quot' + ')'">
+                <div class="medium" th:data-image="${i}" th:style="'background-image: url(' + '&quot' + ${i} + '&quot' + ')'">
                 </div>
             </th:block>
         </div>

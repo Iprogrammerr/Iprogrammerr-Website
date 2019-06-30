@@ -17,12 +17,12 @@
     --background-start: #242424;
     --background-mid: #525254;
     --background-end: #878791;
-    --gallery-small-width-two: 10vw;
-    --gallery-small-height-two: 13vw;
+    --gallery-small-width-two: 5vw;
+    --gallery-small-height-two: 7vw;
     --gallery-medium-width-two: 35vw;
     --gallery-medium-height-two: 47vw;
-    --gallery-large-width-two: 60vw;
-    --gallery-large-height-two: 85vw;
+    --gallery-large-width-two: 75vw;
+    --gallery-large-height-two: 100vw;
     --gallery-small-width-three: 8vw;
     --gallery-small-height-three: 10vw;
     --gallery-medium-width-three: 21vw;
@@ -35,12 +35,12 @@
     --gallery-medium-height-three-large: 19vw;
     --gallery-large-width-three-large: 30vw;
     --gallery-large-height-three-large: 44vw;
-    --gallery-small-width-four: 6vw;
-    --gallery-small-height-four: 8.5vw;
+    --gallery-small-width-four: 5vw;
+    --gallery-small-height-four: 7vw;
     --gallery-medium-width-four: 10vw;
     --gallery-medium-height-four: 13.5vw;
-    --gallery-large-width-four: 24vw;
-    --gallery-large-height-four: 32vw;
+    --gallery-large-width-four: 31vw;
+    --gallery-large-height-four: 42vw;
 }
 
 html, body {
@@ -152,6 +152,36 @@ h3 {
     top: 0;
     right: 0;
     font-size: var(--font-large);
+}
+
+.focused-image, .focused-image-hidden {
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    text-align: center;
+    top: 0;
+    right: 0;
+    z-index: 99;
+}
+
+.focused-image-background {
+    width: 100%;
+    height: 100%;
+    top: 0;
+    right: 0;
+    z-index: -1;
+    position: absolute;
+    opacity: 0.9;
+    background-color: var(--background-start);
+}
+
+.focused-image-hidden {
+    display: none;
+}
+
+.focused-image > img {
+    height: 100%;
+    width: auto;
 }
 
 .hover:hover, .hover > h1:hover {
