@@ -15,13 +15,17 @@ public class Projects {
     private static final String NAME = "name";
     private static final String GOAL = "goal";
     private static final String DESCRIPTION = "description";
-    private static final String IMAGES = "images";
+    private static final String IMAGES_FOLDER = "imagesFolder";
     private static final String LINKS = "links";
     private static final String URL = "url";
     private final JsonArrayCache cache;
+    private final String resourcesContextRoot;
+    private final File imagesFolder;
 
-    public Projects(File projectsFile) {
-        cache = new JsonArrayCache(projectsFile);
+    public Projects(File projectsFile, String resourcesRoot, File imagesFolder) {
+        this.cache = new JsonArrayCache(projectsFile);
+        this.resourcesContextRoot = resourcesRoot;
+        this.imagesFolder = imagesFolder;
     }
 
     public List<Project> all() {
@@ -51,18 +55,34 @@ public class Projects {
     private ProjectDetails fromJson(JSONObject json) {
         String name = json.getString(NAME);
         String goal = json.getString(GOAL);
-        JSONArray imagesJson = json.getJSONArray(IMAGES);
-        List<String> images = new ArrayList<>(imagesJson.length());
-        for (int i = 0; i < imagesJson.length(); i++) {
-            images.add(imagesJson.getString(i));
-        }
         JSONArray linksJson = json.getJSONArray(LINKS);
         List<Link> links = new ArrayList<>(linksJson.length());
         for (int i = 0; i < linksJson.length(); i++) {
             JSONObject lj = linksJson.getJSONObject(i);
             links.add(new Link(lj.getString(URL), lj.getString(NAME)));
         }
-        return new ProjectDetails(name, goal, json.getString(DESCRIPTION), images, links);
+        return new ProjectDetails(name, goal, json.getString(DESCRIPTION), images(json.getString(IMAGES_FOLDER)),
+            links);
+    }
+
+    private List<String> images(String folderName) {
+        List<String> images = new ArrayList<>();
+        String[] files;
+        if (folderName.isEmpty()) {
+            files = null;
+        } else {
+            files = new File(imagesFolder, folderName).list();
+        }
+        if (files != null) {
+            for (String f : files) {
+                images.add(imageUrl(folderName, f));
+            }
+        }
+        return images;
+    }
+
+    private String imageUrl(String project, String image) {
+        return "/" + resourcesContextRoot + "/" + imagesFolder.getName() + "/" + project + "/" + image;
     }
 
     public int firstId() {

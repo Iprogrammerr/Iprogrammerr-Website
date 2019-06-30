@@ -54,6 +54,14 @@ public class Configuration {
         return new File(path);
     }
 
+    public File getDatabase() {
+        return new File(getResources(), "database");
+    }
+
+    public File getPublicResources() {
+        return new File(getResources(), "public");
+    }
+
     public boolean shouldCacheStaticResources() {
         return Boolean.parseBoolean(source.getProperty(CACHE_STATIC_RESOURCES));
     }

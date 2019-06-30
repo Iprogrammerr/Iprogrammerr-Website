@@ -30,6 +30,7 @@ import java.util.concurrent.TimeUnit;
 
 public class App {
 
+    private static final String RESOURCES_CONTEXT = "resources";
     private static final String RESOURCES_NO_CACHE = "max-age=0";
     private static final String RESOURCES_CACHE = "max-age=" + TimeUnit.HOURS.toSeconds(1);
 
@@ -46,10 +47,11 @@ public class App {
         engine.setTemplateResolver(resolver);
         Views views = new HtmlViews(templates, engine);
 
-        String databasePath = resources.getPath() + File.separator + "database";
-        Experiences experiences = new Experiences(new File(databasePath + File.separator + "experiences.json"));
-        Projects projects = new Projects(new File(databasePath + File.separator + "projects.json"));
-        Skills skills = new Skills(new File(databasePath + File.separator + "skills.json"));
+        File database = configuration.getDatabase();
+        Experiences experiences = new Experiences(new File(database, "experiences.json"));
+        Projects projects = new Projects(new File(database, "projects.json"),
+            RESOURCES_CONTEXT, new File(configuration.getPublicResources(), "projects"));
+        Skills skills = new Skills(new File(database, "skills.json"));
 
         WelcomeRespondent welcomeRespondent = new WelcomeRespondent(views, experiences, projects, skills);
         ErrorRespondent errorRespondent = new ErrorRespondent(views);
@@ -71,7 +73,7 @@ public class App {
         HandlerCollection handlers = new HandlerCollection();
         server.setHandler(handlers);
 
-        handlers.addHandler(resourceHandler("resources", new File(configuration.getResources(), "public"),
+        handlers.addHandler(resourceHandler("resources", configuration.getPublicResources(),
             configuration.shouldCacheStaticResources()));
 
         for (Mapping r : configuration.getMappings()) {
