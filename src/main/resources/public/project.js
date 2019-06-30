@@ -15,12 +15,12 @@ focusedImageContainer.onclick = () => {
     document.documentElement.style.overflow = rootScroll;
 };
 
-const focusedImage = focusedImageContainer.querySelector("img");
+const focusedImage = focusedImageContainer.getElementsByClassName("image-container")[0].children[0];
 const images = document.getElementsByClassName("gallery")[0].children;
 let focusedIdx = -1;
 for (let i = 0; i < images.length; i++) {
     images[i].onclick = (e) => {
-        focusedImage.src = e.target.getAttribute(IMAGE_URL_ATTRIBUTE);
+        focusedImage.style.backgroundImage = `url('${e.target.getAttribute(IMAGE_URL_ATTRIBUTE)}')`;
         document.documentElement.style.overflow = HIDDEN_SCROLL;
         if (focusedImageContainer.className == FOCUSED_IMAGE_HIDDEN) {
             focusedImageContainer.className = FOCUSED_IMAGE;
