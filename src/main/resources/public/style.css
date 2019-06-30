@@ -179,9 +179,18 @@ h3 {
     display: none;
 }
 
-.focused-image > img {
+.focused-image .container {
+    width: 100%;
     height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.focused-image .container > img {
     width: auto;
+    max-width: 85vw;
+    height: 85vh;
 }
 
 .hover:hover, .hover > h1:hover {
