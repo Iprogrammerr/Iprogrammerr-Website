@@ -31,7 +31,7 @@
     "name": "Bright Server",
     "goal": "Lightweight, standalone easy to use http server and java web framework.",
     "description": "Soon after I began to search for less complex and opinionated alternatives to Spring I started to use Jetty in embedded mode. That was pretty good, but I think that idea of embedded servers can be further simplified. My goal is to provide most of the conveniences that Spring gives when developing web applications, but at the same time create something a lot simpler and lightweight. It doesn't have any dependencies and its API is so simple that any seasoned Java developer could become familiar with it under an hour.",
-    "imagesFolder": "",
+    "imagesFolder": "bright-server",
     "links": [
       {
         "url": "https://github.com/Iprogrammerr/Bright-Server/",
@@ -43,7 +43,7 @@
     "name": "Gentle Request",
     "goal": "Compact library for making http requests.",
     "description": "When writing heavily reliant on http protocol Android applications I was never happy with libraries available on the market. Furthermore, as I have already written my own <a href=\"https://github.com/Iprogrammerr/Bright-Server/\" target=\"_blank\">http server</a> I took the opportunity to test it from client side and deepen my knowledge about http protocol. It has simple, yet powerful api, which allows sending and receiving bytes, text, json and files. Multipart requests and asynchronicty is also supported.",
-    "imagesFolder": "",
+    "imagesFolder": "gentle-request",
     "links": [
       {
         "url": "https://github.com/Iprogrammerr/Gentle-Request/",
