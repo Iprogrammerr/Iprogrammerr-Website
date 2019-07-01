@@ -73,7 +73,7 @@ public class App {
         HandlerCollection handlers = new HandlerCollection();
         server.setHandler(handlers);
 
-        handlers.addHandler(resourceHandler("resources", configuration.getPublicResources(),
+        handlers.addHandler(resourceHandler(RESOURCES_CONTEXT, configuration.getPublicResources(),
             configuration.shouldCacheStaticResources()));
 
         for (Mapping r : configuration.getMappings()) {

@@ -224,6 +224,7 @@ h3 {
 
 
 a {
+    outline: none;
     color: var(--links-color);   
 }
 

@@ -12,6 +12,7 @@ import java.util.List;
 
 public class Projects {
 
+    private static final String URL_SEPARATOR = "/";
     private static final String NAME = "name";
     private static final String GOAL = "goal";
     private static final String DESCRIPTION = "description";
@@ -19,12 +20,12 @@ public class Projects {
     private static final String LINKS = "links";
     private static final String URL = "url";
     private final JsonArrayCache cache;
-    private final String resourcesContextRoot;
+    private final String resourcesContext;
     private final File imagesFolder;
 
-    public Projects(File projectsFile, String resourcesRoot, File imagesFolder) {
+    public Projects(File projectsFile, String resourcesContext, File imagesFolder) {
         this.cache = new JsonArrayCache(projectsFile);
-        this.resourcesContextRoot = resourcesRoot;
+        this.resourcesContext = resourcesContext;
         this.imagesFolder = imagesFolder;
     }
 
@@ -82,7 +83,10 @@ public class Projects {
     }
 
     private String imageUrl(String project, String image) {
-        return "/" + resourcesContextRoot + "/" + imagesFolder.getName() + "/" + project + "/" + image;
+        return new StringBuilder(URL_SEPARATOR)
+            .append(resourcesContext).append(URL_SEPARATOR).append(imagesFolder.getName())
+            .append(URL_SEPARATOR).append(project).append(URL_SEPARATOR).append(image)
+            .toString();
     }
 
     public int firstId() {
