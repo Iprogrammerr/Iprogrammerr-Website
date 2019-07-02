@@ -8,6 +8,7 @@ import org.json.JSONObject;
 
 import java.io.File;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 public class Projects {
@@ -75,6 +76,7 @@ public class Projects {
             files = new File(imagesFolder, folderName).list();
         }
         if (files != null) {
+            Arrays.sort(files);
             for (String f : files) {
                 images.add(imageUrl(folderName, f));
             }
