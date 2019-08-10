@@ -40,8 +40,7 @@
         </div>
         <div id="gallery" class="gallery fade-in-second-delay">
             <th:block th:each="i : ${project.images}">
-                <div class="medium" th:data-image="${i}"
-                    th:style="'background-image: url(' + '&quot' + ${i} + '&quot' + ')'">
+                <div th:data-image="${i}" th:style="'background-image: url(' + '&quot' + ${i} + '&quot' + ')'">
                 </div>
             </th:block>
         </div>
