@@ -14,7 +14,7 @@
   {
     "name": "Time Ruler",
     "goal": "Self-contained web application for taking charge of your time.",
-    "description": "It is a web app, witch purpose is time management. I wrote it to deepen my knowledge about the web and to try out a little different approach. Views are <a href=\"https://www.thymeleaf.org/\" target=\"_blank\">rendered</a> and served by a backend. Thanks to that approach most logic is handled by Java on the server-side, which is easier to write and test. Moreover, <a href=\"https://github.com/Iprogrammerr/Time-Ruler/tree/master/src/main/resources/js\" target=\"_blank\">JS layer</a> is very thin. With backend I made an experiment and use <a href=\"https://javalin.io\" target=\"_blank\">Javalin</a>, which gave me a lof of convenciences of large frameworks, but didn't require any learning, as it's so simple, that its documentation is just a few pages long. It's also very flexible and doesn't come with a list of unnecessary functionalities and dependencies. Having very bad experience with Hibernate and being skeptical about <a href=\"https://phauer.com/2017/do-it-yourself-orm-alternative-hibernate-drawbacks/\" target=\"_blank\">automated ORM solutions</a> I created my own <a href=\"https://github.com/Iprogrammerr/Time-Ruler/tree/master/src/main/java/com/iprogrammerr/time/ruler/database\" target=\"_blank\">database layer</a> and will probably make small library out of it.",
+    "description": "It is a web app, which purpose is time management. I wrote it to deepen my knowledge about the web and to try out a little different approach. Views are <a href=\"https://www.thymeleaf.org/\">rendered</a> and served by a backend. Thanks to that approach most logic is handled by Java on the server-side, which is easier to write and test. Moreover, <a href=\"https://github.com/Iprogrammerr/Time-Ruler/tree/master/src/main/resources/js\">JS layer</a> is very thin. With backend I made an experiment and use <a href=\"https://javalin.io\">Javalin</a>, which gaves me a lot of convenciences of large frameworks, but didn't require any learning, as it's so simple, that its documentation is just a few pages long. It's also very flexible and doesn't come with a list of unnecessary functionalities and dependencies. Having very bad experience with Hibernate and being skeptical about <a href=\"https://phauer.com/2017/do-it-yourself-orm-alternative-hibernate-drawbacks/\" target=\"_blank\">automated ORM solutions</a> I created my own database layer and made a <a href='https://github.com/Iprogrammerr/Smart-Query'>small library</a> out of it.",
     "imagesFolder": "time-ruler",
     "links": [
       {
@@ -24,6 +24,18 @@
       {
         "url": "http://iprogrammerr.com:1000",
         "name": "Running instance"
+      }
+    ]
+  },
+  {
+    "name": "Smart Query",
+    "goal": "Simple, yet powerful jdbc wrapper that gives both convenience and complete power over sql.",
+    "description": "Finding many problems with ORMs and Hibernate especially, I looked for alternative approach. Being fan of SQL, I have trouble with justifing hiding it behind ORM magic. At the same time, writing repeative, simple SQL statements is very error-prone. <a href='https://www.jooq.org/'>JOOQ</a> is very nice, but I find it too complex. Being fanatic of simplicity and curious of how things work drives me to create this library. Related to this, I also created <a href='https://github.com/Iprogrammerr/Smart-Query-Meta'>database representation generator</a>.",
+    "imagesFolder": "smart-query",
+    "links": [
+      {
+        "url": "https://github.com/Iprogrammerr/Smart-Query",
+        "name": "Code"
       }
     ]
   },
@@ -42,7 +54,7 @@
   {
     "name": "Gentle Request",
     "goal": "Compact library for making http requests.",
-    "description": "When writing heavily reliant on http protocol Android applications I was never happy with libraries available on the market. Furthermore, as I have already written my own <a href=\"https://github.com/Iprogrammerr/Bright-Server/\" target=\"_blank\">http server</a> I took the opportunity to test it from client side and deepen my knowledge about http protocol. It has simple, yet powerful api, which allows sending and receiving bytes, text, json and files. Multipart requests and asynchronicty is also supported.",
+    "description": "When writing heavily reliant on http protocol Android applications I was never happy with libraries available on the market. Furthermore, as I have already written my own <a href=\"https://github.com/Iprogrammerr/Bright-Server/\">http server</a> I took the opportunity to test it from the client side and deepen my knowledge about http protocol. It has simple, yet powerful api, which allows sending and receiving bytes, text, json and files. Multipart requests and asynchronicity are also supported.",
     "imagesFolder": "gentle-request",
     "links": [
       {
@@ -54,12 +66,12 @@
   {
     "name": "Daily Wisdom",
     "goal": "Mobile application for devices with Android that allows reading quotes from the greatest minds in history. CMS for adding and modyfing data consumed by mobile application. RESTful backend that serves as a source of data for both of them.",
-    "description": "RESTful service is written in Java, using Spring Boot nad Hibernate. CMS was created in pure JavaScript. It was my first JS application, so I figured out that writing everything from scratch is a great idea to learn it. It has very simple UI and doesn't handle well different screen resolutions. Modyfing content that mobile app consumes is its only purpose. This app is the most important component of the project and at the same time the only one that matters to the end user. It's a native Android application written in Java. Its primary objective is to allow reading quotes in the most comfortable and encouraging way possible. Data come from the backend, is fetched at the moment of installation and saved locally to a SQLite database. From that time it's synchronized on a weekly basis. Thanks to that approach internet connection isn't needed most of the time.",
+    "description": "RESTful service is written in Java, using Spring Boot nad Hibernate. CMS was created in pure JavaScript. It was my first JS application, so I figured out that writing everything from scratch is a great idea to learn it. It has very simple UI and doesn't handle well different screen resolutions. Modyfing content that mobile app consumes is its only purpose. This app is the most important component of the project and at the same time the only one that matters for the end user. It's a native Android application written in Java. Its primary objective is to allow reading quotes in the most comfortable and encouraging way possible. Data comes from the backend, is fetched at the moment of installation and saved locally to a SQLite database. From that time it's synchronized on a weekly basis. Thanks to this approach internet connection isn't needed most of the time.",
     "imagesFolder": "daily-wisdom",
     "links": [
       {
         "url": "http://iprogrammerr.com/daily-wisdom/",
-        "name": "Cms"
+        "name": "CMS"
       },
       {
         "url": "http://www.iprogrammerr.com:8080/daily-wisdom/swagger-ui.html#/",
@@ -78,7 +90,7 @@
   {
     "name": "Algorithms",
     "goal": "Java application for testing various kinds of algorithms.",
-    "description": "As I am interested in algorithms and we know that doing is the best way of learning this idea have emerged. <del><a href=\"/projects/7\">It will always be in work in progress state, because everytime I will learn a new algorithm it will be added here</a></del>. For now it only has backend and can be easily use through Swagger, so frontend is not really needed but creating it is definitely worth considering.",
+    "description": "As I am interested in algorithms and we know that doing is the best way of learning, this idea have emerged. <del><a href=\"/projects/8\">It will always be in work in progress state, because everytime I will learn a new algorithm it will be added here</a></del>. For now it only has backend and can be easily use through Swagger, so frontend is not really needed but creating it is definitely worth considering.",
     "imagesFolder": "algorithms",
     "links": [
       {
@@ -94,7 +106,7 @@
   {
     "name": "Algorithms and Data Structures",
     "goal": "Implementation of various algorithms and data structures.",
-    "description": "This is the documentation of my interest in a topic described in a title. It has solutions for many popular problems like <a href=\"https://github.com/Iprogrammerr/Algorithms-Data-Structures/blob/master/src/main/java/com/iprogrammerr/algorithms_data_structures/algorithm/DynamicTwoSumProblemSolution.java\" target=\"_blank\">Two Sum Problem</a>, <a href=\"https://github.com/Iprogrammerr/Algorithms-Data-Structures/blob/master/src/main/java/com/iprogrammerr/algorithms_data_structures/algorithm/ReservoirSampling.java\" target=\"_blank\">Reservoir Sampling</a>, <a href=\"https://github.com/Iprogrammerr/Algorithms-Data-Structures/tree/master/src/main/java/com/iprogrammerr/algorithms_data_structures/search\" target=\"_blank\">searching</a>, <a href=\"https://github.com/Iprogrammerr/Algorithms-Data-Structures/tree/master/src/main/java/com/iprogrammerr/algorithms_data_structures/sort\" target=\"_blank\">sorting</a>, <a href=\"https://github.com/Iprogrammerr/Algorithms-Data-Structures/tree/master/src/main/java/com/iprogrammerr/algorithms_data_structures/graph\" target=\"_blank\">graph algorthms</a> or <a href=\"https://github.com/Iprogrammerr/Algorithms-Data-Structures/tree/master/src/main/java/com/iprogrammerr/algorithms_data_structures/cache\" target=\"_blank\">cache</a>. There are implementations of popular data structures like <a href=\"https://github.com/Iprogrammerr/Algorithms-Data-Structures/tree/master/src/main/java/com/iprogrammerr/algorithms_data_structures/tree\" target=\"_blank\">trees</a>, <a href=\"https://github.com/Iprogrammerr/Algorithms-Data-Structures/tree/master/src/main/java/com/iprogrammerr/algorithms_data_structures/hashtable\" target=\"_blank\">hash tables</a> and <a href=\"https://github.com/Iprogrammerr/Algorithms-Data-Structures/tree/master/src/main/java/com/iprogrammerr/algorithms_data_structures/queue\" target=\"_blank\">queues</a>. Lastly, I grappled with a few <a href=\"https://github.com/Iprogrammerr/Algorithms-Data-Structures/tree/master/src/main/java/com/iprogrammerr/algorithms_data_structures/heuristics/meta\" target=\"_blank\">herustic algorithms</a>.",
+    "description": "This is the documentation of my interest in this fundamental topic. It has solutions for many popular problems like <a href=\"https://github.com/Iprogrammerr/Algorithms-Data-Structures/blob/master/src/main/java/com/iprogrammerr/algorithms_data_structures/algorithm/DynamicTwoSumProblemSolution.java\">Two Sum Problem</a>, <a href=\"https://github.com/Iprogrammerr/Algorithms-Data-Structures/blob/master/src/main/java/com/iprogrammerr/algorithms_data_structures/algorithm/ReservoirSampling.java\" >Reservoir Sampling</a>, <a href=\"https://github.com/Iprogrammerr/Algorithms-Data-Structures/tree/master/src/main/java/com/iprogrammerr/algorithms_data_structures/search\">searching</a>, <a href=\"https://github.com/Iprogrammerr/Algorithms-Data-Structures/tree/master/src/main/java/com/iprogrammerr/algorithms_data_structures/sort\">sorting</a>, <a href=\"https://github.com/Iprogrammerr/Algorithms-Data-Structures/tree/master/src/main/java/com/iprogrammerr/algorithms_data_structures/graph\">graph algorthms</a> or <a href=\"https://github.com/Iprogrammerr/Algorithms-Data-Structures/tree/master/src/main/java/com/iprogrammerr/algorithms_data_structures/cache\">cache</a>. There are implementations of popular data structures like <a href=\"https://github.com/Iprogrammerr/Algorithms-Data-Structures/tree/master/src/main/java/com/iprogrammerr/algorithms_data_structures/tree\">trees</a>, <a href=\"https://github.com/Iprogrammerr/Algorithms-Data-Structures/tree/master/src/main/java/com/iprogrammerr/algorithms_data_structures/hashtable\">hash tables</a> and <a href=\"https://github.com/Iprogrammerr/Algorithms-Data-Structures/tree/master/src/main/java/com/iprogrammerr/algorithms_data_structures/queue\">queues</a>. Lastly, I grappled with a few <a href=\"https://github.com/Iprogrammerr/Algorithms-Data-Structures/tree/master/src/main/java/com/iprogrammerr/algorithms_data_structures/heuristics/meta\">herustic algorithms</a>.",
     "imagesFolder": "algorithms-data-structures",
     "links": [
       {
@@ -106,7 +118,7 @@
   {
     "name": "Riddle",
     "goal": "Web app that allows users to compete in solving various riddles.",
-    "description": "From the idea point of view I want to create responsive, easy and interesting to use web app that will combine exercising brain with entertainment. From developing my skills point of view the goal is to expand my knowledge of core technologies that frameworks often abstract away and that are a lot more important, time-proven and stable. What I mean by that? Using pure JavaScript on frontend and pure Java on backend. That of course doesn't mean not using libraries and reinventing the wheel all the time. It means using small, specific ones when they fit my needs. The most important part will be creating my own infrastructure on both front and backend. On backend I just use <del>embedded jetty and servlets</del> <a href=\"https://github.com/Iprogrammerr/Bright-Server/\" target=\"_blank\">Bright Server</a> and jdbc writing SQL and doing object relational mapping by hand. On frontend I want to create my own routing system for SPA, design and create beautiful, user-friendly UI.",
+    "description": "From the idea point of view I want to create responsive, easy and interesting to use web app that will combine brain exercising with entertainment. From developing my skills point of view the goal is to expand my knowledge of core technologies that frameworks often abstract away and that are a lot more important, time-proven and stable. What I mean by that? Using pure JavaScript on frontend and pure Java on backend. That of course doesn't mean not using libraries and reinventing the wheel all the time. It means using small, specific ones when they fit my needs. The most important part will be creating my own infrastructure on both front and backend. On backend I just use <del>embedded jetty and servlets</del> <a href=\"https://github.com/Iprogrammerr/Bright-Server/\">Bright Server</a> and jdbc writing SQL and doing object relational mapping by hand. On frontend I want to create my own routing system for SPA, design and create beautiful, user-friendly UI.",
     "imagesFolder": "riddle",
     "links": [
       {

@@ -22,19 +22,19 @@
         </div>
         <div class="focused-image-background"></div>
     </div>
-    <div th:if="${hasPrevious}" class="arrow-left fade-in-second-delay">
+    <div th:if="${hasPrevious}" class="arrow-left fade-in-first-delay">
         <div id="previous" class="hover">&#10094</div>
     </div>
-    <div th:if="${hasNext}" class="arrow-right fade-in-second-delay">
+    <div th:if="${hasNext}" class="arrow-right fade-in-first-delay">
         <div id="next" class="hover">&#10095</div>
     </div>
     <div class="centered">
-        <h1 th:utext="${project.name}" class="fade-in"></h1>
-        <div class="fade-in-first-delay">
+        <h1 th:utext="${project.name}"></h1>
+        <div class="fade-in">
             <h2>Goal</h2>
             <p th:text="${project.goal}" class="indented"></p>
         </div>
-        <div class="fade-in-second-delay">
+        <div class="fade-in-first-delay">
             <h2>Description</h2>
             <p th:utext="${project.description}" class="indented"></p>
         </div>
@@ -47,7 +47,7 @@
         <div class="fade-in-third-delay">
             <h2>Links</h2>
             <ul class="links" th:each="l : ${project.links}">
-                <li><a th:href="${l.url}" th:text="${l.name}" target="_blank"></a></li>
+                <li><a th:href="${l.url}" th:text="${l.name}"></a></li>
             </ul>
         </div>
     </div>
