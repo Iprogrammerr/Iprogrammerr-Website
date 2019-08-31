@@ -12,7 +12,7 @@
       },
       {
         "name": "Kotlin",
-        "description": "I have written two Android apps in this language. As it has a lot in common with Java, it was very easy to pick up. I enjoyed it a lot, will definitely use it in the future and have hope to see it as Java successor."
+        "description": "I have written two Android apps in this language so far. As it has a lot in common with Java, it was very easy to pick up. I enjoyed it a lot, will definitely use it in the future and have hope to see it as Java successor."
       },
       {
         "name": "C/C++",
@@ -20,7 +20,7 @@
       },
       {
         "name": "Assembly",
-        "description": "I have also played with Assembly to have a better grasp of what is going on on the lowest level. It's my strong conviction that every programmer should at least write some toy programs in it. Knowledge of it gives comprehensive view of how words of high-level languages are translated to machine instructions and how many important details they hide from us. The most importantly, it destroys <a href=\"https://blog.cleancoder.com/uncle-bob/2015/08/06/LetTheMagicDie.html\" target=\"_blank\">the magic</a> and gives confidence of understanding."
+        "description": "I have also played with Assembly to have a better grasp of what is going on on the lowest, machine level. It's my strong conviction that every programmer should at least write some toy programs in it. Knowledge of it gives comprehensive view of how words of high-level languages are translated to machine instructions and how many important details they hide from us. The most importantly, it destroys <a href=\"https://blog.cleancoder.com/uncle-bob/2015/08/06/LetTheMagicDie.html\">the magic</a> and gives confidence of understanding."
       }
     ]
   },
@@ -33,15 +33,15 @@
       },
       {
         "name": "Web",
-        "description": "I created and participated in development of a few RESTful backends and websites. I am familiar with REST API concepts, http protocol, HTML, CSS and JavaScript."
+        "description": "I created and participated in development of a few backends and websites. I am familiar with REST API concepts, HTTP protocol, HTML, CSS and JavaScript."
       },
       {
         "name": "Desktop",
-        "description": "Creating apps using Swing and JavaFX. One of them had to work on a small, resistive touchscreen, which requires very customized approach."
+        "description": "Creating apps using Swing and JavaFX. One of them had to work on a small, resistive touchscreen, which required very customized approach."
       },
       {
         "name": "Command Line",
-        "description": "I authored many programs and algorithms that can be interacted with only through cli. This include utility programs like file transformers, parsers and mappers. Participating in autonomous forklift project I developed a few algorithms exchanging data over TCP/IP using <a href=\"https://hazelcast.com/\" target=\"_blank\">Hazelcast</a>."
+        "description": "I authored many programs and algorithms that can be interacted with only through cli. This includes utility programs like file transformers, parsers and mappers. Participating in autonomous forklift project I developed a few algorithms exchanging data over TCP/IP using <a href=\"https://hazelcast.com/\">Hazelcast</a>."
       }
     ]
   },
@@ -54,11 +54,11 @@
       },
       {
         "name": "Git",
-        "description": "When it comes to version control system, choice is rather obvious now. I have used Git extensively both at my work and in personal projects."
+        "description": "When it comes to version control system, choice is rather obvious now. I have used Git extensively both in my work and personal projects."
       },
       {
         "name": "Maven",
-        "description": "If we talk about build systems I prefer and have the most experience using Maven. I use it by default in every jvm project. My libraries can be found in <a href=\"https://search.maven.org/search?q=iprogrammerr\" target=\"_blank\">The Central Maven Repository</a>."
+        "description": "If we talk about build systems I prefer and have the most experience using Maven. I use it by default in every jvm project. My libraries can be found in <a href=\"https://search.maven.org/search?q=iprogrammerr\">The Central Maven Repository</a>."
       },
       {
         "name": "Gradle",
@@ -71,19 +71,19 @@
     "skills": [
       {
         "name": "HTTP",
-        "description": "Creating simple <a href=\"https://github.com/Iprogrammerr/Bright-Server\" target=\"_blank\">server</a> and using it from both <a href=\"https://github.com/Iprogrammerr/Gentle-Request\" target=\"_blank\">client</a> and server side made me well versed with this protocol."
+        "description": "Creating simple <a href=\"https://github.com/Iprogrammerr/Bright-Server\">server</a> and using it from both <a href=\"https://github.com/Iprogrammerr/Gentle-Request\">client</a> and server side made me well versed with this protocol."
       },
       {
         "name": "REST",
-        "description": "Participating in creating projects that take advantage of its principles and using them from client side."
+        "description": "Participating in creating projects that take advantage of its principles and using them from both sides."
       },
       {
         "name": "Design Patterns",
-        "description": "I think that there is great value in knowing them, because in software engineering we often solve similar problems. Even tough they often don't have to be used exactly as described, knowledge of them helps to understand many frameworks, libraries and recognize category of problems being solved, which makes them a lot easier to solve."
+        "description": "I think that there is a great value in knowing them, because in software engineering we often solve similar problems. Even tough they often don't have to be used exactly as described, knowledge of them helps to understand many frameworks, libraries and recognize category of problems being solved, which makes them a lot easier to solve."
       },
       {
         "name": "Algorithms and Data Structures",
-        "description": "Every programmer should know basic <a href=\"https://github.com/Iprogrammerr/Algorithms-Data-Structures\" target=\"_blank\">algorithms and data structures</a>. Although we often use, and should be doing so, ready-made solutions, we ought to know and understand logic behind them."
+        "description": "Every programmer should know basic <a href=\"https://github.com/Iprogrammerr/Algorithms-Data-Structures\">algorithms and data structures</a>. Although we often use, and should be doing so, ready-made solutions, we ought to know and understand logic behind them."
       },
       {
         "name": "Dedication to learning",
