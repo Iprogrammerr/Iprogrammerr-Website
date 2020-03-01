@@ -1,7 +1,7 @@
 [
   {
     "context": "daily-wisdom",
-    "path": "/home/igor/ws/frontend/daily_wisdom",
+    "path": "/home/igor/daily-wisdom/frontend",
     "welcomeFile": "login.html"
   }
 ]

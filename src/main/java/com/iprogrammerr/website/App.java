@@ -14,6 +14,7 @@ import org.eclipse.jetty.server.ServerConnector;
 import org.eclipse.jetty.server.handler.ContextHandler;
 import org.eclipse.jetty.server.handler.HandlerCollection;
 import org.eclipse.jetty.server.handler.ResourceHandler;
+import org.eclipse.jetty.server.handler.gzip.GzipHandler;
 import org.eclipse.jetty.servlet.ServletHandler;
 import org.eclipse.jetty.servlet.ServletHolder;
 import org.eclipse.jetty.util.resource.Resource;
@@ -65,7 +66,6 @@ public class App {
         Server server = new Server();
 
         HandlerCollection handlers = new HandlerCollection();
-        server.setHandler(handlers);
 
         handlers.addHandler(resourceHandler(RESOURCES_CONTEXT, configuration.getPublicResources(),
                 configuration.shouldCacheStaticResources()));
@@ -82,6 +82,13 @@ public class App {
         ServerConnector connector = new ServerConnector(server);
         connector.setPort(configuration.getPort());
         server.setConnectors(new Connector[]{connector});
+
+        GzipHandler gzipHandler = new GzipHandler();
+        gzipHandler.setMinGzipSize(512);
+        gzipHandler.setIncludedMimeTypes("text/plain", "text/css", "text/html", "application/javascript");
+
+        gzipHandler.setHandler(handlers);
+        server.setHandler(gzipHandler);
 
         return server;
     }
@@ -100,6 +107,7 @@ public class App {
         ContextHandler contextHandler = new ContextHandler();
         contextHandler.setContextPath("/" + context);
         contextHandler.setHandler(handler);
+
         return contextHandler;
     }
 
