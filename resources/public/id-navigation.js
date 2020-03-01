@@ -1,4 +1,4 @@
-export function IdNavigation(baseUrl) {
+export default function IdNavigation(baseUrl) {
 
     const _baseUrl = baseUrl;
 

@@ -1,4 +1,4 @@
-import { IdNavigation } from "./id-navigation.js";
+import IdNavigation from "./id-navigation.js";
 
 const FOCUSED_IMAGE = "focused-image";
 const FOCUSED_IMAGE_HIDDEN = `${FOCUSED_IMAGE}-hidden`;

@@ -1,7 +1,7 @@
 [
   {
     "startDate": "2017.09",
-    "endDate": "",
+    "endDate": "2019.11",
     "place": "Inovatica",
     "function": "Java developer",
     "description": "Using jvm to solve various problems. Ranging from writing mobile, desktop and RESTful apps to coming up with algorithms for autonomous forklift.",
@@ -22,6 +22,32 @@
       {
         "type": "Algorithms",
         "description": "Participating in autonomous forklift project I have opportunity to work on very interesting problems. One of them was a safety system, that allows forklift to firstly slow down and then stop, if detected obstacle is too close."
+      }
+    ]
+  },
+  {
+    "startDate": "2019.11",
+    "endDate": "",
+    "place": "Hycom",
+    "function": "Java developer",
+    "description": "Using Java, Python and host of others tools to solve data centric challenges.",
+    "work": [
+      {
+
+        "type": "Data processing",
+        "description": "Creating and modifying apps that consume data from various resources, do some sort of processing with it and/or send/store it. All of them are containerized and deployed on AWS and make heavy use of its infrastructure including RDS, DynamoDB, SQS, SNS, ECS and S3."
+      },
+      {
+        "type": "Backend",
+        "description": "Creating and modifying apps that consume or produce RESTful APIs"
+      },
+      {
+        "type": "Data analysis",
+        "description": "Writing analysis of various datasets produced by data processing apps or in a raw format. Tools of use: Python, Scikit-learn, Pandas, Grafana."
+      },
+      {
+        "type": "DevOps",
+        "description": "Taking care and improving existing CI/CD infrastructure. It's based on Jenkins and use host of Bash, Python, SQL and Ansible scripts."
       }
     ]
   }

@@ -15,6 +15,10 @@
         "description": "I have written two Android apps in this language so far. As it has a lot in common with Java, it was very easy to pick up. I enjoyed it a lot, will definitely use it in the future and have hope to see it as Java successor."
       },
       {
+        "name": "Python",
+        "description": "My tool of choice for writing helpful scripts, data analysis and predictions."
+      },
+      {
         "name": "C/C++",
         "description": "This is the language in which I learned programming. I have never create anything of substantial complexity in it, but if there will be a need I could quickly refresh and expand my skills. I will also be happy to do so."
       },
@@ -42,6 +46,10 @@
       {
         "name": "Command Line",
         "description": "I authored many programs and algorithms that can be interacted with only through cli. This includes utility programs like file transformers, parsers and mappers. Participating in autonomous forklift project I developed a few algorithms exchanging data over TCP/IP using <a href=\"https://hazelcast.com/\">Hazelcast</a>."
+      },
+      {
+        "name": "Cloud",
+        "description": "Work in data lake project, which consists of various apps, scripts and jobs deployed on AWS allowed me to learn specifics of cloud environment."
       }
     ]
   },

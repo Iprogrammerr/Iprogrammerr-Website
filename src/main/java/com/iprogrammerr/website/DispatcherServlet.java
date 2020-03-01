@@ -39,7 +39,6 @@ public class DispatcherServlet extends HttpServlet {
             resp.setHeader(LOCATION_HEADER, redirect);
             resp.setStatus(HttpURLConnection.HTTP_SEE_OTHER);
         }
-
     }
 
     private String response(String url, HttpServletRequest req) {

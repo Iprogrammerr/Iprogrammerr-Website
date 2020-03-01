@@ -10,6 +10,12 @@
 
 <body class="gradient">
     <div class="background"></div>
+    <div th:if="${hasPrevious}" class="arrow-left fade-in-first-delay">
+        <div id="previous" class="hover">&#10094</div>
+    </div>
+    <div th:if="${hasNext}" class="arrow-right fade-in-first-delay">
+        <div id="next" class="hover">&#10095</div>
+    </div>
     <div class="centered">
         <div class="fade-in">
             <h1 th:text="${experience.place}"></h1>
@@ -23,5 +29,7 @@
         </div>
     </div>
 </body>
+<script src="/resources/experience.js" type="module"></script>
 <script src="/resources/app.js"></script>
+
 </html>
