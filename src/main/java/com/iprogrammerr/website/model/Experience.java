@@ -1,4 +1,4 @@
-package com.iprogrammerr.website.model.experience;
+package com.iprogrammerr.website.model;
 
 public class Experience {
 

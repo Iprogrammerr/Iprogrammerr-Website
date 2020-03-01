@@ -1,7 +1,10 @@
-package com.iprogrammerr.website.model.skill;
+package com.iprogrammerr.website.repository;
 
+import com.iprogrammerr.website.file.JsonArrayCache;
+import com.iprogrammerr.website.model.CategorySkills;
+import com.iprogrammerr.website.model.CategorySkillsDetails;
 import com.iprogrammerr.website.model.IdxId;
-import com.iprogrammerr.website.model.JsonArrayCache;
+import com.iprogrammerr.website.model.Skill;
 import org.json.JSONArray;
 import org.json.JSONObject;
 
@@ -9,16 +12,15 @@ import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Skills {
+public class SkillRepository extends JsonRepository {
 
     private static final String CATEGORY = "category";
     private static final String NAME = "name";
     private static final String SKILLS = "skills";
     private static final String DESCRIPTION = "description";
-    private final JsonArrayCache cache;
 
-    public Skills(File skillsFile) {
-        cache = new JsonArrayCache(skillsFile);
+    public SkillRepository(File skillsFile) {
+        super(new JsonArrayCache(skillsFile));
     }
 
     public List<CategorySkills> all() {
@@ -43,7 +45,7 @@ public class Skills {
         return new CategorySkills(json.getString(CATEGORY), items);
     }
 
-    public CategorySkillsDetails categorySkills(int id) {
+    public CategorySkillsDetails skillsOfCategory(int id) {
         try {
             JSONArray all = cache.content();
             JSONObject json = all.getJSONObject(IdxId.fromId(id, all.length()).idx());
@@ -57,19 +59,5 @@ public class Skills {
         } catch (Exception e) {
             throw new RuntimeException(e);
         }
-    }
-
-    public int firstId() {
-        return IdxId.FIRST_ID;
-    }
-
-    public int lastId() {
-        int last;
-        try {
-            last = cache.content().length();
-        } catch (Exception e) {
-            last = 0;
-        }
-        return last;
     }
 }

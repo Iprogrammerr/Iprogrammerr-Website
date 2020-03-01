@@ -1,7 +1,9 @@
-package com.iprogrammerr.website.model.experience;
+package com.iprogrammerr.website.repository;
 
+import com.iprogrammerr.website.file.JsonArrayCache;
+import com.iprogrammerr.website.model.Experience;
+import com.iprogrammerr.website.model.ExperienceDetails;
 import com.iprogrammerr.website.model.IdxId;
-import com.iprogrammerr.website.model.JsonArrayCache;
 import com.iprogrammerr.website.model.Software;
 import org.json.JSONArray;
 import org.json.JSONObject;
@@ -10,7 +12,7 @@ import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Experiences {
+public class ExperienceRepository extends JsonRepository {
 
     private static final String START_DATE = "startDate";
     private static final String END_DATE = "endDate";
@@ -19,12 +21,10 @@ public class Experiences {
     private static final String DESCRIPTION = "description";
     private static final String WORK = "work";
     private static final String TYPE = "type";
-    private final JsonArrayCache cache;
 
-    public Experiences(File experiencesFile) {
-        cache = new JsonArrayCache(experiencesFile);
+    public ExperienceRepository(File experiencesFile) {
+        super(new JsonArrayCache(experiencesFile));
     }
-
 
     public List<Experience> all() {
         try {
@@ -42,7 +42,7 @@ public class Experiences {
 
     private Experience fromJson(int id, JSONObject json) {
         return new Experience(id, json.getString(START_DATE), json.getString(END_DATE), json.getString(PLACE),
-            json.getString(FUNCTION), json.getString(DESCRIPTION));
+                json.getString(FUNCTION), json.getString(DESCRIPTION));
     }
 
     public ExperienceDetails experience(int id) {
@@ -57,7 +57,7 @@ public class Experiences {
 
     private ExperienceDetails fromJson(JSONObject json) {
         return new ExperienceDetails(json.getString(START_DATE), json.getString(END_DATE), json.getString(PLACE),
-            json.getString(FUNCTION), fromJson(json.getJSONArray(WORK)));
+                json.getString(FUNCTION), fromJson(json.getJSONArray(WORK)));
     }
 
     private List<Software> fromJson(JSONArray json) {

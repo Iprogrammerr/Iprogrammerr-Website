@@ -1,4 +1,4 @@
-package com.iprogrammerr.website.model;
+package com.iprogrammerr.website.file;
 
 import org.json.JSONArray;
 
@@ -27,6 +27,14 @@ public class JsonArrayCache {
                 previous = new JSONArray(previousJson);
             }
             return previous;
+        }
+    }
+
+    public int contentLength() {
+        try {
+            return content().length();
+        } catch (Exception e) {
+            return 0;
         }
     }
 }

@@ -1,4 +1,4 @@
-package com.iprogrammerr.website.model.skill;
+package com.iprogrammerr.website.model;
 
 public class Skill {
 

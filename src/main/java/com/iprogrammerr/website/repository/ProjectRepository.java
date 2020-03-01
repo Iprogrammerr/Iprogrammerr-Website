@@ -1,8 +1,10 @@
-package com.iprogrammerr.website.model.project;
+package com.iprogrammerr.website.repository;
 
+import com.iprogrammerr.website.file.JsonArrayCache;
 import com.iprogrammerr.website.model.IdxId;
-import com.iprogrammerr.website.model.JsonArrayCache;
 import com.iprogrammerr.website.model.Link;
+import com.iprogrammerr.website.model.Project;
+import com.iprogrammerr.website.model.ProjectDetails;
 import org.json.JSONArray;
 import org.json.JSONObject;
 
@@ -11,7 +13,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-public class Projects {
+public class ProjectRepository extends JsonRepository {
 
     private static final String URL_SEPARATOR = "/";
     private static final String NAME = "name";
@@ -20,12 +22,11 @@ public class Projects {
     private static final String IMAGES_FOLDER = "imagesFolder";
     private static final String LINKS = "links";
     private static final String URL = "url";
-    private final JsonArrayCache cache;
     private final String resourcesContext;
     private final File imagesFolder;
 
-    public Projects(File projectsFile, String resourcesContext, File imagesFolder) {
-        this.cache = new JsonArrayCache(projectsFile);
+    public ProjectRepository(File projectsFile, String resourcesContext, File imagesFolder) {
+        super(new JsonArrayCache(projectsFile));
         this.resourcesContext = resourcesContext;
         this.imagesFolder = imagesFolder;
     }
@@ -64,7 +65,7 @@ public class Projects {
             links.add(new Link(lj.getString(URL), lj.getString(NAME)));
         }
         return new ProjectDetails(name, goal, json.getString(DESCRIPTION), images(json.getString(IMAGES_FOLDER)),
-            links);
+                links);
     }
 
     private List<String> images(String folderName) {
@@ -85,23 +86,8 @@ public class Projects {
     }
 
     private String imageUrl(String project, String image) {
-        return new StringBuilder(URL_SEPARATOR)
-            .append(resourcesContext).append(URL_SEPARATOR).append(imagesFolder.getName())
-            .append(URL_SEPARATOR).append(project).append(URL_SEPARATOR).append(image)
-            .toString();
-    }
-
-    public int firstId() {
-        return IdxId.FIRST_ID;
-    }
-
-    public int lastId() {
-        int last;
-        try {
-            last = cache.content().length();
-        } catch (Exception e) {
-            last = 0;
-        }
-        return last;
+        return new StringBuilder(URL_SEPARATOR).append(resourcesContext).append(URL_SEPARATOR)
+                .append(imagesFolder.getName()).append(URL_SEPARATOR).append(project).append(URL_SEPARATOR)
+                .append(image).toString();
     }
 }

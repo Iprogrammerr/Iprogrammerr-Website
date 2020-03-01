@@ -1,4 +1,4 @@
-package com.iprogrammerr.website.model.project;
+package com.iprogrammerr.website.model;
 
 public class Project {
 

@@ -1,4 +1,4 @@
-package com.iprogrammerr.website.model.skill;
+package com.iprogrammerr.website.model;
 
 import java.util.List;
 

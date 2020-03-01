@@ -1,4 +1,4 @@
-package com.iprogrammerr.website.model;
+package com.iprogrammerr.website.file;
 
 import java.io.File;
 import java.nio.file.Files;

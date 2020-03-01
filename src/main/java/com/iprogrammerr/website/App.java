@@ -1,9 +1,9 @@
 package com.iprogrammerr.website;
 
 import com.iprogrammerr.website.model.Mapping;
-import com.iprogrammerr.website.model.experience.Experiences;
-import com.iprogrammerr.website.model.project.Projects;
-import com.iprogrammerr.website.model.skill.Skills;
+import com.iprogrammerr.website.repository.ExperienceRepository;
+import com.iprogrammerr.website.repository.ProjectRepository;
+import com.iprogrammerr.website.repository.SkillRepository;
 import com.iprogrammerr.website.respondent.*;
 import com.iprogrammerr.website.view.HtmlViews;
 import com.iprogrammerr.website.view.Views;
@@ -41,17 +41,18 @@ public class App {
         Views views = new HtmlViews(templates, engine);
 
         File database = configuration.getDatabase();
-        Experiences experiences = new Experiences(new File(database, "experiences.json"));
-        Projects projects = new Projects(new File(database, "projects.json"), RESOURCES_CONTEXT,
+        ExperienceRepository experienceRepository = new ExperienceRepository(new File(database, "experiences.json"));
+        ProjectRepository projectRepository = new ProjectRepository(new File(database, "projects.json"), RESOURCES_CONTEXT,
                 new File(configuration.getPublicResources(), "projects"));
-        Skills skills = new Skills(new File(database, "skills.json"));
+        SkillRepository skillRepository = new SkillRepository(new File(database, "skills.json"));
 
-        WelcomeRespondent welcomeRespondent = new WelcomeRespondent(views, experiences, projects, skills);
+        WelcomeRespondent welcomeRespondent = new WelcomeRespondent(views, experienceRepository, projectRepository,
+                skillRepository);
         ErrorRespondent errorRespondent = new ErrorRespondent(views);
         AboutRespondent aboutRespondent = new AboutRespondent(views);
-        ExperienceRespondent experienceRespondent = new ExperienceRespondent(views, experiences);
-        ProjectRespondent projectRespondent = new ProjectRespondent(views, projects);
-        SkillsRespondent skillsRespondent = new SkillsRespondent(views, skills);
+        ExperienceRespondent experienceRespondent = new ExperienceRespondent(views, experienceRepository);
+        ProjectRespondent projectRespondent = new ProjectRespondent(views, projectRepository);
+        SkillsRespondent skillsRespondent = new SkillsRespondent(views, skillRepository);
 
         DispatcherServlet dispatcherServlet = new DispatcherServlet(welcomeRespondent, errorRespondent, aboutRespondent,
                 experienceRespondent, projectRespondent, skillsRespondent);
