@@ -27,7 +27,7 @@ public class App {
 
     private static final String RESOURCES_CONTEXT = "resources";
     private static final String RESOURCES_NO_CACHE = "max-age=0";
-    private static final String RESOURCES_CACHE = "max-age=" + TimeUnit.HOURS.toSeconds(1);
+    private static final String RESOURCES_CACHE = "max-age=" + TimeUnit.DAYS.toSeconds(365);
 
     public static void main(String... args) throws Exception {
         Configuration configuration = Configuration.fromCmd(args);
@@ -42,8 +42,8 @@ public class App {
 
         File database = configuration.getDatabase();
         ExperienceRepository experienceRepository = new ExperienceRepository(new File(database, "experiences.json"));
-        ProjectRepository projectRepository = new ProjectRepository(new File(database, "projects.json"), RESOURCES_CONTEXT,
-                new File(configuration.getPublicResources(), "projects"));
+        ProjectRepository projectRepository = new ProjectRepository(new File(database, "projects.json"),
+                RESOURCES_CONTEXT, new File(configuration.getPublicResources(), "projects"));
         SkillRepository skillRepository = new SkillRepository(new File(database, "skills.json"));
 
         WelcomeRespondent welcomeRespondent = new WelcomeRespondent(views, experienceRepository, projectRepository,
