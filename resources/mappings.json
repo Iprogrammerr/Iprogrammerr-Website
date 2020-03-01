@@ -1,7 +1,7 @@
 [
   {
     "context": "daily-wisdom",
-    "path": "C:\\Apache24\\htdocs\\daily-wisdom-frontend",
+    "path": "/home/igor/ws/frontend/daily_wisdom",
     "welcomeFile": "login.html"
   }
 ]

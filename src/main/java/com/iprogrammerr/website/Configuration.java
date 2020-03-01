@@ -45,13 +45,8 @@ public class Configuration {
         return Integer.parseInt(source.getProperty(PORT));
     }
 
-    public File getResources() {
-        String path = source.getProperty(RESOURCES_PATH, "");
-        if (path.isEmpty()) {
-            String classPath = Configuration.class.getResource(".").getPath();
-            path = classPath.substring(0, classPath.indexOf("target")) + "src/main/resources";
-        }
-        return new File(path);
+    private File getResources() {
+        return new File(source.getProperty(RESOURCES_PATH, ""));
     }
 
     public File getDatabase() {
@@ -62,13 +57,17 @@ public class Configuration {
         return new File(getResources(), "public");
     }
 
+    public File getTemplates() {
+        return new File(getResources(), "template");
+    }
+
     public boolean shouldCacheStaticResources() {
         return Boolean.parseBoolean(source.getProperty(CACHE_STATIC_RESOURCES));
     }
 
     public List<Mapping> getMappings() throws Exception {
-        String json = new String(Files.readAllBytes(Paths.get(getResources().getPath() +
-            File.separator + "mappings.json")));
+        String json = new String(
+                Files.readAllBytes(Paths.get(getResources().getPath() + File.separator + "mappings.json")));
         JSONArray all = new JSONArray(json);
         List<Mapping> resources = new ArrayList<>(all.length());
         for (int i = 0; i < all.length(); i++) {

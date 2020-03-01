@@ -4,12 +4,7 @@ import com.iprogrammerr.website.model.Mapping;
 import com.iprogrammerr.website.model.experience.Experiences;
 import com.iprogrammerr.website.model.project.Projects;
 import com.iprogrammerr.website.model.skill.Skills;
-import com.iprogrammerr.website.respondent.AboutRespondent;
-import com.iprogrammerr.website.respondent.ErrorRespondent;
-import com.iprogrammerr.website.respondent.ExperienceRespondent;
-import com.iprogrammerr.website.respondent.ProjectRespondent;
-import com.iprogrammerr.website.respondent.SkillsRespondent;
-import com.iprogrammerr.website.respondent.WelcomeRespondent;
+import com.iprogrammerr.website.respondent.*;
 import com.iprogrammerr.website.view.HtmlViews;
 import com.iprogrammerr.website.view.Views;
 import org.eclipse.jetty.server.Connector;
@@ -37,9 +32,7 @@ public class App {
     public static void main(String... args) throws Exception {
         Configuration configuration = Configuration.fromCmd(args);
 
-        File resources = configuration.getResources();
-
-        File templates = new File(resources, "template");
+        File templates = configuration.getTemplates();
         TemplateEngine engine = new TemplateEngine();
         FileTemplateResolver resolver = new FileTemplateResolver();
         resolver.setPrefix(templates.getPath() + File.separator);
@@ -49,8 +42,8 @@ public class App {
 
         File database = configuration.getDatabase();
         Experiences experiences = new Experiences(new File(database, "experiences.json"));
-        Projects projects = new Projects(new File(database, "projects.json"),
-            RESOURCES_CONTEXT, new File(configuration.getPublicResources(), "projects"));
+        Projects projects = new Projects(new File(database, "projects.json"), RESOURCES_CONTEXT,
+                new File(configuration.getPublicResources(), "projects"));
         Skills skills = new Skills(new File(database, "skills.json"));
 
         WelcomeRespondent welcomeRespondent = new WelcomeRespondent(views, experiences, projects, skills);
@@ -61,7 +54,7 @@ public class App {
         SkillsRespondent skillsRespondent = new SkillsRespondent(views, skills);
 
         DispatcherServlet dispatcherServlet = new DispatcherServlet(welcomeRespondent, errorRespondent, aboutRespondent,
-            experienceRespondent, projectRespondent, skillsRespondent);
+                experienceRespondent, projectRespondent, skillsRespondent);
 
         server(configuration, dispatcherServlet).start();
     }
@@ -74,11 +67,11 @@ public class App {
         server.setHandler(handlers);
 
         handlers.addHandler(resourceHandler(RESOURCES_CONTEXT, configuration.getPublicResources(),
-            configuration.shouldCacheStaticResources()));
+                configuration.shouldCacheStaticResources()));
 
         for (Mapping r : configuration.getMappings()) {
             handlers.addHandler(resourceHandler(r.context, new File(r.path), r.welcomeFile,
-                configuration.shouldCacheStaticResources()));
+                    configuration.shouldCacheStaticResources()));
         }
 
         ServletHandler servletHandler = new ServletHandler();
