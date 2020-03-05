@@ -11,12 +11,16 @@ public class UrlParameter {
     public int intValue(int defaultValue) {
         int value;
         try {
-            String[] parts = parts();
-            value = Integer.parseInt(parts[parts.length - 1].trim());
+            value = Integer.parseInt(stringValue(String.valueOf(defaultValue)));
         } catch (Exception e) {
             value = defaultValue;
         }
         return value;
+    }
+
+    public String stringValue(String defaultValue) {
+        String[] parts = parts();
+        return parts.length == 0 ? defaultValue : parts[parts.length - 1].trim();
     }
 
     public int intValue() {

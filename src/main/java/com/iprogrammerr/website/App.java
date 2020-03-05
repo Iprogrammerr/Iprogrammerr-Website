@@ -54,9 +54,10 @@ public class App {
         ExperienceRespondent experienceRespondent = new ExperienceRespondent(views, experienceRepository);
         ProjectRespondent projectRespondent = new ProjectRespondent(views, projectRepository);
         SkillsRespondent skillsRespondent = new SkillsRespondent(views, skillRepository);
+        ToolsRespondent toolsRespondent = new ToolsRespondent(views);
 
         DispatcherServlet dispatcherServlet = new DispatcherServlet(welcomeRespondent, errorRespondent, aboutRespondent,
-                experienceRespondent, projectRespondent, skillsRespondent);
+                experienceRespondent, projectRespondent, skillsRespondent, toolsRespondent);
 
         server(configuration, dispatcherServlet).start();
     }
