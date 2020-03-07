@@ -11,7 +11,7 @@ function initializeItemToCompare(root, itemName) {
 
 function renderAttribute(removable = false) {
     const attributeKey = nextAttributeKey();
-    return renderElement('div', {},
+    return renderElement('div', {class: 'text-center'},
         renderElement('input', propertiesWithDataAttribute({
             type: 'text',
             value: attributeKey,
@@ -47,6 +47,29 @@ function renderAttribute(removable = false) {
         }, '+'));
 }
 
+function renderItemToCompare(name, removable=false) {
+    return renderElement('div', {}, renderElement('input', {
+        type: 'text',
+        value: name,
+        onkeyup: function (e) {
+            console.log('Change...', e);
+        }
+    }, name),
+    renderElement('button', {
+        onclick: (e) => {
+            if (removable) {
+                const parent = e.target.parentNode;
+                const attrValue = parent.querySelector('input[value]').value;
+            }
+        }
+    }, '-'),
+    renderElement('button', {
+        onclick: (e) => {
+
+        }
+    }, '+'));
+}
+
 function toLegalAttributeName(newName) {
     return newName.replace(/ /g, '_');
 }
@@ -58,7 +81,7 @@ function updateAttributeName(previousAttribute, newAttribute, newName) {
         Array.from(e.children).forEach(c => {
             updateItemAttribute(c, newAttribute);
             const name = c.nodeName.toLowerCase();
-            if (name == 'p') {
+            if (name == 'h3') {
                 c.innerText = newName;
             } else if (name == 'input' && c.placeholder == '') {
                 c.placeholder = newName;
@@ -80,6 +103,13 @@ function updateItemAttribute(item, newName) {
     item.setAttribute(DATA_ATTRIBUTE_KEY, newName);
 }
 
+function nextItemKey(increment = false) {
+    if (increment) {
+        ++itemsCounter;
+    }
+    return `Item${itemsCounter}`;
+}
+
 function nextAttributeKey(increment = false) {
     if (increment) {
         ++attributeCounter;
@@ -89,8 +119,8 @@ function nextAttributeKey(increment = false) {
 
 function renderItemAttribute() {
     const attributeKey = nextAttributeKey();
-    return renderElement('div', emptyPropertiesWithDataAttribute(attributeKey),
-        renderElement('p', emptyPropertiesWithDataAttribute(attributeKey), `${attributeKey}`),
+    return renderElement('div', propertiesWithDataAttribute({'class': 'item-attribute'}, attributeKey),
+        renderElement('h3', emptyPropertiesWithDataAttribute(attributeKey), `${attributeKey}`),
         renderElement('input', propertiesWithDataAttribute({ type: 'text', placeholder: 'Value' },
             attributeKey)));
 }
@@ -124,16 +154,25 @@ function renderElement(type, properties, ...children) {
     return dom;
 }
 
-const attributes = document.getElementById('attributes')
+const attributes = document.getElementById('attributes');
+const items = document.getElementById('items');
 const comparatorBody = document.getElementsByClassName('comparator')[0];
 
 const DATA_ATTRIBUTE_KEY = 'data-attribute';
 const DATA_ITEM_KEY = 'data-item';
+const DATA_ITEM_NAME = 'data-item-name';
 let attributeCounter = 1;
+let itemsCounter = 1;
 const attributesValues = new MutableAttributes();
 attributesValues.addAtribute(nextAttributeKey());
 console.log('Attibutes...', attributesValues);
 
 attributes.appendChild(renderAttribute());
-initializeItemToCompare(comparatorBody, 'A');
-initializeItemToCompare(comparatorBody, 'B');
+
+let firstItem = nextItemKey();
+let secondItem = nextItemKey(true);
+
+items.appendChild(renderItemToCompare(firstItem));
+items.appendChild(renderItemToCompare(secondItem));
+initializeItemToCompare(comparatorBody, firstItem);
+initializeItemToCompare(comparatorBody, secondItem);

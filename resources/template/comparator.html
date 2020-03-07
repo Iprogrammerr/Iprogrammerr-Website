@@ -14,15 +14,43 @@
         div>p {
             display: inline-block;
         }
+
+        h1,
+        h2 {
+            text-align: center;
+        }
+
+        h3 {
+            overflow: hidden;
+            text-overflow: ellipsis;
+            max-width: 100%;
+        }
+
+        .text-center {
+            text-align: center;
+            width: 100%;
+        }
+
+        #compare-button {
+            width: 50%;
+        }
     </style>
 </head>
 
 <body class="gradient">
     <div class="background-bottom"></div>
-    <div class="centered fade-in">
+    <div class="fade-in text-center">
         <h1>Let's compare something!</h1>
-        <div id="attributes" class="centered"></div>
+        <div class="comparator-header">
+            <div id="items">
+                <h2>Items</h2>
+            </div>
+            <div id="attributes" class="centered">
+                <h2>Attributes</h2>
+            </div>
+        </div>
         <div class="comparator"></div>
+        <button id='compare-button'>Compare</button>
     </div>
 </body>
 
