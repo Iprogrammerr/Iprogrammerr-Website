@@ -1,9 +1,3 @@
-* {
-    box-sizing: border-box;
-    font-family: var(--font);
-    color: white;
-}
-
 :root {
     --font: "Comic Sans MS", cursive, sans-serif;
     --padding-medium: 16px;
@@ -23,6 +17,12 @@
     --gallery-height-three: 24vw;
     --gallery-width-four: 10vw;
     --gallery-height-four: 13.5vw;
+}
+
+* {
+    box-sizing: border-box;
+    font-family: var(--font);
+    color: white;
 }
 
 html, body {

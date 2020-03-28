@@ -3,6 +3,7 @@ import time
 
 ASSETS_VERSION = str(int(time.time()))
 
+#TODO relative path
 ASSETS_DIRECTORY = '/home/igor/ws/IdeaProjects/iprogrammerr-website/resources'
 IMAGES_EXTENSIONS = ['jpg', 'png']
 
